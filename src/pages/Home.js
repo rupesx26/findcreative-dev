@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
-import { api } from '../api';
-import { useServerData } from '../state/serverDataContext';
+// import { api } from '../api';
+// import { useServerData } from '../state/serverDataContext';
 import Head from './Head';
 
 const Home = () => {
-  const serverTodos = useServerData(data => {
-    return data.todos || [];
-  });
-  const [text, setText] = useState('');
-  const [todos, setTodos] = useState(serverTodos);
+  // const serverTodos = useServerData(data => {
+  //   return data.todos || [];
+  // });
+  // const [text, setText] = useState('');
+  // const [todos, setTodos] = useState(serverTodos);
 
   return (
     <div>
@@ -20,7 +20,7 @@ const Home = () => {
       />
       <h1>Home page</h1>
 
-      <form
+      {/* <form
         onSubmit={e => {
           e.preventDefault();
 
@@ -49,17 +49,17 @@ const Home = () => {
         {todos.map(todo => (
           <li key={todo.id}>{todo.text}</li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
 
-Home.fetchData = () => {
-  return api.todos.all().then(todos => {
-    return {
-      todos
-    };
-  });
-};
+// Home.fetchData = () => {
+//   return api.todos.all().then(todos => {
+//     return {
+//       todos
+//     };
+//   });
+// };
 
 export default Home;
