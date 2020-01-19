@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 import Routes from '../routes';
 
 const App = () => (
   <div className="app">
-    <nav aria-label="main navigation">
+    {/* <nav aria-label="main navigation">
       <NavLink exact to="/" activeClassName="active">
         Home
       </NavLink>
@@ -16,13 +16,13 @@ const App = () => (
       <NavLink exact to="/work" activeClassName="active">
         Services
       </NavLink>
-    </nav>
+    </nav> */}
 
     <main className="main">
       <Routes />
     </main>
 
-    <footer />
+    {/* <footer /> */}
   </div>
 );
 

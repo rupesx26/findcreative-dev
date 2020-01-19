@@ -1,0 +1,32 @@
+
+
+.head-banner .title {
+    font-size: 7vw;
+    text-align: center;
+    color: #000000;
+    margin: 0 auto;
+    line-height: 1;
+    font-family: 'Nexa-bold';
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -.01783333em;
+    // width: 49vw;
+    position: relative;
+}
+.animation-slide-head .slide {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+}
+.animation-slide-head .slide .caret{
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    line-height: .2;
+    padding: 0 0.5em;
+    text-align: center;
+}
+
+  
+

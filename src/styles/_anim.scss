@@ -1,0 +1,114 @@
+@keyframes appear {
+    0% {
+      opacity: 0;
+      bottom: -3em;
+    }
+    100% {
+      opacity: 1;
+      bottom: 0;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-3.5%);
+      margin-top: -10%;
+    }
+    100% {
+      transform: translateY(0);
+      margin-top: 0;
+    }
+  }
+  
+  
+  
+  @keyframes shrink {
+    0% {
+      width: 95%;
+    }
+    100% {
+      width: 90%;
+    }
+  }
+
+
+  @keyframes move-chevron {
+    25% {
+     opacity: 1;
+       }
+    33% {
+     opacity: 1;
+     transform: translateY($base * 3.8);
+    }
+    66% {
+     opacity: 1;
+     transform: translateY($base * 5.2);
+    }
+    100% {
+     opacity: 0;
+     transform: translateY($base * 8) scale(0.5);
+    }
+   }
+
+
+
+   @keyframes blob{
+    0%,100% { border-radius: "64% 36% 27% 73% / 55% 58% 42% 45%"; transform: rotate(360deg); background: rgba(48, 195, 229)}
+    25% { border-radius: "73% 27% 26% 38% / 73% 36% 64% 27%"; transform: rotate(90deg);}
+    40% { border-radius: "40% 60% 70% 30% / 47% 62% 38% 53%"; transform: rotate(-90deg);}
+    50% { border-radius: "28% 72% 44% 56% / 49% 40% 60% 51%"; transform: rotate(180deg);}
+    70% { border-radius: "64% 36% 27% 73% / 55% 58% 42% 45%"; transform: rotate(-280deg);}
+    85% { border-radius: "73% 27% 26% 38% / 73% 36% 64% 27%"; transform: rotate(360deg);}
+  }
+  
+  @keyframes bloblayer1{
+    0%,100% { border-radius: "73% 27% 26% 38% / 73% 36% 64% 27%"; background: rgba(48, 195, 229, 0.2);}
+    25% { border-radius: "28% 72% 44% 56% / 49% 40% 60% 51%";}
+    40% { border-radius: "64% 36% 27% 73% / 55% 58% 42% 45%";}
+    50% { border-radius: "40% 60% 70% 30% / 47% 62% 38% 53%";}
+    70% { border-radius: "64% 36% 27% 73% / 55% 58% 42% 45%";}
+    85% { border-radius: "73% 27% 26% 38% / 73% 36% 64% 27%";;}
+  }
+  
+  @keyframes bloblayer2{
+    0%,100% { border-radius:"40% 60% 70% 30% / 47% 62% 38% 53%"; background: rgba(48, 195, 229, 0.3);}
+    25% { border-radius: "64% 36% 27% 73% / 55% 58% 42% 45%";  }
+    40% { border-radius: "33% 25% 72% 65% / 46% 85% 42% 51%";   }
+    50% { border-radius: "28% 72% 44% 56% / 49% 40% 60% 51%";  }
+    70% { border-radius: "64% 36% 27% 73% / 55% 58% 42% 45%";   }
+    85% { border-radius: "37% 72% 62% 83% / 48% 55% 28% 68%"; }
+  }
+  
+  
+  @keyframes bloblayer3{
+    0%,100% { border-radius: "31% 60% 51% 36% / 40% 40% 60% 51%";}
+    25% { border-radius: "73% 27% 26% 38% / 73% 36% 64% 27%";}
+    50% {border-radius: "40% 60% 70% 30% / 47% 62% 38% 53%";}
+    75% {  border-radius: "64% 36% 27% 73% / 55% 58% 42% 45%";}  
+  }
+
+  @keyframes from0to360 {
+    from{transform:rotate(0);}
+    to{transform:rotate(360deg);}
+  }
+  
+  
+  @keyframes colorchange {
+      0% {
+        fill: #e91c23;
+      }
+      12% {fill: #f6e307;}
+      25% {fill: #00b3da;}
+    55% {fill: #e82e81;}
+    75% {fill: #5e2b87;}
+    100% {fill: #1f1f20;}
+  }
+  
+  @keyframes strokeColor {
+      0% {stroke: #e91c23;}
+      12% {stroke: #f6e307;}
+      25% {stroke: #00b3da;}
+    55% {stroke: #e82e81;}
+    75% {stroke: #5e2b87;}
+    100% {stroke: #1f1f20;}
+  }

@@ -1,0 +1,78 @@
+@mixin font-face( $font-name, $font-path, // path + file name. Ex : path/to/font/filename
+$font-weight: 400, $font-style: normal, $support-required: 'modern') {
+  @font-face {
+    font-family: $font-name;
+    font-style : $font-style;
+    font-weight: $font-weight;
+    @if $support-required=='oldie' {
+      src: url('#{$font-path}.eot');
+      src: url('#{$font-path}.eot?#iefix') format('embedded-opentype'),
+      url('#{$font-path}.woff2') format('woff2'),
+      url('#{$font-path}.woff') format('woff'),
+      url('#{$font-path}.ttf') format('truetype');
+    }
+    @if $support-required=='recent' {
+      src: url('#{$font-path}.woff2') format('woff2'),
+      url('#{$font-path}.woff') format('woff'),
+      url('#{$font-path}.ttf') format('truetype');
+    }
+    @if $support-required=='modern' {
+      src: url('#{$font-path}.woff2') format('woff2'),
+      url('#{$font-path}.woff') format('woff');
+    }
+  }
+  @if $support-required !='oldie' and $support-required !='recent' and $support-required !='modern' {
+    @error 'Invalid support-required value. Must be "oldie"==>IE8 and above/ Android native browser 4+/ Safari 4.3 OR "recent"==>IE9+/ Android native browser 4.0+/ Safari 4.3+ OR "modern"==>IE9+/ Android native browser 4.4+/ Safari 5.1+';
+  }
+}
+
+$font-nexa-ltrg : 'Nexa-Light';
+$font-nexa-bdrg : 'Nexa-bold';
+$font-work-sans: 'Work Sans', sans-serif;
+
+$base: 0.8rem;
+$cols: 12;
+$gutter: 20px;
+$container-width: 100%;
+
+$break-xsmall: 577px;
+$break-small: 769px;
+$break-medium: 1025px;
+$break-large: 1441px;
+
+
+/*
+ * Generates classes for a grid of columns, prefixed by size.
+ * The result will be .col-[size]-[col]-[total-columns] E.g. .col-xs-6-12
+ *
+ * @param {string}	$size			The name of the size target (e.g. xs, sm, md, lg, xl, etc.)
+ * @param {int}		$grid-columns	Amount of columns
+ */
+ @mixin grid-generator($size, $grid-columns) {
+	@for $i from 1 through $grid-columns {
+		.col-#{$size}-#{$i} {
+			width: percentage($i / $grid-columns);
+			float: left;
+		}
+	}
+}
+
+/*
+ * A mixin targeting a specific device width and larger.
+ * These are the available targets: 'xs', 'sm', 'md', 'lg', 'xl'
+ *
+ * @param {string} $media The target media
+ */
+ @mixin respond-from($media) {
+	@if $media == xs {
+		@media (min-width: 0px)  { @content; }
+	} @else if $media == sm {
+		@media (min-width: 768px) { @content; }
+	} @else if $media == md {
+		@media (min-width: 1200) { @content; }
+	} @else if $media == lg {
+		@media (min-width: 1440) { @content; }
+	} @else if $media == xl {
+		@media (min-width: 1800) { @content; }
+	}
+}

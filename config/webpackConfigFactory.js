@@ -83,11 +83,13 @@ module.exports = function(envType) {
       },
 
       // CSS Modules
+
       {
         test: /\.module\.s?css$/,
         include: [resolvePath('../src')],
         use: [
           IS_DEV && 'style-loader',
+
           IS_PROD && MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
@@ -124,6 +126,7 @@ module.exports = function(envType) {
           'css-loader',
           {
             loader: 'postcss-loader',
+
             options: {
               ident: 'postcss',
               plugins: () => [
@@ -137,6 +140,19 @@ module.exports = function(envType) {
           'sass-loader',
           'import-glob-loader'
         ].filter(Boolean)
+      },
+
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        include: [resolvePath('../public')],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
       }
     ].filter(Boolean)
   };

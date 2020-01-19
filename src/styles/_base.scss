@@ -4,11 +4,14 @@ body {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 16px;
   padding: 0;
   margin: 0;
-  color: $blue-dark;
+ text-rendering: optimizeLegibility;
+}
+body::-webkit-scrollbar { 
+  display: none; 
 }
 
 #root {
@@ -18,26 +21,96 @@ body {
 
 nav {
   padding: 20px;
-  background: $gray-light;
+  background: yellow;
   margin-bottom: 40px;
 }
 
-.main {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 200px;
-}
 
-footer {
-  background: $blue-dark;
+
+.container {
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 150px;
-  text-align: center;
+  display: block;
+  margin: auto;
 }
 
-.active {
-  color: $blue;
+.row {
+  flex-direction: row;
+
+  &.reverse {
+    flex-direction: row-reverse;;
+  }
+}
+
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  margin-right: $gutter;
+  margin-left: $gutter;
+
+  &.no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  [class^="col-"] {
+      box-sizing: border-box;
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding-right: $gutter / 2;
+      padding-left: $gutter / 2;
+  }
+  &.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    }
+
+  .no-gutters {
+    padding-right: 0;
+    padding-left: 0;
+    }
+    .no-gutters-left {
+      padding-left: 0;
+    }
+    .no-gutters-right {
+      padding-right: 0;
+    }
+
+}
+
+@include grid-generator(xs, 12);
+
+@include respond-from(sm) {
+	@include grid-generator(sm, 12);
+}
+
+@include respond-from(md) {
+	@include grid-generator(md, 12);
+}
+
+@include respond-from(lg) {
+	@include grid-generator(lg, 12);
+}
+
+@include respond-from(xl) {
+	@include grid-generator(xl, 10);
+	@include grid-generator(xl, 12);
+}
+
+
+.justify-content-right {
+  justify-content: flex-end!important;
+}
+
+.justify-content-left {
+  justify-content: flex-start!important;
+}
+
+.justify-content-center {
+  justify-content: center!important;
+}
+
+.none {
+  display: none!important;
 }

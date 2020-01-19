@@ -51,7 +51,7 @@
     "chokidar": "^3.0.2",
     "compression": "^1.7.4",
     "core-js": "^3.2.1",
-    "css-loader": "^3.2.0",
+    "css-loader": "^3.4.2",
     "dotenv": "^8.1.0",
     "error-overlay-webpack-plugin": "^0.4.1",
     "eslint": "^6.3.0",
