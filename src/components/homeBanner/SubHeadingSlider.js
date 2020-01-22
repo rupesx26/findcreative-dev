@@ -28,6 +28,13 @@ class SubHeadingSlider extends Component {
     const tl = new TimelineMax({ paused: true, repeat: -1 });
     const subtitleTimeline = new TimelineLite();
     subtitleTimeline
+      .fromTo(
+        '.sub-slide-1',
+        1,
+        { opacity: 0, y: 20, ease: Power0.easeInOut },
+        { opacity: 1, y: 0, ease: Power0.easeInOut },
+        '+=1'
+      )
       .to(
         '.sub-slide-1',
         1,
@@ -59,13 +66,7 @@ class SubHeadingSlider extends Component {
         { opacity: 0, y: -20, ease: Power0.easeInOut },
         '+=1'
       )
-      .to(`.sub-slide-1`, 0.1, { opacity: 0, y: 20, ease: Power0.easeInOut })
-      .to(
-        `.sub-slide-1`,
-        1,
-        { opacity: 1, y: 0, ease: Power0.easeInOut },
-        '+=1'
-      );
+      .to(`.sub-slide-1`, 1, { opacity: 0, y: 20, ease: Power0.easeInOut });
 
     tl.add(subtitleTimeline);
 

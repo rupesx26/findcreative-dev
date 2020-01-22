@@ -1,16 +1,24 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import pageLoader from './components/loader';
 
 const LoadableHome = Loadable({
-  loader: () => import(/* webpackChunkName: 'home' */ './pages/Home'),
-  loading: () => <div>Loading...</div>
+  loader: async () =>
+    await import(/* webpackChunkName: 'home' */ './pages/Home'),
+  loading: () => pageLoader,
+  delay: 2000, // 0.3 seconds
+  timeout: 1000 // 10 seconds
 });
 
 const LoadableDifference = Loadable({
-  loader: () =>
-    import(/* webpackChunkName: 'about' */ './pages/difference/Difference'),
-  loading: () => <div>Loading...</div>
+  loader: async () =>
+    await import(
+      /* webpackChunkName: 'about' */ './pages/difference/Difference'
+    ),
+  loading: () => pageLoader,
+  delay: 2000, // 0.3 seconds
+  timeout: 1000 // 10 seconds
 });
 
 const LoadableWork = Loadable({

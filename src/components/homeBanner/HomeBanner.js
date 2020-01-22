@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import SubHeadingSlider from './SubHeadingSlider';
 import HeadingSlider from './HeadingSlider';
-
 import styles from './homebanner.module.scss';
+import Blob from '../blob/Blob';
 class Banner extends Component {
   render() {
     return (
@@ -14,6 +14,7 @@ class Banner extends Component {
             <div className="col-md-10 col-xs-10 col-sm-10 col-lg-10">
               <div className={styles.banner}>
                 <div className={styles.view}>
+                  <Blob />
                   <SubHeadingSlider />
                   <HeadingSlider />
                 </div>
