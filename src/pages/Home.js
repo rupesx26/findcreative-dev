@@ -69,20 +69,56 @@ import React from 'react';
 
 //Import Components
 import Head from './Head';
-import Banner from '../components/homeBanner/HomeBanner';
+import Banner from '../components/homebanner/HomeBanner';
+import HomeCarousel from '../components/homecarousel';
+import PageAnimWrapper from '../components/pagetransition';
+import { motion } from 'framer-motion';
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: '100vh',
+    height: '0'
+  },
+  in: {
+    opacity: 1,
+    y: '0',
+    scale: 1,
+    height: '100vh'
+  },
+  out: {
+    opacity: 0,
+    y: '-100vh',
+    height: '0'
+  }
+};
+
+const pageTransition = {
+  type: 'tween',
+  ease: 'anticipate',
+  duration: 1.2
+};
+
+const pageStyle = {
+  // position: "absolute",
+  width: '100%'
+  // backgroundColor: '#ccc'
+};
 
 const Home = () => {
   return (
-    <div>
+    <PageAnimWrapper>
       <Head
         title="new react ssr home page"
         description="home page description"
         content="home page content"
       />
+
       <div className="home-page page-wrapper">
         <Banner />
+        <HomeCarousel />
       </div>
-    </div>
+    </PageAnimWrapper>
   );
 };
 

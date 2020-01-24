@@ -1,14 +1,13 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import pageLoader from './components/loader';
+import { AnimatePresence } from 'framer-motion';
 
 const LoadableHome = Loadable({
   loader: async () =>
     await import(/* webpackChunkName: 'home' */ './pages/Home'),
-  loading: () => pageLoader,
-  delay: 2000, // 0.3 seconds
-  timeout: 1000 // 10 seconds
+  loading: () => pageLoader
 });
 
 const LoadableDifference = Loadable({
@@ -16,9 +15,7 @@ const LoadableDifference = Loadable({
     await import(
       /* webpackChunkName: 'about' */ './pages/difference/Difference'
     ),
-  loading: () => pageLoader,
-  delay: 2000, // 0.3 seconds
-  timeout: 1000 // 10 seconds
+  loading: () => pageLoader
 });
 
 const LoadableWork = Loadable({
@@ -31,11 +28,22 @@ const LoadableNotFound = Loadable({
   loading: () => <div>Loading...</div>
 });
 
-export default () => (
-  <Switch>
-    <Route exact path="/" component={LoadableHome} />
-    <Route path="/difference" component={LoadableDifference} />
-    <Route path="/work" component={LoadableWork} />
-    <Route component={LoadableNotFound} />
-  </Switch>
-);
+const Routes = () => {
+  let location = useLocation();
+  return (
+    <Route
+      render={({ location }) => (
+        <AnimatePresence exitBeforeEnter initial={false}>
+          <Switch location={location} key={location.pathname}>
+            <Route exact path="/" component={LoadableHome} />
+            <Route path="/difference" component={LoadableDifference} />
+            <Route path="/work" component={LoadableWork} />
+            <Route component={LoadableNotFound} />
+          </Switch>
+        </AnimatePresence>
+      )}
+    />
+  );
+};
+
+export default Routes;

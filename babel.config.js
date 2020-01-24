@@ -17,7 +17,8 @@ module.exports = function(api) {
     'react-loadable/babel',
     '@babel/plugin-transform-runtime',
     '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-syntax-dynamic-import'
+    '@babel/plugin-syntax-dynamic-import',
+    'css-modules-transform'
   ];
 
   return {

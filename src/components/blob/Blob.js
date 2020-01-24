@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import styles from './blob.module.scss';
-import {
-  TweenMax,
-  TimelineLite,
-  TimelineMax,
-  Power0,
-  Expo
-} from 'gsap/dist/gsap';
+import { TimelineLite, Power0 } from 'gsap/dist/gsap';
 
 class Blob extends Component {
   constructor(props) {
