@@ -27,7 +27,9 @@ if (cluster.isMaster) {
     }
 
     console.info(
-      `Server running on port ${PORT} -- Worker pid: ${cluster.worker.process.pid}`
+      `Server running on port ${PORT} -- Worker pid: ${
+        cluster.worker.process.pid
+      }`
     );
   });
 }
