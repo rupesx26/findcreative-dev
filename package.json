@@ -51,7 +51,7 @@
     "chokidar": "^3.0.2",
     "compression": "^1.7.4",
     "core-js": "^3.2.1",
-    "css-loader": "^3.4.2",
+    "css-loader": "^3.2.0",
     "dotenv": "^8.1.0",
     "error-overlay-webpack-plugin": "^0.4.1",
     "eslint": "^6.3.0",
@@ -63,6 +63,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.0.1",
     "express": "^4.17.1",
+    "file-loader": "^5.0.2",
     "fs-extra": "^8.1.0",
     "gsap": "^3.0.5",
     "helmet": "^3.20.1",
@@ -97,8 +98,5 @@
     "webpack-hot-middleware": "^2.25.0",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-node-externals": "^1.7.2"
-  },
-  "devDependencies": {
-    "file-loader": "^5.0.2"
   }
 }
