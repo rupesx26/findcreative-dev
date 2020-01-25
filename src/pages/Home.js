@@ -71,22 +71,24 @@ import React from 'react';
 import Head from './Head';
 import Banner from '../components/homebanner/HomeBanner';
 import HomeCarousel from '../components/homecarousel';
-//import PageAnimWrapper from '../components/pagetransition';
+import PageAnimWrapper from '../components/pagetransition';
 
 const Home = () => {
   return (
-    <div>
-      <Head
-        title="new react ssr home page"
-        description="home page description"
-        content="home page content"
-      />
+    <PageAnimWrapper>
+      <div>
+        <Head
+          title="new react ssr home page"
+          description="home page description"
+          content="home page content"
+        />
 
-      <div className="home-page page-wrapper">
-        <Banner />
-        <HomeCarousel />
+        <div className="home-page page-wrapper">
+          <Banner />
+          <HomeCarousel />
+        </div>
       </div>
-    </div>
+    </PageAnimWrapper>
   );
 };
 
