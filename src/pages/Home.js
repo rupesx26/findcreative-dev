@@ -69,7 +69,7 @@ import React from 'react';
 
 //Import Components
 import Head from './Head';
-import Banner from '../components/homeBanner/HomeBanner';
+import Banner from '../components/homebanner/HomeBanner';
 
 const Home = () => {
   return (

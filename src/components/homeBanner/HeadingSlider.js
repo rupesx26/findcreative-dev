@@ -7,7 +7,6 @@ import {
   Expo
 } from 'gsap/dist/gsap';
 import styles from './heading.module.scss';
-import { filter } from 'compression';
 
 // * to create is to unite
 // * now is everything
