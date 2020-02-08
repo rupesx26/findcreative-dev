@@ -65,31 +65,39 @@
 
 // export default Home;
 
-import React from 'react';
-
+import React, { Component } from 'react';
 //Import Components
 import Head from './Head';
 import Banner from '../components/homebanner/HomeBanner';
 import HomeCarousel from '../components/homecarousel';
 import PageAnimWrapper from '../components/pagetransition';
+import ScrollMagic from 'scrollmagic';
 
-const Home = () => {
-  return (
-    <PageAnimWrapper>
-      <div>
-        <Head
-          title="new react ssr home page"
-          description="home page description"
-          content="home page content"
-        />
+class Home extends Component {
+  render() {
+    return (
+      <PageAnimWrapper>
+        <div>
+          <Head
+            title="new react ssr home page"
+            description="home page description"
+            content="home page content"
+          />
 
-        <div className="home-page page-wrapper">
-          <Banner />
-          <HomeCarousel />
+          <div className="home-page page-wrapper">
+            <Banner />
+            <HomeCarousel />
+          </div>
         </div>
-      </div>
-    </PageAnimWrapper>
-  );
-};
+      </PageAnimWrapper>
+    );
+  }
+}
+
+// const Home = () => {
+//   return (
+
+//   );
+// };
 
 export default Home;
