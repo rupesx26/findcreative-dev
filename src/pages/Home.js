@@ -68,10 +68,10 @@
 import React, { Component } from 'react';
 //Import Components
 import Head from './Head';
-import Banner from '../components/homebanner/HomeBanner';
+import Banner from '../components/homeBanner/HomeBanner';
 import HomeCarousel from '../components/homecarousel';
 import PageAnimWrapper from '../components/pagetransition';
-import ScrollMagic from 'scrollmagic';
+import { ScrollScene } from 'scrollscene';
 
 class Home extends Component {
   render() {
