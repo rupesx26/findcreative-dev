@@ -19,13 +19,18 @@ body::-webkit-scrollbar {
   position: relative;
 }
 
-nav {
-  padding: 20px;
-  background: yellow;
-  margin-bottom: 40px;
+img {
+  max-width: 100%;
 }
 
 
+.logo {
+  height: 64px;
+  width: 59px;
+  z-index: 5;
+  margin-top: 42px;
+  margin-left: 42px;
+}
 
 .container {
   width: 100%;

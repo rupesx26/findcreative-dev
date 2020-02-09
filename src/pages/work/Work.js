@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { TweenMax } from 'gsap/dist/gsap';
 import styles from './work.module.scss';
 import Head from '../Head';
-//import PageAnimWrapper from '../../components/pagetransition';
+import PageAnimWrapper from '../../components/pagetransition';
 
 const Services = () => {
   const blue = useRef(null);
@@ -26,7 +26,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div>
+    <PageAnimWrapper>
       <Head
         title="new react ssr services page"
         description="services page description"
@@ -45,7 +45,7 @@ const Services = () => {
           <circle ref={green} cx="133.4" cy="16.6" r="16.1" fill="#009e52" />
         </svg>
       </div>
-    </div>
+    </PageAnimWrapper>
   );
 };
 

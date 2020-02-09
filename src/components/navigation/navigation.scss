@@ -1,0 +1,62 @@
+
+
+.fca-navigation {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 0;
+    .nav-view {
+        position: relative;
+        height: inherit;
+    }
+    &.menu-open {
+        background: #000;
+        color: #fff;
+    }
+    .logo{
+
+    }
+    .hamburger {
+        height: 30px;
+        width: 25px;
+        position: fixed;
+        top: 56px;
+        right: 52px;
+        cursor: pointer;
+
+        &.menu-open {
+           
+
+            .line:nth-child(1) {
+                background: #fff;
+                transform: rotate(45deg);
+                margin-bottom: 5px;
+            }
+            .line:nth-child(2) {
+                opacity: 0;
+                transform: translateX(-16px);
+            }
+            .line:nth-child(3) {
+                background: #fff;
+                transform: translateX(-5px) translateY(-8px) rotate(-45deg);
+            }
+        }
+        &.menu-close {
+            .line {
+                background: #000;
+            }
+            
+        }
+        .line {
+            height: 2px;
+            background: #000;
+            margin-bottom: 3px;
+            width: 100%;
+            display: block;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+        }
+    }
+}

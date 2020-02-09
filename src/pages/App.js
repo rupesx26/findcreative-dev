@@ -2,12 +2,12 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 import Routes from '../routes';
-
+import Navigation from '../components/navigation';
 const App = () => {
   return (
     <div className="app">
-      <nav aria-label="main navigation">
-        <NavLink exact to="/" activeClassName="active">
+      <Navigation />
+      {/* <NavLink exact to="/" activeClassName="active">
           Home
         </NavLink>
         <NavLink exact to="/difference" activeClassName="active">
@@ -16,8 +16,7 @@ const App = () => {
 
         <NavLink exact to="/work" activeClassName="active">
           Services
-        </NavLink>
-      </nav>
+        </NavLink> */}
 
       <main className="main">
         <Routes />

@@ -68,26 +68,28 @@
 import React, { Component } from 'react';
 //Import Components
 import Head from './Head';
-import Banner from '../components/homeBanner/HomeBanner';
+import Banner from '../components/homebanner/HomeBanner';
 import HomeCarousel from '../components/homecarousel';
 import PageAnimWrapper from '../components/pagetransition';
-import { ScrollScene } from 'scrollscene';
+//import { ScrollMagic } from 'scrollscene';
+//import {isMobile} from 'react-device-detect'; is for mobile devices
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <PageAnimWrapper>
-        <div>
-          <Head
-            title="new react ssr home page"
-            description="home page description"
-            content="home page content"
-          />
-
-          <div className="home-page page-wrapper">
-            <Banner />
-            <HomeCarousel />
-          </div>
+        <Head
+          title="new react ssr home page"
+          description="home page description"
+          content="home page content"
+        />
+        <div className="home-page page-wrapper">
+          <Banner />
+          <HomeCarousel />
         </div>
       </PageAnimWrapper>
     );

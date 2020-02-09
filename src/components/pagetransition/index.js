@@ -3,20 +3,13 @@ import { motion } from 'framer-motion';
 
 const pageVariants = {
   initial: {
-    opacity: 0,
-    y: '100vh'
-    //height: '0'
+    opacity: 0
   },
   in: {
-    opacity: 1,
-    y: '0'
-    //height: '100vh'
+    opacity: 1
   },
   out: {
-    opacity: 0,
-    y: '-100vh',
-    // height: '0',
-    backgroundColor: 'rgba(0,0,0,1)'
+    opacity: 0
   }
 };
 
@@ -27,9 +20,7 @@ const pageTransition = {
 };
 
 const pageStyle = {
-  // position: "absolute",
   width: '100%'
-  // backgroundColor: '#ccc'
 };
 
 const PageAnimWrapper = props => {

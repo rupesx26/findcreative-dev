@@ -4,7 +4,7 @@ class HomeCarousel extends Component {
   render() {
     return (
       <section id={Styles.homeCarouselWrapper}>
-        <div>Carousel</div>
+        <div style={{ padding: '50px' }}>Carousel</div>
       </section>
     );
   }
