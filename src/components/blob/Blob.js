@@ -1,38 +1,46 @@
 import React, { Component } from 'react';
 import styles from './blob.module.scss';
-import { TimelineLite, Power0 } from 'gsap/dist/gsap';
+import { imagePath } from '../../utils/assetUtils';
 
 class Blob extends Component {
-  constructor(props) {
-    super(props);
-    this.blobAnimation = this.blobAnimation.bind(this);
-  }
-
-  componentDidMount() {
-    this.blobAnimation();
-  }
-
-  blobAnimation() {
-    // TweenMax.to('.blob-otr', .1, {opacity: 1})
-
-    const blob = new TimelineLite();
-    blob.fromTo(
-      '.blob-otr',
-      1,
-      { opacity: 0, x: -400, filter: 'blur(9px)' },
-      { opacity: 1, x: 0, filter: 'blur(0px)', ease: Power0.easeInOut },
-      '+=1'
-    );
-  }
-
   render() {
     return (
-      <div className={`${styles.blobOuter} blob-otr`}>
+      <div
+        className={`${styles.blobOuter} blob-otr ${this.props.blobAnimClass}`}
+      >
+        {this.props.thinline && (
+          <div className={styles.thinLineBlobWrapper}>
+            <img
+              className={styles.reactLogo}
+              src={imagePath('thin-lines-blob@2x.png')}
+              alt=""
+            />
+          </div>
+        )}
+
         <div className={styles.blobWrapper}>
-          <div className={styles.blobLayer1}></div>
-          <div className={styles.blobLayer2}></div>
-          <div className={styles.blob}></div>
-          <div className={styles.blobLayer3}></div>
+          <div
+            style={{
+              backgroundColor: this.props.bbbgcolor,
+              opacity: this.props.bb1opacity
+            }}
+            className={styles.blobLayer1}
+          ></div>
+          <div
+            style={{
+              backgroundColor: this.props.bbbgcolor,
+              opacity: this.props.bb2opacity
+            }}
+            className={styles.blobLayer2}
+          ></div>
+          <div
+            style={{ backgroundColor: this.props.mainblog }}
+            className={styles.blob}
+          ></div>
+          <div
+            style={{ borderColor: this.props.blobBorder }}
+            className={styles.blobLayer3}
+          ></div>
         </div>
       </div>
     );

@@ -7,6 +7,7 @@
     top: 0;
     left: 0;
     height: 0;
+    overflow: hidden;
     .nav-view {
         position: relative;
         height: inherit;
@@ -16,7 +17,12 @@
         color: #fff;
     }
     .logo{
-
+        height: 64px;
+        width: 59px;
+        z-index: 5;
+        top: 42px;
+        left: 42px;
+        position: fixed;
     }
     .hamburger {
         height: 30px;
@@ -58,5 +64,52 @@
             border-radius: 3px;
             transition: all 0.2s ease;
         }
+    }
+    .menu-list-wrapper {
+        margin: 0; 
+        padding: 12.333333vw 14.666667vw;
+        list-style: none;
+        
+        .list-item-wrapper {
+            font-size: 5.5em;
+            font-weight: bold;
+            line-height: 1.23;
+            text-align: left;
+            a {
+                text-decoration: none;
+                color: #eee;
+
+                .pos {
+                    font-size: 0.25em;
+                    font-weight: 600;
+                    position: absolute;
+                    left: 10px;
+                    font-family: 'Work Sans', sans-serif;
+                    bottom: 60%;
+                    opacity: 0;
+                    transition: all 0.4s ease-in-out;
+                }
+                &:hover {
+                    color: #fff;
+                    .list-item {
+                        color: #fff;
+                    }
+                    .pos {
+                        bottom: 67%;
+                        opacity: 1;
+                    }
+                }
+              }
+            .list-item {
+                padding: 1rem 0;
+                margin: 0 5%;
+                cursor: pointer;
+                margin-bottom: 35px;
+                font-family: 'Nexa-bold';
+                position: relative;
+                color: #A0A0A0;
+                transition: color 0.2s ease-in-out;
+            }
+          }
     }
 }
