@@ -3,7 +3,7 @@
   "version": "5.1.0",
   "private": true,
   "engines": {
-    "node": "6.11.1"
+    "node": ">=10.15"
   },
   "scripts": {
     "dev": "node scripts/start.js",

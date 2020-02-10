@@ -23,8 +23,7 @@ module.exports = {
     path: resolvePath('../build'),
     filename: 'server.js',
     publicPath: PUBLIC_URL + '/',
-    globalObject: 'this',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
@@ -76,6 +75,5 @@ module.exports = {
       }
     ]
   },
-
   externals: [nodeExternals()]
 };
