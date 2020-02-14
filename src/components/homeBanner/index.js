@@ -26,7 +26,7 @@ class Banner extends Component {
   }
   render() {
     return (
-      <section className={styles.bannerWrapper}>
+      <section className={`${styles.bannerWrapper} section`}>
         <div className="container">
           <div
             className={`${styles.row} row justify-content-center no-gutters`}

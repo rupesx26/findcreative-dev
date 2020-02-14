@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { TimelineMax, Power0, Power2, Power1 } from 'gsap/dist/gsap';
 import { imagePath } from '../../utils/assetUtils';
+import { Link } from 'react-router-dom';
 import Blob from '../blob/Blob';
 
 import MenuItem from './menuitem';
@@ -19,7 +20,6 @@ class Navigation extends Component {
     };
     this.handleMenuClick = this.handleMenuClick.bind(this);
     this.renderMenuList = this.renderMenuList.bind(this);
-    this.handleLinkClick = this.handleLinkClick.bind(this);
     this.menuListAnimation = this.menuListAnimation.bind(this);
     this.menuToggle = new TimelineMax({ paused: true, reversed: true });
     this.logoToggle = new TimelineMax();
@@ -39,31 +39,31 @@ class Navigation extends Component {
     this.menuToggle
       .fromTo(
         '.fca-navigation',
-        1,
+        0.7,
         { height: 0 },
         { height: '100vh', background: '#000', ease: Power0.inOut }
       )
-      .reverse()
+      //.reverse()
       .fromTo(
         '.menu-list-wrapper',
-        0.9,
+        0.6,
         { opacity: 0, y: 100 },
         { opacity: 1, y: 0, ease: Power0.inOut }
       )
-      .reverse()
+      //.reverse()
       .fromTo(
         '.nav-blob',
         0.5,
         { opacity: 0, y: 100, scale: 0 },
         { opacity: 1, y: 0, scale: 1, ease: Power0.inOut }
-      )
-      .reverse();
+      );
+    //.reverse();
     this.menuListAnimation();
   }
 
   menuListAnimation() {
     return menu.map((val, index) => {
-      const delay = 0.6 + index / 10;
+      const delay = 0.3 + index / 10;
       this.menuItemToggle
         .fromTo(
           `.list-item-wrapper:nth-child(${index + 1})`,
@@ -104,12 +104,6 @@ class Navigation extends Component {
     this.isVisible = !this.state.menuOpen ? 'isVisible' : '';
   }
 
-  handleLinkClick() {
-    this.setState({
-      menuOpen: false
-    });
-  }
-
   renderMenuList() {
     return menu.map((val, index) => {
       const links = val.toLowerCase();
@@ -119,7 +113,7 @@ class Navigation extends Component {
           route={links}
           number={`0${index + 1}.`}
           onClick={() => {
-            this.handleLinkClick();
+            this.handleMenuClick();
           }}
         >
           {val}
@@ -133,9 +127,9 @@ class Navigation extends Component {
       <nav className={`fca-navigation ${this.state.toggleMenu}`}>
         <div className="nav-view">
           <div className="logo">
-            <a href="/">
+            <Link to="/">
               <img src={imagePath(this.logo)} alt="" />
-            </a>
+            </Link>
           </div>
           <ul className={`menu-list-wrapper`}>{this.renderMenuList()}</ul>
           <Blob
