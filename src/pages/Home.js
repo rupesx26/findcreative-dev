@@ -85,7 +85,8 @@ class Home extends Component {
     this.fullpageWrapper = this.fullpageWrapper.bind(this);
     this.slideAnimation = new TimelineMax({ paused: true });
     this.state = {
-      currentSlide: null
+      currentSlide: null,
+      currentDirection: null
     };
   }
 
@@ -96,38 +97,25 @@ class Home extends Component {
   fullpageWrapper() {
     return (
       <ReactFullpage
-        scrollingSpeed={1500}
+        scrollingSpeed={1000}
         navigationTooltips={this.anchors}
         keyboardScrolling={true}
         onLeave={(origin, destination, direction) => {
           this.setState({
-            currentSlide: destination.index
+            currentSlide: destination.index,
+            currentDirection: direction
           });
-          //console.log("onLeave event", { origin, destination, direction });
-          //     if(destination.index === 1) {
-          //         this.slideAnimation
-          //         .fromTo('.in-slide', 1, {x:0},{x:200, ease: Power1.inOut}, '+=1').play()
-          //     }
-          //     if(destination.index === 2) {
-          //       this.slideAnimation
-          //       .fromTo('.in-slide-1', 1, {x:0},{x:200, ease: Power1.inOut}, '+=1').play()
-          //     }
-          //   if(destination.index === 3) {
-          //     this.slideAnimation
-          //     .fromTo('.in-slide-2', 1, {x:0},{x:200, ease: Power1.inOut}, '+=1').play()
-          //   }
-          // if(destination.index === 4) {
-          //   this.slideAnimation
-          //   .fromTo('.in-slide-3', 1, {x:0},{x:200, ease: Power1.inOut}, '+=1').play()
-          //   }
         }}
         render={({ state, fullpageApi }) => {
-          console.log('render prop change', state, fullpageApi); // eslint-disable-line no-console
+          //console.log('render prop change', state, fullpageApi); // eslint-disable-line no-console
 
           return (
             <div>
               <Banner ref={this.banner} />
-              <HomeCarousel activeSlide={this.state.currentSlide} />
+              <HomeCarousel
+                activeSlide={this.state.currentSlide}
+                direction={this.state.currentDirection}
+              />
               <Footer />
             </div>
           );

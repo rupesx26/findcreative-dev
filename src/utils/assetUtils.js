@@ -4,6 +4,10 @@ export function imagePath(assetName) {
   return `${process.env.PUBLIC_URL}/images/${assetName}`;
 }
 
+export function workImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/work/${assetName}`;
+}
+
 export function fontPath(assetName) {
   return `${process.env.PUBLIC_URL}/fonts/${assetName}`;
 }
