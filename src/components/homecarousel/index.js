@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import {
   TimelineMax,
   Power0,
-  Power2,
-  Power4,
   Power1,
+  Power2,
+  Power3,
+  Power4,
   TweenMax
 } from 'gsap/dist/gsap';
 import { workImagePath } from '../../utils/assetUtils';
@@ -20,6 +21,7 @@ class HomeCarousel extends Component {
     this.slideAnimation2 = new TimelineMax();
     this.slideAnimation3 = new TimelineMax();
     this.slideAnimation4 = new TimelineMax();
+    this.footerAnimation = new TimelineMax();
     this.image1 = workImagePath('hrx.jpg');
     this.image2 = workImagePath('nihar-gold.jpg');
     this.image3 = workImagePath('coco-soul.jpg');
@@ -28,256 +30,357 @@ class HomeCarousel extends Component {
   componentDidMount() {
     // //Slide 1 animation
     this.slideAnimation1
-      .to('.slide-1 .carousel-wrapper', 0.5, {
-        y: 200,
-        opacity: 0,
-        visibility: 'hidden'
-      })
-      .to('.slide-1 .carousel-img-clip', 0.5, {
+      .to('.slide-1 .carousel-img-clip', 0.1, {
         clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
         ease: Power0.inOut
-      });
+      })
+      .to('.slide-1 .project-title', 0.1, { y: -350, opacity: 0 })
+      .to('.slide-1 .project-type', 0.1, { y: 200, opacity: 0 });
 
     this.slideAnimation2
-      .to('.slide-2 .carousel-wrapper', 0.5, {
-        y: 200,
-        opacity: 0,
-        visibility: 'hidden'
-      })
-      .to('.slide-2 .carousel-img-clip', 0.5, {
+      .to('.slide-2 .carousel-img-clip', 0.1, {
         clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
         ease: Power0.inOut
-      });
-    // this.slideAnimation1
-    // .to(
-    //   '.slide-1 .carousel-wrapper',
-    //   .5,
-    //   {  opacity: 0 },
-    //   // {
-    //   //   opacity: 1,
-    //   //   visibility: 'visible',
-    //   //   ease: Power0.inOut
-    //   // },
-    //   '+=0.6'
-    // )
-    // .fromTo(
-    //   '.slide-1 .carousel-img-clip',
-    //   .7,
-    //   { y: 200, opacity: 0, clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' },
-    //   {
-    //     y: 0,
-    //     opacity: 1,
-    //     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' ,
-    //     ease: Power0.inOut
-    //   },
-    //   '-=0.01'
-    // )
+      })
+      .to('.slide-2 .project-title', 0.1, { y: -350, opacity: 0 })
+      .to('.slide-2 .project-type', 0.1, { y: 200, opacity: 0 });
 
-    //Slide 2 animation
-    // this.slideAnimation2
-    // .fromTo(
-    //   '.slide-2 .carousel-wrapper',
-    //   .5,
-    //   {  opacity: 0 },
-    //   {
-    //     opacity: 1,
-    //     visibility: 'visible',
-    //     ease: Power0.inOut
-    //   },
-    //   '+=0.6'
-    // )
-    // .fromTo(
-    //   '.slide-2 .carousel-img-clip',
-    //   .7,
-    //   { y: 200, opacity: 0, clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' },
-    //   {
-    //     y: 0,
-    //     opacity: 1,
-    //     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' ,
-    //     ease: Power0.inOut
-    //   },
-    //   '-=0.01'
-    // )
+    this.slideAnimation3
+      .to('.slide-3 .carousel-img-clip', 0.1, {
+        clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+        ease: Power0.inOut
+      })
+      .to('.slide-3 .project-title', 0.1, { y: -350, opacity: 0 })
+      .to('.slide-3 .project-type', 0.1, { y: 200, opacity: 0 });
 
-    // //Slide 3 animation
-    // this.slideAnimation3
-    // .fromTo(
-    //   '.slide-3 .carousel-wrapper',
-    //   .5,
-    //   {  opacity: 0 },
-    //   {
-    //     opacity: 1,
-    //     visibility: 'visible',
-    //     ease: Power0.inOut
-    //   },
-    //   '+=0.6'
-    // )
-    // .fromTo(
-    //   '.slide-3 .carousel-img-clip',
-    //   .7,
-    //   { y: 200, opacity: 0, clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' },
-    //   {
-    //     y: 0,
-    //     opacity: 1,
-    //     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' ,
-    //     ease: Power0.inOut
-    //   },
-    //   '-=0.01'
-    // )
+    this.slideAnimation4
+      .to('.slide-4 .carousel-img-clip', 0.1, {
+        clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+        ease: Power0.inOut
+      })
+      .to('.slide-4 .project-title', 0.1, { y: -350, opacity: 0 })
+      .to('.slide-4 .project-type', 0.1, { y: 200, opacity: 0 });
 
-    // //Slide 4 animation
-    // this.slideAnimation4
-    // .fromTo(
-    //   '.slide-4 .carousel-wrapper',
-    //   .5,
-    //   {  opacity: 0 },
-    //   {
-    //     opacity: 1,
-    //     visibility: 'visible',
-    //     ease: Power0.inOut
-    //   },
-    //   '+=0.6'
-    // )
-    // .fromTo(
-    //   '.slide-4 .carousel-img-clip',
-    //   .7,
-    //   { y: 200, opacity: 0, clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' },
-    //   {
-    //     y: 0,
-    //     opacity: 1,
-    //     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' ,
-    //     ease: Power0.inOut
-    //   },
-    //   '-=0.01'
-    // )
+    this.footerAnimation.to('#footer-view', 1, {
+      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+    });
   }
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.activeSlide === 2 && nextProps.direction === 'down');
+    console.log(nextProps);
+    //Slide 0 start
     if (nextProps.activeSlide === 0 && nextProps.direction === 'up') {
       this.slideAnimation1
-        .to('.slide-1 .carousel-wrapper', 0.5, {
-          y: 200,
+        .to('.slide-1 .project-title', 0.2, {
+          y: -150,
           opacity: 0,
-          visibility: 'hidden'
+          ease: Power1.inOut
+        })
+        .to('.slide-1 .project-type', 0.2, {
+          y: 90,
+          opacity: 0,
+          ease: Power1.inOut
         })
         .to('.slide-1 .carousel-img-clip', 0.5, {
+          opacity: 1,
           clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
           ease: Power4.inOut
         });
-      // TweenMax.staggerFromTo('.slide-1 .project-title', 1.5, {y:0, filter: 'blur(0px)',  opacity:1}, {opacity:0, y:300, filter: 'blur(10px)', ease:Power1.inOut }, '+=1');
     }
-    if (nextProps.activeSlide === 1 && nextProps.direction === 'down') {
-      // TweenMax.staggerFromTo('.slide-1 .project-title', 1.5, {opacity:0, y:300, filter: 'blur(10px)' }, {y:0, filter: 'blur(0px)',  opacity:1, ease:Power1.inOut}, '+=1');
-      // TweenMax.staggerFromTo('.slide-1 .project-type', 1.5, {opacity:0, y:90}, {y:0, opacity:1, ease:Power1.inOut});
+    //Slide 0 end
 
+    //Slide 1 start
+    if (nextProps.activeSlide === 1 && nextProps.direction === 'down') {
       this.slideAnimation1
-        .to('.slide-1 .carousel-wrapper', 0.7, {
-          y: 0,
+        .to('.slide-1 .carousel-img-clip', 0.5, {
           opacity: 1,
-          visibility: 'visible',
-          ease: Power1.inOut
-        })
-        .to('.slide-1 .carousel-img-clip', 0.7, {
           clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 0)',
           ease: Power4.inOut
+        })
+        .to('.slide-1 .project-title', 0.2, {
+          y: 0,
+          opacity: 1,
+          ease: Power3.inOut
+        })
+        .to('.slide-1 .project-type', 0.2, {
+          y: 70,
+          opacity: 1,
+          ease: Power3.inOut
         });
     } else if (nextProps.activeSlide === 1 && nextProps.direction === 'up') {
       this.slideAnimation2
-        .to('.slide-2 .carousel-wrapper', 0.5, {
-          y: 200,
+        .to('.slide-2 .project-title', 0.2, {
+          y: -150,
           opacity: 0,
-          visibility: 'hidden'
+          ease: Power1.inOut
+        })
+        .to('.slide-2 .project-type', 0.2, {
+          y: 90,
+          opacity: 0,
+          ease: Power1.inOut
         })
         .to('.slide-2 .carousel-img-clip', 0.5, {
+          opacity: 1,
           clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
           ease: Power4.inOut
         });
 
       this.slideAnimation1
-        .to('.slide-1 .carousel-wrapper', 0.5, {
-          y: 0,
-          opacity: 1,
-          visibility: 'visible',
-          ease: Power1.inOut
-        })
         .to('.slide-1 .carousel-img-clip', 0.5, {
+          opacity: 1,
           clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
           ease: Power4.inOut
-        });
+        })
+        .to('.slide-1 .project-title', 0.2, {
+          y: 0,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+        .to(
+          '.slide-1 .project-type',
+          0.2,
+          { y: 70, opacity: 1, ease: Power1.inOut },
+          '-=0.1'
+        );
     }
+    //Slide 1 end
+
+    //Slide 2 start
     if (nextProps.activeSlide === 2 && nextProps.direction === 'down') {
       this.slideAnimation1
-        .to('.slide-1 .carousel-wrapper', 0.5, {
-          y: 200,
+        .to('.slide-1 .project-title', 0.2, {
+          y: -150,
           opacity: 0,
-          visibility: 'hidden',
+          ease: Power1.inOut
+        })
+        .to('.slide-1 .project-type', 0.2, {
+          y: 90,
+          opacity: 0,
           ease: Power1.inOut
         })
         .to('.slide-1 .carousel-img-clip', 0.5, {
+          opacity: 1,
           clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
           ease: Power4.inOut
         });
 
       this.slideAnimation2
-        .to('.slide-2 .carousel-wrapper', 0.7, {
-          y: 0,
+        .to('.slide-2 .carousel-img-clip', 0.5, {
           opacity: 1,
-          visibility: 'visible',
-          ease: Power1.inOut
-        })
-        .to('.slide-2 .carousel-img-clip', 0.7, {
           clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
           ease: Power4.inOut
-        });
-    } else if (nextProps.activeSlide === 2 && nextProps.direction === 'up') {
-      // this.slideAnimation2
-      // .to('.slide-2 .carousel-wrapper', .5, {y:200, opacity: 0, visibility: 'hidden' })
-      // .to('.slide-2 .carousel-img-clip', .5, {clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)', ease: Power4.inOut})
-
-      this.slideAnimation2
-        .to('.slide-2 .carousel-wrapper', 0.5, {
+        })
+        .to('.slide-2 .project-title', 0.2, {
           y: 0,
           opacity: 1,
-          visibility: 'visible',
           ease: Power1.inOut
         })
+        .to(
+          '.slide-2 .project-type',
+          0.2,
+          { y: 70, opacity: 1, ease: Power1.inOut },
+          '-=0.1'
+        );
+    } else if (nextProps.activeSlide === 2 && nextProps.direction === 'up') {
+      this.slideAnimation3
+        .to('.slide-3 .project-title', 0.2, {
+          y: -150,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-3 .project-type', 0.2, {
+          y: 90,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-3 .carousel-img-clip', 0.5, {
+          clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        });
+
+      this.slideAnimation2
         .to('.slide-2 .carousel-img-clip', 0.5, {
           clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
           ease: Power4.inOut
-        });
+        })
+        .to('.slide-2 .project-title', 0.2, {
+          y: 0,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+        .to(
+          '.slide-2 .project-type',
+          0.2,
+          { y: 70, opacity: 1, ease: Power1.inOut },
+          '-=0.1'
+        );
     }
+    //Slide 2 end
 
+    //Slide 3 start
     if (nextProps.activeSlide === 3 && nextProps.direction === 'down') {
       this.slideAnimation2
-        .to('.slide-2 .carousel-wrapper', 0.5, {
-          y: 200,
+        .to('.slide-2 .project-title', 0.2, {
+          y: -150,
           opacity: 0,
-          visibility: 'hidden',
+          ease: Power1.inOut
+        })
+        .to('.slide-2 .project-type', 0.2, {
+          y: 90,
+          opacity: 0,
           ease: Power1.inOut
         })
         .to('.slide-2 .carousel-img-clip', 0.5, {
           clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
           ease: Power4.inOut
         });
+
+      this.slideAnimation3
+        .to('.slide-3 .carousel-img-clip', 0.5, {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        })
+        .to('.slide-3 .project-title', 0.2, {
+          y: 0,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+        .to(
+          '.slide-3 .project-type',
+          0.2,
+          { y: 70, opacity: 1, ease: Power1.inOut },
+          '-=0.1'
+        );
+    } else if (nextProps.activeSlide === 3 && nextProps.direction === 'up') {
+      this.slideAnimation4
+        .to('.slide-4 .project-title', 0.2, {
+          y: -150,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-4 .project-type', 0.2, {
+          y: 90,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-4 .carousel-img-clip', 0.5, {
+          clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        });
+
+      this.slideAnimation3
+        .to('.slide-3 .carousel-img-clip', 0.5, {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        })
+        .to('.slide-3 .project-title', 0.2, {
+          y: 0,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+        .to(
+          '.slide-3 .project-type',
+          0.2,
+          { y: 70, opacity: 1, ease: Power1.inOut },
+          '-=0.1'
+        );
     }
-    // if (nextProps.activeSlide === 3) {
-    //   this.slideAnimation2.timeScale(1).reverse();
-    //   this.slideAnimation4.timeScale(1).reverse();
-    //   this.slideAnimation3.play();
-    // }
-    // if (nextProps.activeSlide === 4) {
-    //   this.slideAnimation3.timeScale(1).reverse();
-    //   this.slideAnimation4.play();
-    // }
-    // if (nextProps.activeSlide === 5) {
-    //   this.slideAnimation4.timeScale(1).reverse();
-    // }
+    //Slide 3 end
+
+    //Slide 4 start
+    if (nextProps.activeSlide === 4 && nextProps.direction === 'down') {
+      this.slideAnimation3
+        .to('.slide-3 .project-title', 0.2, {
+          y: -150,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-3 .project-type', 0.2, {
+          y: 90,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-3 .carousel-img-clip', 0.5, {
+          clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+          ease: Power4.inOut
+        });
+      this.slideAnimation4
+        .to('.slide-4 .carousel-img-clip', 0.5, {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        })
+        .to('.slide-4 .project-title', 0.2, {
+          y: 0,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+        .to(
+          '.slide-4 .project-type',
+          0.2,
+          { y: 80, opacity: 1, ease: Power1.inOut },
+          '-=0.1'
+        );
+    } else if (nextProps.activeSlide === 4 && nextProps.direction === 'up') {
+      this.slideAnimation4
+        .to('.slide-4 .carousel-img-clip', 0.5, {
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        })
+        .to('.slide-4 .project-title', 0.2, {
+          y: 0,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+        .to(
+          '.slide-4 .project-type',
+          0.2,
+          { y: 80, opacity: 1, ease: Power1.inOut },
+          '-=0.1'
+        );
+
+      this.footerAnimation.to('#footer-view', 0.5, {
+        clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+        ease: Power1.inOut
+      });
+      //.to('.logo', {opacity:0})
+      // .set('.logo', {opacity:0})
+      // .to('.logo', .2, {opacity:1, ease: Power0.inOut})
+      // .to('.logo a img', .2, { attr:{src:"/images/fca-logo-black.png"}, ease: Power0.inOut},"+=.3")
+    }
+    //Slide 4 end
+
+    //Slide 5 start
+    if (nextProps.activeSlide === 5 && nextProps.direction === 'down') {
+      this.slideAnimation4
+        .to('.slide-4 .project-title', 0.1, {
+          y: -150,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-4 .project-type', 0.1, {
+          y: 90,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-4 .carousel-img-clip', 0.1, {
+          clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+          ease: Power4.inOut
+        });
+      this.footerAnimation
+        // .set('.logo', {opacity:0})
+        // .to('.logo', .2, {opacity:1, ease: Power0.inOut})
+        // .to('.logo a img', .2, {attr:{src:"/images/fca-logo-white.png"}, ease: Power0.inOut},"+=.3")
+        .to('#footer-view', 0.5, {
+          clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 0)',
+          ease: Power4.inOut
+        });
+    }
+    //Slide 5 end
   }
 
   render() {
     return (
       <React.Fragment>
-        <section className="section slide-1">
+        <section className="section slide-wrapper slide-1">
           <div className="carousel-wrapper">
             <Link>
               <div className="carousel-container">
@@ -299,7 +402,7 @@ class HomeCarousel extends Component {
             </Link>
           </div>
         </section>
-        <section className="section slide-2">
+        <section className="section slide-wrapper slide-2">
           <div className="carousel-wrapper">
             <Link>
               <div className="carousel-container">
@@ -311,11 +414,17 @@ class HomeCarousel extends Component {
                     ></div>
                   </div>
                 </div>
+                <div className="carousel-right-content">
+                  <div className="project-content">
+                    <h2 className="project-title">Nihar Gold</h2>
+                    <h3 className="project-type">Packaging Design</h3>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>
         </section>
-        <section className="section slide-3">
+        <section className="section slide-wrapper slide-3">
           <div className="carousel-wrapper">
             <Link>
               <div className="carousel-container">
@@ -327,11 +436,17 @@ class HomeCarousel extends Component {
                     ></div>
                   </div>
                 </div>
+                <div className="carousel-right-content">
+                  <div className="project-content">
+                    <h2 className="project-title">Coco Soul</h2>
+                    <h3 className="project-type">Digital Content</h3>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>
         </section>
-        <section className="section slide-4">
+        <section className="section slide-wrapper slide-4">
           <div className="carousel-wrapper">
             <Link>
               <div className="carousel-container">
@@ -341,6 +456,12 @@ class HomeCarousel extends Component {
                       className="img-container"
                       style={{ backgroundImage: `url(${this.image4})` }}
                     ></div>
+                  </div>
+                </div>
+                <div className="carousel-right-content">
+                  <div className="project-content">
+                    <h2 className="project-title">Sussegado</h2>
+                    <h3 className="project-type">Product & Package Design</h3>
                   </div>
                 </div>
               </div>

@@ -81,6 +81,7 @@ import Footer from '../components/footer';
 class Home extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.anchors = ['firstPage', 'secondPage', 'thirdPage'];
     this.fullpageWrapper = this.fullpageWrapper.bind(this);
     this.slideAnimation = new TimelineMax({ paused: true });
@@ -108,7 +109,6 @@ class Home extends Component {
         }}
         render={({ state, fullpageApi }) => {
           //console.log('render prop change', state, fullpageApi); // eslint-disable-line no-console
-
           return (
             <div>
               <Banner ref={this.banner} />
@@ -132,26 +132,10 @@ class Home extends Component {
           description="home page description"
           content="home page content"
         />
-        <div className="home-page page-wrapper">
-          {this.fullpageWrapper()}
-          {/* <ReactFullpage scrollingSpeed = {1000}
-        render={() => {
-          <ReactFullpage.Wrapper>
-            <Banner ref={this.banner}/>
-            <HomeCarousel />
-          </ReactFullpage.Wrapper>
-            }}
-          /> */}
-        </div>
+        <div className="home-page page-wrapper">{this.fullpageWrapper()}</div>
       </PageAnimWrapper>
     );
   }
 }
-
-// const Home = () => {
-//   return (
-
-//   );
-// };
 
 export default Home;

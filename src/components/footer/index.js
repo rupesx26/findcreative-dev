@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import styles from './footer.module.scss';
+import './footer.scss';
 
 class Footer extends Component {
   render() {
     return (
-      <section className={`${styles.pageFooter} section`}>
-        <div>Footer</div>
+      <section className="page-footer section">
+        <div id="footer-view">Footer</div>
       </section>
     );
   }
