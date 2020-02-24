@@ -52,7 +52,7 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.2,
+          duration: 1.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
@@ -86,7 +86,7 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.2,
+          duration: 1.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
@@ -120,7 +120,7 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.2,
+          duration: 1.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
@@ -154,7 +154,7 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.2,
+          duration: 1.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
@@ -188,7 +188,7 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.2,
+          duration: 1.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
@@ -208,7 +208,7 @@ class HeadingSlider extends Component {
           opacity: 0,
           y: 50,
           filter: 'blur(2px)',
-          duration: 1.2,
+          duration: 1.5,
           stagger: { amount: 0.25 },
           ease: Expo.easeIn
         },
@@ -380,7 +380,9 @@ class HeadingSlider extends Component {
               <div className={`${styles.slide} head-slide-2`}>
                 <div>now&nbsp;</div>
                 <div>is&nbsp;</div>
-                <div className="uniq">everything</div>
+                <div className="uniq" style={{ display: 'block' }}>
+                  everything
+                </div>
               </div>
               <div className={`${styles.slide} head-slide-3`}>
                 <div>we&nbsp;</div>

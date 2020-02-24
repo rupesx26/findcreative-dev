@@ -3,11 +3,11 @@
   width: 50vh;
 }
 .blob-outer {
-    height: 450px;
-    width : 450px;
+    height: 300px;
+    width : 300px;
     position: absolute;
-    right: 5em;
-    top: 10em;
+    right: 9em;
+    top: 13em;
     opacity: 0;
   }
   .blob-wrapper {
@@ -18,49 +18,53 @@
   }
   
   .blob-layer-1 {
-    width: calc(450px - 30px);
+    width: calc(100% - 30px);
     display:inline-block;
-    height: calc(450px - 30px);
-    animation: bloblayer1 7s linear infinite;
+    height: calc(100% - 30px);
+    animation: bloblayer1 40s linear infinite;
     position: absolute;
     top: 2em;
-    left: 1em;
+    left: -2em;
+    transform: rotate(45deg);
   }
   
   .blob-layer-2 {
-    width: calc(450px - 100px);
+    width: calc(100% - 100px);
     display:inline-block;
-    height: calc(450px - 100px);
+    height: calc(100% - 50px);
     /*background-size:cover;*/
-    animation: bloblayer2 7s linear infinite;
+    animation: bloblayer2 40s linear infinite;
     position: absolute;
-    top: 5em;
-    right: 5em;
+    top: 4em;
+    right: 7em;
   }
   
   .blob-layer-3 {
-    width: calc(450px - 100px);
+    width: calc(100% - 100px);
     display: inline-block;
-    height: calc(450px - 100px);
+    height: calc(100% - 100px);
     background: transparent;
     border-width: 1px;
     border-style: solid;
     opacity: 0.1;
-    animation: bloblayer3 7s linear infinite;
+    animation: bloblayer3 40s linear infinite;
     position: absolute;
-    top: 3em;
-    left: 4em;
+    top: 5em;
+    left: -2em;
   
   }
 
   .blob {
-    width: calc(450px - 100px);
+    width: calc(100% - 90px);
     display:inline-block;
-    height: calc(450px - 100px);
+    height: calc(100% - 90px);
     // background:rgb(48, 195, 229);
     margin-top: 20%;
     /*background-size:cover;*/
-    animation: blob 30s linear infinite;
+    animation: blob 40s linear infinite;
+    position: absolute;
+    top: 0em;
+    left: 0em;
   }
 
 

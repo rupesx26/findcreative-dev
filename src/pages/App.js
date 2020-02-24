@@ -6,7 +6,7 @@ import Navigation from '../components/navigation';
 const App = () => {
   return (
     <div className="app">
-      <Navigation />
+      {/* <Navigation /> */}
       {/* <NavLink exact to="/" activeClassName="active">
           Home
         </NavLink>

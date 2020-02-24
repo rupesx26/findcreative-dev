@@ -11,3 +11,7 @@ export function workImagePath(assetName) {
 export function fontPath(assetName) {
   return `${process.env.PUBLIC_URL}/fonts/${assetName}`;
 }
+
+export function blobImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/blob/${assetName}`;
+}

@@ -366,7 +366,7 @@ class HomeCarousel extends Component {
           ease: Power4.inOut
         });
       this.footerAnimation
-        // .set('.logo', {opacity:0})
+        //.set('.logo', {className: '+=logo fca-white'})
         // .to('.logo', .2, {opacity:1, ease: Power0.inOut})
         // .to('.logo a img', .2, {attr:{src:"/images/fca-logo-white.png"}, ease: Power0.inOut},"+=.3")
         .to('#footer-view', 0.5, {

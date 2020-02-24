@@ -14,6 +14,7 @@ const menu = ['Difference', 'Work', 'Connect'];
 class Navigation extends Component {
   constructor(props) {
     super(props);
+    console.log('navigation==>', this.props.toggleHeader);
     this.state = {
       menuOpen: false,
       toggleMenu: ''
@@ -25,6 +26,7 @@ class Navigation extends Component {
     this.logoToggle = new TimelineMax();
     this.menuItemToggle = new TimelineMax({ paused: true, reversed: true });
     this.logo = null;
+    this.logoClass = null;
     //this.blobAnimation = TimelineMax({paused: true, reversed: true})
   }
 
@@ -32,6 +34,7 @@ class Navigation extends Component {
     this.setState({
       toggleMenu: this.state.menuOpen ? 'menu-open' : 'menu-close'
     });
+    this.logoClass = this.state.menuOpen ? 'fca-white' : 'fca-black';
     this.logo = this.state.menuOpen
       ? 'fca-logo-white.png'
       : 'fca-logo-black.png';
@@ -101,6 +104,8 @@ class Navigation extends Component {
       ? 'fca-logo-white.png'
       : 'fca-logo-black.png';
 
+    this.logoClass = !this.state.menuOpen ? 'fca-white' : 'fca-black';
+
     this.isVisible = !this.state.menuOpen ? 'isVisible' : '';
   }
 
@@ -126,7 +131,7 @@ class Navigation extends Component {
     return (
       <nav className={`fca-navigation ${this.state.toggleMenu}`}>
         <div className="nav-view">
-          <div className="logo">
+          <div className={`logo ${this.logoClass}`}>
             <Link to="/">
               <img src={imagePath(this.logo)} alt="" />
             </Link>

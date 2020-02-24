@@ -75,6 +75,8 @@ import Banner from '../components/homebanner';
 import HomeCarousel from '../components/homecarousel';
 import PageAnimWrapper from '../components/pagetransition';
 import Footer from '../components/footer';
+import Navigation from '../components/navigation';
+
 //import { ScrollMagic } from 'scrollscene';
 //import {isMobile} from 'react-device-detect'; is for mobile devices
 
@@ -87,7 +89,8 @@ class Home extends Component {
     this.slideAnimation = new TimelineMax({ paused: true });
     this.state = {
       currentSlide: null,
-      currentDirection: null
+      currentDirection: null,
+      toggleHeader: null
     };
   }
 
@@ -132,6 +135,7 @@ class Home extends Component {
           description="home page description"
           content="home page content"
         />
+        <Navigation toggleHeader={this.state.toggleHeader} />
         <div className="home-page page-wrapper">{this.fullpageWrapper()}</div>
       </PageAnimWrapper>
     );
