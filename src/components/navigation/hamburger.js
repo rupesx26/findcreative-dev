@@ -38,7 +38,7 @@ class Hamburger extends Component {
                 this.handleClick();
               }
         }
-        className={`hamburger ${this.state.open}`}
+        className={`hamburger ${this.state.open} ${this.props.colorUpdate}`}
       >
         <span className="line"></span>
         <span className="line"></span>

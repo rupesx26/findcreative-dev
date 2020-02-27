@@ -66,6 +66,7 @@
 // export default Home;
 
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ReactFullpage from '@fullpage/react-fullpage';
 import { TimelineMax, Power0, Power2, Power1 } from 'gsap/dist/gsap';
 
@@ -83,19 +84,17 @@ import Navigation from '../components/navigation';
 class Home extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.anchors = ['firstPage', 'secondPage', 'thirdPage'];
     this.fullpageWrapper = this.fullpageWrapper.bind(this);
     this.slideAnimation = new TimelineMax({ paused: true });
     this.state = {
-      currentSlide: null,
-      currentDirection: null,
-      toggleHeader: null
+      currentSlide: 0,
+      currentDirection: 'down',
+      toggleHeader: false,
+      showSayHello: true,
+      footerBgColor: 'dark',
+      inversionColor: false
     };
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll, true);
   }
 
   fullpageWrapper() {
@@ -112,19 +111,67 @@ class Home extends Component {
         }}
         render={({ state, fullpageApi }) => {
           //console.log('render prop change', state, fullpageApi); // eslint-disable-line no-console
+          // if(this.state.currentSlide === 4 && this.state.currentDirection === 'down') {
+          //   this.state.toggleHeader = true
+          // } else if(this.state.currentSlide === 5) {
+          //   this.state.toggleHeader = false
+          // } else if(this.state.currentSlide === 4 && this.state.currentDirection === 'up') {
+          //   this.state.toggleHeader = false
+          // } else if(this.state.currentSlide === 3 && this.state.currentDirection === 'up') {
+          //   this.state.toggleHeader = false
+          // } else if(this.state.currentSlide === 5 && this.state.currentDirection === 'down') {
+          //   this.state.toggleHeader = true
+          // }
+
+          //console.log('check',this.state.currentSlide === 5 && this.state.currentDirection === 'down')
           return (
             <div>
-              <Banner ref={this.banner} />
-              <HomeCarousel
+              <Banner
+                moveslide={fullpageApi}
                 activeSlide={this.state.currentSlide}
                 direction={this.state.currentDirection}
               />
-              <Footer />
+              <HomeCarousel
+                activeSlide={this.state.currentSlide}
+                direction={this.state.currentDirection}
+                toggleHeader={this.state.toggleHeader}
+              />
+              <Footer
+                activeSlide={this.state.currentSlide}
+                direction={this.state.currentDirection}
+                footerBgColor={this.state.footerBgColor}
+                toggleHeader={this.state.toggleHeader}
+              >
+                <small className="subtitle">Interested in more?</small>
+                <Link to="/" data-text="view work">
+                  View Work
+                  <div className="footer-arrow">
+                    <div className="chevron"></div>
+                    <div className="chevron"></div>
+                    <div className="chevron"></div>
+                  </div>
+                </Link>
+              </Footer>
             </div>
           );
         }}
       />
     );
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    //console.log(props)
+    //console.log(state)
+    if (state.currentSlide === 5 && state.currentDirection === 'down') {
+      return {
+        toggleHeader: true
+      };
+    } else {
+      return {
+        toggleHeader: null
+      };
+    }
+    return null;
   }
 
   render() {
@@ -135,7 +182,10 @@ class Home extends Component {
           description="home page description"
           content="home page content"
         />
-        <Navigation toggleHeader={this.state.toggleHeader} />
+        <Navigation
+          toggleHeader={this.state.toggleHeader}
+          showSayHello={this.state.showSayHello}
+        />
         <div className="home-page page-wrapper">{this.fullpageWrapper()}</div>
       </PageAnimWrapper>
     );

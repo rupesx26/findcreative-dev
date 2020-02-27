@@ -23,6 +23,30 @@
         top: 42px;
         left: 42px;
         position: fixed;
+        
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity .3s linear .3s;
+        }
+        .fca-white {
+            .black {
+                opacity: 0;
+            }
+            .white {
+                opacity: 1;
+            }
+        }
+
+        .fca-black {
+            .white {
+                opacity: 0;
+            }
+            .black {
+                opacity: 1;
+            }
+        }
     }
     .hamburger {
         height: 30px;
@@ -31,10 +55,11 @@
         top: 56px;
         right: 52px;
         cursor: pointer;
-
+        
+        .line {
+            transition: background .2s linear .5s;        
+        }
         &.menu-open {
-           
-
             .line:nth-child(1) {
                 background: #fff;
                 transform: rotate(45deg);
@@ -50,6 +75,16 @@
             }
         }
         &.menu-close {
+            &.dark {
+                .line {
+                    background: #000000;
+                }
+            }
+            &.light {
+                .line {
+                    background: #ffffff;
+                }
+            }
             .line {
                 background: #000;
             }

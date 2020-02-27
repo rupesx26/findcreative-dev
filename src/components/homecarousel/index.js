@@ -16,7 +16,6 @@ class HomeCarousel extends Component {
   constructor(props) {
     super(props);
     this.currentIndex = this.props.activeSlide;
-
     this.slideAnimation1 = new TimelineMax();
     this.slideAnimation2 = new TimelineMax();
     this.slideAnimation3 = new TimelineMax();
@@ -26,6 +25,9 @@ class HomeCarousel extends Component {
     this.image2 = workImagePath('nihar-gold.jpg');
     this.image3 = workImagePath('coco-soul.jpg');
     this.image4 = workImagePath('sussegado.jpg');
+    this.state = {
+      toggleHeader: this.props.toggleHeader
+    };
   }
   componentDidMount() {
     // //Slide 1 animation
@@ -66,7 +68,6 @@ class HomeCarousel extends Component {
     });
   }
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     //Slide 0 start
     if (nextProps.activeSlide === 0 && nextProps.direction === 'up') {
       this.slideAnimation1
@@ -140,7 +141,8 @@ class HomeCarousel extends Component {
           0.2,
           { y: 70, opacity: 1, ease: Power1.inOut },
           '-=0.1'
-        );
+        )
+        .set('.fca-white', { className: '+=fca-black' });
     }
     //Slide 1 end
 
@@ -212,7 +214,8 @@ class HomeCarousel extends Component {
           0.2,
           { y: 70, opacity: 1, ease: Power1.inOut },
           '-=0.1'
-        );
+        )
+        .set('.fca-white', { className: '+=fca-black' });
     }
     //Slide 2 end
 
@@ -282,7 +285,8 @@ class HomeCarousel extends Component {
           0.2,
           { y: 70, opacity: 1, ease: Power1.inOut },
           '-=0.1'
-        );
+        )
+        .set('.fca-white', { className: '+=fca-black' });
     }
     //Slide 3 end
 
@@ -335,16 +339,14 @@ class HomeCarousel extends Component {
           0.2,
           { y: 80, opacity: 1, ease: Power1.inOut },
           '-=0.1'
-        );
+        )
+
+        .set('.fca-white', { className: '+=fca-black' });
 
       this.footerAnimation.to('#footer-view', 0.5, {
         clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
         ease: Power1.inOut
       });
-      //.to('.logo', {opacity:0})
-      // .set('.logo', {opacity:0})
-      // .to('.logo', .2, {opacity:1, ease: Power0.inOut})
-      // .to('.logo a img', .2, { attr:{src:"/images/fca-logo-black.png"}, ease: Power0.inOut},"+=.3")
     }
     //Slide 4 end
 
@@ -366,13 +368,11 @@ class HomeCarousel extends Component {
           ease: Power4.inOut
         });
       this.footerAnimation
-        //.set('.logo', {className: '+=logo fca-white'})
-        // .to('.logo', .2, {opacity:1, ease: Power0.inOut})
-        // .to('.logo a img', .2, {attr:{src:"/images/fca-logo-white.png"}, ease: Power0.inOut},"+=.3")
         .to('#footer-view', 0.5, {
           clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 0)',
           ease: Power4.inOut
-        });
+        })
+        .set('.fca-black', { className: '+=fca-white' });
     }
     //Slide 5 end
   }

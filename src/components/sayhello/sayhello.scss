@@ -1,0 +1,19 @@
+.say-hello {
+    position: fixed;
+    font: normal 13px/15px Work Sans;
+    letter-spacing: 0.1em;
+    color: #000000;
+    transform: rotate(-90deg);
+    display: block;
+    z-index: 1;
+    bottom: 9em;
+    left: 2.3em;
+    cursor: pointer;
+    transition: color .5s linear .5s;
+    &.dark {
+        color: #000000;
+    }
+    &.light {
+        color: #ffffff;
+    }
+}

@@ -2,22 +2,32 @@ import React, { Component } from 'react';
 import { TimelineMax, Power0, Power2, Power1 } from 'gsap/dist/gsap';
 import { imagePath } from '../../utils/assetUtils';
 import { Link } from 'react-router-dom';
+import SayHello from '../sayhello';
 import Blob from '../blob/Blob';
 
 import MenuItem from './menuitem';
 
 import Hamburger from './hamburger';
 import './navigation.scss';
+import { P } from '@fullpage/react-fullpage';
 
 const menu = ['Difference', 'Work', 'Connect'];
+
+const defaultGlobalState = {
+  logoClass: null
+};
+const globalStateContext = React.createContext(defaultGlobalState);
 
 class Navigation extends Component {
   constructor(props) {
     super(props);
-    console.log('navigation==>', this.props.toggleHeader);
     this.state = {
       menuOpen: false,
-      toggleMenu: ''
+      toggleMenu: '',
+      sayHelloStatus: this.props.showSayHello,
+      logoClass: null,
+      logo: null,
+      colorUpdate: ''
     };
     this.handleMenuClick = this.handleMenuClick.bind(this);
     this.renderMenuList = this.renderMenuList.bind(this);
@@ -25,19 +35,14 @@ class Navigation extends Component {
     this.menuToggle = new TimelineMax({ paused: true, reversed: true });
     this.logoToggle = new TimelineMax();
     this.menuItemToggle = new TimelineMax({ paused: true, reversed: true });
-    this.logo = null;
-    this.logoClass = null;
     //this.blobAnimation = TimelineMax({paused: true, reversed: true})
   }
 
   componentDidMount() {
     this.setState({
-      toggleMenu: this.state.menuOpen ? 'menu-open' : 'menu-close'
+      toggleMenu: this.state.menuOpen ? 'menu-open' : 'menu-close',
+      logoClass: this.state.menuOpen ? 'fca-white' : 'fca-black'
     });
-    this.logoClass = this.state.menuOpen ? 'fca-white' : 'fca-black';
-    this.logo = this.state.menuOpen
-      ? 'fca-logo-white.png'
-      : 'fca-logo-black.png';
 
     this.menuToggle
       .fromTo(
@@ -64,6 +69,42 @@ class Navigation extends Component {
     this.menuListAnimation();
   }
 
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  // //  console.log('getDerivedStateFromProps',nextProps)
+  // // // console.log('getDerivedStateFromProps',nextProps)
+  //    if(nextProps.toggleHeader) {
+  //     return {
+  //       toggleHeader:  true
+  //     }
+  //   } else {
+  //     return {
+  //       toggleHeader:  false
+  //     }
+  //   }
+  // //else {
+  // //     return {
+  // //       toggleHeader:  false,
+  // //     }
+  // //   }
+
+  //     return null
+  //    }
+
+  static getDerivedStateFromProps(props, state) {
+    // console.log(props)
+    // console.log(state)
+    if (props.toggleHeader) {
+      return {
+        colorUpdate: 'light'
+      };
+    } else {
+      return {
+        colorUpdate: 'dark'
+      };
+    }
+    return null;
+  }
+
   menuListAnimation() {
     return menu.map((val, index) => {
       const delay = 0.3 + index / 10;
@@ -79,18 +120,40 @@ class Navigation extends Component {
   }
 
   handleMenuClick() {
-    this.setState({
-      menuOpen: !this.state.menuOpen,
-      toggleMenu: !this.state.menuOpen ? 'menu-open' : 'menu-close'
-    });
+    if (this.props.toggleHeader) {
+      this.setState({
+        menuOpen: !this.state.menuOpen,
+        toggleMenu: !this.state.menuOpen ? 'menu-open' : 'menu-close',
+        logoClass: !this.state.menuOpen
+          ? 'fca-white handleClick'
+          : 'fca-white handleClick'
+      });
+    } else if (!this.props.toggleHeader) {
+      this.setState({
+        menuOpen: !this.state.menuOpen,
+        toggleMenu: !this.state.menuOpen ? 'menu-open' : 'menu-close',
+        logoClass: !this.state.menuOpen
+          ? 'fca-white handleClick2'
+          : 'fca-black handleClick2'
+      });
+    } else {
+      this.setState({
+        menuOpen: !this.state.menuOpen,
+        toggleMenu: !this.state.menuOpen ? 'menu-open' : 'menu-close',
+        logoClass: !this.state.menuOpen
+          ? 'fca-white handleClick3'
+          : 'fca-black handleClick3'
+      });
+    }
+    //console.log(this.state.logoClass)
 
-    this.logoToggle.fromTo(
-      '.logo',
-      1,
-      { opacity: 0 },
-      { opacity: 1, ease: Power0.inOut },
-      '+=.6'
-    );
+    // this.logoToggle.fromTo(
+    //   '.logo',
+    //   .5,
+    //   { opacity: 0 },
+    //   { opacity: 1, ease: Power0.inOut },
+    //   '+=.6'
+    // );
 
     this.state.menuOpen
       ? this.menuItemToggle.reverse(false)
@@ -99,12 +162,6 @@ class Navigation extends Component {
     this.state.menuOpen
       ? this.menuToggle.reverse(false)
       : this.menuToggle.play();
-
-    this.logo = !this.state.menuOpen
-      ? 'fca-logo-white.png'
-      : 'fca-logo-black.png';
-
-    this.logoClass = !this.state.menuOpen ? 'fca-white' : 'fca-black';
 
     this.isVisible = !this.state.menuOpen ? 'isVisible' : '';
   }
@@ -128,13 +185,25 @@ class Navigation extends Component {
   }
 
   render() {
+    //console.log('render==>', this.state.logoClass)
     return (
       <nav className={`fca-navigation ${this.state.toggleMenu}`}>
         <div className="nav-view">
-          <div className={`logo ${this.logoClass}`}>
-            <Link to="/">
-              <img src={imagePath(this.logo)} alt="" />
-            </Link>
+          <div className="logo">
+            <div className={`${this.state.logoClass}`}>
+              <Link to="/">
+                <img
+                  src={imagePath('fca-logo-black.png')}
+                  className="black"
+                  alt=""
+                />
+                <img
+                  src={imagePath('fca-logo-white.png')}
+                  className="white"
+                  alt=""
+                />
+              </Link>
+            </div>
           </div>
           <ul className={`menu-list-wrapper`}>{this.renderMenuList()}</ul>
           <Blob
@@ -146,9 +215,13 @@ class Navigation extends Component {
             mainblog="#504f4f"
           />
           <Hamburger
+            colorUpdate={this.state.colorUpdate}
             open={this.state.menuOpen}
             onClick={() => this.handleMenuClick()}
           />
+          {this.state.sayHelloStatus && (
+            <SayHello colorUpdate={this.state.colorUpdate} />
+          )}
         </div>
       </nav>
     );
