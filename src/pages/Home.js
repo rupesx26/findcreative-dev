@@ -77,7 +77,6 @@ import HomeCarousel from '../components/homecarousel';
 import PageAnimWrapper from '../components/pagetransition';
 import Footer from '../components/footer';
 import Navigation from '../components/navigation';
-
 //import { ScrollMagic } from 'scrollscene';
 //import {isMobile} from 'react-device-detect'; is for mobile devices
 
@@ -142,8 +141,14 @@ class Home extends Component {
                 footerBgColor={this.state.footerBgColor}
                 toggleHeader={this.state.toggleHeader}
               >
-                <small className="subtitle">Interested in more?</small>
-                <Link to="/" data-text="view work">
+                <small className="footer-subtitle subtitle">
+                  Interested in more?
+                </small>
+                <Link
+                  to="/"
+                  data-text="view work"
+                  className={`title footer-title`}
+                >
                   View Work
                   <div className="footer-arrow">
                     <div className="chevron"></div>
@@ -168,7 +173,7 @@ class Home extends Component {
       };
     } else {
       return {
-        toggleHeader: null
+        toggleHeader: false
       };
     }
     return null;

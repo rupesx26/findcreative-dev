@@ -15,139 +15,90 @@
         }
     }
 
-    .common-footer { 
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        padding: 0 3.5em;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-
-        address {
-            font-style: normal;
-            font-weight: 300;
-            font-size: 14px;
-            width: 15%;
-            display: flex;
-            flex-direction: column;
-            span {
-                font-weight: 500;
-            }   
-        }
-
-        .copy-writes {
-            font-size: 11px;
-            font-weight: 300;
-            width: 40%;
-            text-align: center;
-            font-family: 'Work Sans', sans-serif;
-            display: flex;
-            justify-content: center;
-        
-        }
-        .footer-social-icons {
-            height: 22px;
-            width: 15%;
-            text-align: center;
-            display: flex;
-            justify-content: right;
-            cursor: pointer;
-            .icon-box {
-                /* display: flex; */
-                flex-basis: 22%;
-                justify-content: right;
-                text-align: right;
-                svg {
-                    width: 15px;
-                }
-            }
-        }
-    }
+    
 
 
-    .page-footer-wrapper { 
-        height: inherit;
-        width: 100%;
+    // .page-footer-wrapper { 
+    //     height: inherit;
+    //     width: 100%;
 
-        .page-footer-content { 
-            width: 100%;
-            text-align: center;
+    //     .page-footer-content { 
+    //         width: 100%;
+    //         text-align: center;
 
-            .title {
-                font-family:'Nexa-bold';
-                font-size: 6.2em;
-                text-transform: lowercase;
-                font-weight: 600;
-                margin: 0;
-                display: block;
-                text-decoration: none;
-                position: relative;
-                color: #e91c23;
-                line-height: 1.04;
-                &.color1 {
-                    color: #f4db09;
-                }
-                &.color2{
-                    color: #00b3da;
-                }
-                &.color3 {
-                    color: #e82e81;
-                }
-                &.color4 {
-                    color: #5e2b87;
-                }
-                &.color5 {
-                    color: #4545f5;
-                }
-                &.color6{
-                    color: #e91c23;
-                }
-                // .hover-text {
-                //     position: absolute;
-                //     bottom: 0;
-                //     left: 0;
-                //     transition: width .4s ease-in-out;
-                //     color: gray;
-                //     width: 0;
-                // }
-                // &:hover {
-                //     width: 100%;
-                // }
-                &:hover{
-                    &:before {
-                        width: 100.01%;
-                        color: #fff;
-                    }
-                }
-                &.invert {
-                   &:hover {
-                    &:before {
-                        color: #000;
-                    }
-                   }
-                }
+    //         .title {
+    //             font-family:'Nexa-bold';
+    //             font-size: 6.2em;
+    //             text-transform: lowercase;
+    //             font-weight: 600;
+    //             margin: 0;
+    //             display: block;
+    //             text-decoration: none;
+    //             position: relative;
+    //             color: #e91c23;
+    //             line-height: 1.04;
+    //             &.color1 {
+    //                 color: #f4db09;
+    //             }
+    //             &.color2{
+    //                 color: #00b3da;
+    //             }
+    //             &.color3 {
+    //                 color: #e82e81;
+    //             }
+    //             &.color4 {
+    //                 color: #5e2b87;
+    //             }
+    //             &.color5 {
+    //                 color: #4545f5;
+    //             }
+    //             &.color6{
+    //                 color: #e91c23;
+    //             }
+    //             // .hover-text {
+    //             //     position: absolute;
+    //             //     bottom: 0;
+    //             //     left: 0;
+    //             //     transition: width .4s ease-in-out;
+    //             //     color: gray;
+    //             //     width: 0;
+    //             // }
+    //             // &:hover {
+    //             //     width: 100%;
+    //             // }
+    //             &:hover{
+    //                 &:before {
+    //                     width: 100.01%;
+    //                     color: #fff;
+    //                 }
+    //             }
+    //             &.invert {
+    //                &:hover {
+    //                 &:before {
+    //                     color: #000;
+    //                 }
+    //                }
+    //             }
                 
-                &:before {
-                    content: attr(data-text);
-                    position: absolute;
-                    left: 0;
-                    width: 0;
-                    transition: width 1s;
-                    overflow: hidden;
-                    white-space: nowrap;
-                }
-            }
+    //             &:before {
+    //                 content: attr(data-text);
+    //                 position: absolute;
+    //                 left: 0;
+    //                 width: 0;
+    //                 transition: width 1s;
+    //                 overflow: hidden;
+    //                 white-space: nowrap;
+    //             }
+    //         }
 
-            .subtitle {
-                font-size: 13px;
-                font-family: 'Work Sans', sans-serif;
-                font-weight: 400;
-                line-height: 4;
-            }
-        }
-    }
+    //         .subtitle {
+    //             font-size: 13px;
+    //             font-family: 'Work Sans', sans-serif;
+    //             font-weight: 400;
+    //             line-height: 4;
+    //         }
+    //     }
+    // }
  }
 
 //  .menu-open {

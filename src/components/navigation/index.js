@@ -4,19 +4,14 @@ import { imagePath } from '../../utils/assetUtils';
 import { Link } from 'react-router-dom';
 import SayHello from '../sayhello';
 import Blob from '../blob/Blob';
-
 import MenuItem from './menuitem';
-
 import Hamburger from './hamburger';
+import Icon from '../icons';
+
 import './navigation.scss';
 import { P } from '@fullpage/react-fullpage';
 
 const menu = ['Difference', 'Work', 'Connect'];
-
-const defaultGlobalState = {
-  logoClass: null
-};
-const globalStateContext = React.createContext(defaultGlobalState);
 
 class Navigation extends Component {
   constructor(props) {
@@ -222,6 +217,35 @@ class Navigation extends Component {
           {this.state.sayHelloStatus && (
             <SayHello colorUpdate={this.state.colorUpdate} />
           )}
+        </div>
+
+        <div className="footer-social-icons nav-icons">
+          <div className="icon-box">
+            <a target="_blank" href="https://www.facebook.com/findcreative.in/">
+              <Icon icon="facebook" />
+            </a>
+          </div>
+          <div className="icon-box">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/findcreativeave/"
+            >
+              <Icon icon="instagram" />
+            </a>
+          </div>
+          <div className="icon-box">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/company/13384828/admin/"
+            >
+              <Icon icon="linkedin2" />
+            </a>
+          </div>
+          <div className="icon-box">
+            <a target="_blank" href="https://twitter.com/findcreativeave">
+              <Icon icon="twitter" />
+            </a>
+          </div>
         </div>
       </nav>
     );
