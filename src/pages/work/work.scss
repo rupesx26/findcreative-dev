@@ -1,0 +1,115 @@
+@import '../../styles/mixins';
+
+.work-page {
+  position: relative;
+  z-index: 2;
+
+	.work-list {
+		margin: 100px 0 0;
+		position: relative;
+	}
+	#odd3 {
+		margin-bottom: 8vw;
+	}
+
+	.work-wrapper {
+		text-decoration: none;
+		color: #000;
+		transition: all .6s ease-in-out;
+		&.even {
+			// margin-top: 250px;
+		}
+		.work-image {
+			height: 67vh;
+			margin-bottom: 28px;
+			width: 100%;
+			transition: all .5s ease-in-out;
+			overflow: hidden;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			img {
+				max-width: 100%;
+				height: 100%;
+			}
+		}
+		&:hover {
+			.work-image {
+				transform: scale(0.97)
+			}
+		}
+		.work-details {
+			width: 100%;
+			opacity: 0;
+			.title {
+				font-family: $font-nexa-bdrg;
+				font-size: 2.2em;
+			}
+			.sub-title {
+				font-weight: 400;
+				font-size: 15px;
+				line-height: 1.68;
+				letter-spacing: -0.05em;
+				font-family: $font-work-sans;
+			}
+		}
+	}
+
+	.work-wrap {
+		display: block;
+	    width: 25vw;
+	    margin-bottom: 300px;
+	    position: absolute;
+
+	     &:nth-child(2), &:nth-child(1) {
+	    	top: 0!important;
+	    }
+
+	     // &:nth-child(1) {
+	     // 	margin-top: 180px;
+	     // }
+	    &.odd {
+		    right: 0;
+		    left: auto;
+		}
+	}
+
+
+	.work-wrapper-2 {
+		margin-bottom: 18.60vw;
+		width: 100%;
+		position: relative;
+		min-height: 100vh;
+
+
+		
+		&._wrap-odd {
+			.work-wrapper:first-child{
+				left: 10em;
+			}
+			.work-wrapper:last-child {
+				right: -2em;
+				top: 150px;
+			}
+		}
+		&._wrap-even {
+
+			.work-wrapper:first-child {
+				top: 144px;
+			}
+
+			.work-wrapper:nth-child(2) {
+				right: 0;
+			}
+		}
+
+		.work-wrapper {
+			display: block;
+		    width: 25vw;
+		    position: absolute;
+		    // top: 100vh;
+		}
+	}
+	
+	
+}

@@ -22,7 +22,7 @@ class Footer extends Component {
 
   static getDerivedStateFromProps(props, state) {
     const animation2 = new TimelineMax();
-    if (props.toggleHeader) {
+    if (props.footerActive) {
       animation2
         .to(
           '.footer-subtitle',
@@ -50,12 +50,14 @@ class Footer extends Component {
         );
     }
     if (props.activeSlide === 4) {
+      // console.log('here==>',props)
       animation2
         .to('.copy-writes', 0.2, { opacity: 0, y: 50, ease: Power0.inOut })
         .to('.footer-icons', 0.2, { opacity: 0, y: 50, ease: Power0.inOut })
         .to('.footer-title', 0.5, { opacity: 0, y: 100, ease: Power0.inOut })
         .to('.footer-subtitle', 0.5, { opacity: 0, y: 50, ease: Power0.inOut });
     }
+    return null;
   }
 
   render() {

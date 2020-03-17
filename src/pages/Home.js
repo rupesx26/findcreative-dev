@@ -92,7 +92,8 @@ class Home extends Component {
       toggleHeader: false,
       showSayHello: true,
       footerBgColor: 'dark',
-      inversionColor: false
+      inversionColor: false,
+      footerActive: false
     };
   }
 
@@ -140,6 +141,7 @@ class Home extends Component {
                 direction={this.state.currentDirection}
                 footerBgColor={this.state.footerBgColor}
                 toggleHeader={this.state.toggleHeader}
+                footerActive={this.state.footerActive}
               >
                 <small className="footer-subtitle subtitle">
                   Interested in more?
@@ -169,11 +171,13 @@ class Home extends Component {
     //console.log(state)
     if (state.currentSlide === 5 && state.currentDirection === 'down') {
       return {
-        toggleHeader: true
+        toggleHeader: true,
+        footerActive: true
       };
     } else {
       return {
-        toggleHeader: false
+        toggleHeader: false,
+        footerActive: false
       };
     }
     return null;

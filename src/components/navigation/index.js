@@ -59,6 +59,12 @@ class Navigation extends Component {
         0.5,
         { opacity: 0, y: 100, scale: 0 },
         { opacity: 1, y: 0, scale: 1, ease: Power0.inOut }
+      )
+      .fromTo(
+        `.menu-social-icons`,
+        0.7,
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0, ease: Power0.inOut }
       );
     //.reverse();
     this.menuListAnimation();
@@ -203,11 +209,12 @@ class Navigation extends Component {
           <ul className={`menu-list-wrapper`}>{this.renderMenuList()}</ul>
           <Blob
             blobAnimClass="nav-blob"
-            bbbgcolor="#b5b5b5"
-            bb1opacity="0.24"
-            bb2opacity="0.44"
+            bb1BgColor="#121212"
+            bb2BgColor="#373737"
+            bb3BgColor="#1d1c1c"
+            bb1opacity="1"
+            bb2opacity="1"
             blobBorder="#fff"
-            mainblog="#504f4f"
           />
           <Hamburger
             colorUpdate={this.state.colorUpdate}
@@ -219,7 +226,7 @@ class Navigation extends Component {
           )}
         </div>
 
-        <div className="footer-social-icons nav-icons">
+        <div className="footer-social-icons nav-icons menu-social-icons">
           <div className="icon-box">
             <a target="_blank" href="https://www.facebook.com/findcreative.in/">
               <Icon icon="facebook" />

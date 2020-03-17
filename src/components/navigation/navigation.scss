@@ -147,4 +147,34 @@
             }
           }
     }
+    .nav-blob {
+        height: 600px;
+        width: 600px;
+        right: -2em;
+        top: 44%;
+    }
+
+    .footer-social-icons {
+        height: 22px;
+        width: 15%;
+        text-align: center;
+        display: flex;
+        justify-content: right;
+        cursor: pointer;
+        position: absolute;
+        right: 3.5em;
+        bottom: 20px;
+        z-index: 10;
+        .icon-box {
+            /* display: flex; */
+            flex-basis: 22%;
+            justify-content: right;
+            text-align: right;
+            svg {
+                width: 15px;
+                fill: #fff;
+            }
+        }
+    }
 }
+

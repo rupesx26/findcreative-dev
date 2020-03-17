@@ -54,12 +54,14 @@ class SubHeadingSlider extends Component {
         { opacity: 1, y: 0 },
         '+=.5'
       )
-      .to('.type-1', 1.5, { opacity: 0, y: -20 }, '+=.6')
-      .to('.type-2', 1.5, { opacity: 1, y: 0 }, '+=.5')
-      .to('.type-2', 1.5, { opacity: 0, y: -20 }, '+=.6')
-      .to('.type-3', 1.5, { opacity: 1, y: 0 }, '+=.5')
-      .to('.type-3', 1.5, { opacity: 0, y: -20 }, '+=.6')
-      .to('.last', 1.5, { opacity: 1, y: 0 }, '+=.5')
+      .to('.type-1', 2, { opacity: 0, y: -20 }, '+=.6')
+      .to('.type-2', 2, { opacity: 1, y: 0 }, '+=.5')
+      .to('.type-2', 2, { opacity: 0, y: -20 }, '+=.6')
+      .to('.type-3', 2, { opacity: 1, y: 0 }, '+=.5')
+      .to('.type-3', 2, { opacity: 0, y: -20 }, '+=.6')
+      .to('.for-last', 0.5, { opacity: 0, y: -20 }, '+=.6')
+      .to('.last', 0.5, { opacity: 0, x: -35 }, '+=.5')
+      .to('.last', 2, { opacity: 1, y: 0 }, '+=.5')
       .to(
         '.sub-slide-2',
         1,
@@ -90,7 +92,9 @@ class SubHeadingSlider extends Component {
                 We are findcreative Ave.
               </span>
               <span className={`${styles.slide} sub-slide-2`}>
-                <span className="init-text">findcreative Ave is </span>
+                <span className="init-text">
+                  findcreative Ave <span className="for-last">is a</span>{' '}
+                </span>
                 <span className={styles.bucket}>
                   <span className="type type-1">design agency</span>
                   <span className="type type-2">creative agency</span>

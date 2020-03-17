@@ -7,6 +7,7 @@ import {
   Expo
 } from 'gsap/dist/gsap';
 import styles from './heading.module.scss';
+import Blob from '../blob/Blob';
 
 // * to create is to unite
 // * now is everything
@@ -22,11 +23,13 @@ import styles from './heading.module.scss';
 class HeadingSlider extends Component {
   constructor(props) {
     super();
+    this.blobAnimation = this.blobAnimation.bind(this);
     this.bannerAnimationHead = this.bannerAnimationHead.bind(this);
   }
 
   componentDidMount() {
     this.bannerAnimationHead();
+    this.blobAnimation();
   }
 
   bannerAnimationHead() {
@@ -52,20 +55,20 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.5,
+          duration: 2.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-1 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-1 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-1 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      //.to('.head-slide-1 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-1 div',
         {
@@ -86,20 +89,20 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.5,
+          duration: 2.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-2 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-2 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-2 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      // .to('.head-slide-2 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-2 div',
         {
@@ -120,20 +123,20 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.5,
+          duration: 2.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-3 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-3 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-3 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      // .to('.head-slide-3 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-3 div',
         {
@@ -154,20 +157,20 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.5,
+          duration: 2.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-4 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-4 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-4 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      // .to('.head-slide-4 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-4 div',
         {
@@ -188,27 +191,27 @@ class HeadingSlider extends Component {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 1.5,
+          duration: 2.5,
           stagger: { amount: 0.5 },
           ease: Expo.easeOut
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-5 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-5 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-5 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      // .to('.head-slide-5 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-5 div',
         {
           opacity: 0,
           y: 50,
           filter: 'blur(2px)',
-          duration: 1.5,
+          duration: 2.5,
           stagger: { amount: 0.25 },
           ease: Expo.easeIn
         },
@@ -228,14 +231,14 @@ class HeadingSlider extends Component {
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-6 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-6 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-6 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      // .to('.head-slide-6 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-6 div',
         {
@@ -262,14 +265,14 @@ class HeadingSlider extends Component {
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-7 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-7 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-7 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      // .to('.head-slide-7 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-7 div',
         {
@@ -296,14 +299,14 @@ class HeadingSlider extends Component {
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-8 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-8 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-8 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      // .to('.head-slide-8 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-8 div',
         {
@@ -330,14 +333,14 @@ class HeadingSlider extends Component {
         },
         '+=1.5'
       )
-      .fromTo(
-        '.head-slide-9 .uniq',
-        0.7,
-        { scale: 1 },
-        { scale: 1.03, ease: Power0.easeInOut },
-        '+=1'
-      )
-      .to('.head-slide-9 .uniq', 0.7, { scale: 1 }, '+=.2')
+      // .fromTo(
+      //   '.head-slide-9 .uniq',
+      //   0.7,
+      //   { scale: 1 },
+      //   { scale: 1.03, ease: Power0.easeInOut },
+      //   '+=1'
+      // )
+      // .to('.head-slide-9 .uniq', 0.7, { scale: 1 }, '+=.2')
       .to(
         '.head-slide-9 div',
         {
@@ -362,10 +365,30 @@ class HeadingSlider extends Component {
       [tl]
     );
   }
+  blobAnimation() {
+    const blob = new TimelineLite();
+    blob.fromTo(
+      '.banner-blob',
+      2,
+      { opacity: 0, x: 0, filter: 'blur(9px)' },
+      { opacity: 1, x: 0, filter: 'blur(0px)', ease: Power0.inOut },
+      '+=4'
+    );
+  }
 
   render() {
     return (
       <div className={styles.headBanner}>
+        <Blob
+          thinline={false}
+          blobAnimClass="banner-blob"
+          bb1opacity="0.24"
+          bb2opacity="0.44"
+          blobBorder="#000"
+          bb1BgColor="#c9def4"
+          bb2BgColor="#ccdef2"
+          bb3BgColor="#ccdef2"
+        />
         <div className={styles.title}>
           <div className={styles.animationSlideHead}>
             <h1>
@@ -373,16 +396,14 @@ class HeadingSlider extends Component {
                 <div>to&nbsp;</div>
                 <div>create&nbsp;</div>
                 <div>is&nbsp;</div>
-                <div>to&nbsp;</div>
                 <br />
+                <div>to&nbsp;</div>
                 <div className="uniq">unite</div>
               </div>
               <div className={`${styles.slide} head-slide-2`}>
                 <div>now&nbsp;</div>
                 <div>is&nbsp;</div>
-                <div className="uniq" style={{ display: 'block' }}>
-                  everything
-                </div>
+                <div className="uniq">everything</div>
               </div>
               <div className={`${styles.slide} head-slide-3`}>
                 <div>we&nbsp;</div>
@@ -392,22 +413,22 @@ class HeadingSlider extends Component {
                 <div className="uniq">design</div>
               </div>
               <div className={`${styles.slide} head-slide-4`}>
-                <div>We&nbsp;</div>
+                <div>we&nbsp;</div>
                 <div>make&nbsp;</div>
-                <div>Branding&nbsp;</div>
+                <div>branding&nbsp;</div>
                 <div>and&nbsp;</div>
-                <div>Digital&nbsp;</div>
-                <div className="uniq">Content</div>
+                <div>digital&nbsp;</div>
+                <div className="uniq">content</div>
               </div>
               <div className={`${styles.slide} head-slide-5`}>
-                <div className="uniq">Audit&nbsp;</div>
+                <div className="uniq">audit&nbsp;</div>
                 <div>and&nbsp;</div>
-                <div>Research&nbsp;</div>
+                <div>research&nbsp;</div>
                 <div>helps&nbsp;</div>
                 <div>us&nbsp;</div>
                 <div>build&nbsp;</div>
                 <div className="uniq">great&nbsp;</div>
-                <div>Design</div>
+                <div>design</div>
               </div>
               <div className={`${styles.slide} head-slide-6`}>
                 <div>our&nbsp;</div>
@@ -426,8 +447,9 @@ class HeadingSlider extends Component {
                 <div className="uniq">execute</div>
               </div>
               <div className={`${styles.slide} head-slide-8`}>
-                <div>Branding&nbsp;</div>
+                <div>branding&nbsp;</div>
                 <div>is&nbsp;</div>
+                <br />
                 <div>our&nbsp;</div>
                 <div className="uniq">middle&nbsp;</div>
                 <div>name</div>
@@ -436,6 +458,7 @@ class HeadingSlider extends Component {
                 <div>crazy&nbsp;</div>
                 <div>client&nbsp;</div>
                 <div>brings&nbsp;</div>
+                <br />
                 <div className="uniq">crazy&nbsp;</div>
                 <div>ideas.</div>
               </div>

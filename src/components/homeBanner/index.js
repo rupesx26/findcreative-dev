@@ -18,12 +18,12 @@ import {
 class Banner extends Component {
   constructor(props) {
     super(props);
-    this.blobAnimation = this.blobAnimation.bind(this);
+    //this.blobAnimation = this.blobAnimation.bind(this);
     this.currentIndex = this.props.activeSlide;
     this.scrollDownAnimation = new TimelineMax();
   }
   componentDidMount() {
-    this.blobAnimation();
+    //this.blobAnimation();
 
     this.scrollDownAnimation.fromTo(
       '.scroll-down',
@@ -39,16 +39,16 @@ class Banner extends Component {
       }
     );
   }
-  blobAnimation() {
-    const blob = new TimelineLite();
-    blob.fromTo(
-      '.banner-blob',
-      1,
-      { opacity: 0, x: -400, filter: 'blur(9px)' },
-      { opacity: 1, x: 0, filter: 'blur(0px)', ease: Power0.inOut },
-      '+=1'
-    );
-  }
+  // blobAnimation() {
+  //   const blob = new TimelineLite();
+  //   blob.fromTo(
+  //     '.banner-blob',
+  //     1,
+  //     { opacity: 0, x: 0, filter: 'blur(9px)' },
+  //     { opacity: 1, x: 0, filter: 'blur(0px)', ease: Power0.inOut },
+  //     '+=1'
+  //   );
+  // }
   componentWillReceiveProps(nextProps) {
     if (nextProps.activeSlide === 0 && nextProps.direction === 'up') {
       this.scrollDownAnimation.to('.scroll-down', 1, {
@@ -88,15 +88,6 @@ class Banner extends Component {
             <div className="col-md-10 col-xs-10 col-sm-10 col-lg-10">
               <div className="banner">
                 <div className="view">
-                  <Blob
-                    thinline={false}
-                    blobAnimClass="banner-blob"
-                    bbbgcolor="#ccdef2"
-                    bb1opacity="0.24"
-                    bb2opacity="0.44"
-                    blobBorder="#000"
-                    mainblog="#c9def4"
-                  />
                   <SubHeadingSlider />
                   <HeadingSlider />
                 </div>

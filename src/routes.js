@@ -18,7 +18,7 @@ const LoadableDifference = Loadable({
 });
 
 const LoadableWork = Loadable({
-  loader: () => import(/* webpackChunkName: 'services' */ './pages/work/Work'),
+  loader: () => import(/* webpackChunkName: 'services' */ './pages/work'),
   loading: () => <div>Loading...</div>
 });
 

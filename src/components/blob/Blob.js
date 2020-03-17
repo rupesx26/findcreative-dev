@@ -21,20 +21,20 @@ class Blob extends Component {
         <div className={styles.blobWrapper}>
           <div
             style={{
-              backgroundColor: this.props.bbbgcolor,
+              backgroundColor: this.props.bb3BgColor,
               opacity: this.props.bb1opacity
             }}
             className={styles.blobLayer1}
           ></div>
           <div
             style={{
-              backgroundColor: this.props.bbbgcolor,
+              backgroundColor: this.props.bb2BgColor,
               opacity: this.props.bb2opacity
             }}
             className={styles.blobLayer2}
           ></div>
           <div
-            style={{ backgroundColor: this.props.mainblog }}
+            style={{ backgroundColor: this.props.bb1BgColor }}
             className={styles.blob}
           ></div>
           <div
