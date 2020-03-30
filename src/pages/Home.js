@@ -100,9 +100,10 @@ class Home extends Component {
   fullpageWrapper() {
     return (
       <ReactFullpage
-        scrollingSpeed={1000}
+        scrollingSpeed={1800}
         navigationTooltips={this.anchors}
         keyboardScrolling={true}
+        touchSensitivity={100}
         onLeave={(origin, destination, direction) => {
           this.setState({
             currentSlide: destination.index,
@@ -110,20 +111,6 @@ class Home extends Component {
           });
         }}
         render={({ state, fullpageApi }) => {
-          //console.log('render prop change', state, fullpageApi); // eslint-disable-line no-console
-          // if(this.state.currentSlide === 4 && this.state.currentDirection === 'down') {
-          //   this.state.toggleHeader = true
-          // } else if(this.state.currentSlide === 5) {
-          //   this.state.toggleHeader = false
-          // } else if(this.state.currentSlide === 4 && this.state.currentDirection === 'up') {
-          //   this.state.toggleHeader = false
-          // } else if(this.state.currentSlide === 3 && this.state.currentDirection === 'up') {
-          //   this.state.toggleHeader = false
-          // } else if(this.state.currentSlide === 5 && this.state.currentDirection === 'down') {
-          //   this.state.toggleHeader = true
-          // }
-
-          //console.log('check',this.state.currentSlide === 5 && this.state.currentDirection === 'down')
           return (
             <div>
               <Banner

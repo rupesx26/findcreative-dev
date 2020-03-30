@@ -40,32 +40,36 @@ class HomeCarousel extends Component {
         clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
         ease: Power0.inOut
       })
-      .to('.slide-1 .project-title', 0.1, { y: -350, opacity: 0 })
-      .to('.slide-1 .project-type', 0.1, { y: 200, opacity: 0 });
+      .to('.slide-1 .project-content', 0.1, { y: 100, opacity: 0 })
+      .to('.slide-1 .project-title', 0.1, { y: 20, opacity: 0 })
+      .to('.slide-1 .project-type', 0.1, { y: 80, opacity: 0 });
 
     this.slideAnimation2
       .to('.slide-2 .carousel-img-clip', 0.1, {
         clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
         ease: Power0.inOut
       })
-      .to('.slide-2 .project-title', 0.1, { y: -350, opacity: 0 })
-      .to('.slide-2 .project-type', 0.1, { y: 200, opacity: 0 });
+      .to('.slide-2 .project-content', 0.1, { y: 100, opacity: 0 })
+      .to('.slide-2 .project-title', 0.1, { y: 20, opacity: 0 })
+      .to('.slide-2 .project-type', 0.1, { y: 80, opacity: 0 });
 
     this.slideAnimation3
       .to('.slide-3 .carousel-img-clip', 0.1, {
         clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
         ease: Power0.inOut
       })
-      .to('.slide-3 .project-title', 0.1, { y: -350, opacity: 0 })
-      .to('.slide-3 .project-type', 0.1, { y: 200, opacity: 0 });
+      .to('.slide-3 .project-content', 0.1, { y: 100, opacity: 0 })
+      .to('.slide-3 .project-title', 0.1, { y: 20, opacity: 0 })
+      .to('.slide-3 .project-type', 0.1, { y: 80, opacity: 0 });
 
     this.slideAnimation4
       .to('.slide-4 .carousel-img-clip', 0.1, {
         clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
         ease: Power0.inOut
       })
-      .to('.slide-4 .project-title', 0.1, { y: -350, opacity: 0 })
-      .to('.slide-4 .project-type', 0.1, { y: 200, opacity: 0 });
+      .to('.slide-4 .project-content', 0.1, { y: 100, opacity: 0 })
+      .to('.slide-4 .project-title', 0.1, { y: 20, opacity: 0 })
+      .to('.slide-4 .project-type', 0.1, { y: 80, opacity: 0 });
 
     this.footerAnimation.to('#footer-view', 1, {
       clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
@@ -81,20 +85,24 @@ class HomeCarousel extends Component {
     //Slide 0 start
     if (nextProps.activeSlide === 0 && nextProps.direction === 'up') {
       this.slideAnimation1
+        .to('.slide-1 .carousel-img-clip', 0.2, {
+          clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        })
+        .to('.slide-1 .project-content', 0.5, {
+          y: 100,
+          opacity: 0,
+          ease: Power4.inOut
+        })
         .to('.slide-1 .project-title', 0.2, {
-          y: -150,
+          y: 20,
           opacity: 0,
           ease: Power1.inOut
         })
         .to('.slide-1 .project-type', 0.2, {
-          y: 90,
+          y: 80,
           opacity: 0,
           ease: Power1.inOut
-        })
-        .to('.slide-1 .carousel-img-clip', 0.5, {
-          opacity: 1,
-          clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
-          ease: Power4.inOut
         });
 
       this.paginationBar.to('.carousel-bar-tracker', 0, {
@@ -108,17 +116,22 @@ class HomeCarousel extends Component {
     //Slide 1 start
     if (nextProps.activeSlide === 1 && nextProps.direction === 'down') {
       this.slideAnimation1
-        .to('.slide-1 .carousel-img-clip', 0.5, {
+        .to('.slide-1 .carousel-img-clip', 1, {
           opacity: 1,
           clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 0)',
           ease: Power4.inOut
         })
-        .to('.slide-1 .project-title', 0.2, {
+        .to('.slide-1 .project-content', 1, {
+          y: 0,
+          opacity: 1,
+          ease: Power4.inOut
+        })
+        .to('.slide-1 .project-title', 0.5, {
           y: 0,
           opacity: 1,
           ease: Power3.inOut
         })
-        .to('.slide-1 .project-type', 0.2, {
+        .to('.slide-1 .project-type', 0.4, {
           y: 70,
           opacity: 1,
           ease: Power3.inOut
@@ -138,26 +151,41 @@ class HomeCarousel extends Component {
       );
     } else if (nextProps.activeSlide === 1 && nextProps.direction === 'up') {
       this.slideAnimation2
-        .to('.slide-2 .project-title', 0.2, {
-          y: -150,
-          opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-2 .project-type', 0.2, {
-          y: 90,
-          opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-2 .carousel-img-clip', 0.5, {
-          opacity: 1,
+        .to('.slide-2 .carousel-img-clip', 0.2, {
           clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        })
+
+        .to('.slide-2 .project-title', 0.5, {
+          y: 20,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-2 .project-type', 0.4, {
+          y: 80,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-2 .project-content', 0.2, {
+          y: 100,
+          opacity: 0,
           ease: Power4.inOut
         });
 
       this.slideAnimation1
-        .to('.slide-1 .carousel-img-clip', 0.5, {
+        .to(
+          '.slide-1 .carousel-img-clip',
+          1,
+          {
+            opacity: 1,
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+            ease: Power4.inOut
+          },
+          '+=1'
+        )
+        .to('.slide-1 .project-content', 1, {
+          y: 0,
           opacity: 1,
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
           ease: Power4.inOut
         })
         .to('.slide-1 .project-title', 0.2, {
@@ -165,12 +193,12 @@ class HomeCarousel extends Component {
           opacity: 1,
           ease: Power1.inOut
         })
-        .to(
-          '.slide-1 .project-type',
-          0.2,
-          { y: 70, opacity: 1, ease: Power1.inOut },
-          '-=0.1'
-        )
+        .to('.slide-1 .project-type', 0.2, {
+          y: 70,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+
         .set('.fca-white', { className: '+=fca-black' });
       this.setState({
         count: nextProps.activeSlide
@@ -191,39 +219,56 @@ class HomeCarousel extends Component {
     //Slide 2 start
     if (nextProps.activeSlide === 2 && nextProps.direction === 'down') {
       this.slideAnimation1
-        .to('.slide-1 .project-title', 0.2, {
-          y: -150,
-          opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-1 .project-type', 0.2, {
-          y: 90,
-          opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-1 .carousel-img-clip', 0.5, {
-          opacity: 1,
+        .to('.slide-1 .carousel-img-clip', 0.2, {
           clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
           ease: Power4.inOut
-        });
-
-      this.slideAnimation2
-        .to('.slide-2 .carousel-img-clip', 0.5, {
-          opacity: 1,
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-          ease: Power4.inOut
         })
-        .to('.slide-2 .project-title', 0.2, {
-          y: 0,
-          opacity: 1,
-          ease: Power1.inOut
+        .to('.slide-1 .project-title', 0.5, {
+          y: -80,
+          opacity: 0,
+          ease: Power3.inOut
+        })
+        .to('.slide-1 .project-type', 0.4, {
+          y: -20,
+          opacity: 0,
+          ease: Power3.inOut
         })
         .to(
-          '.slide-2 .project-type',
+          '.slide-1 .project-content',
           0.2,
-          { y: 70, opacity: 1, ease: Power1.inOut },
-          '-=0.1'
+          {
+            y: -100,
+            opacity: 0,
+            ease: Power4.inOut
+          },
+          '-=0.5'
         );
+
+      this.slideAnimation2
+        .to(
+          '.slide-2 .carousel-img-clip',
+          1,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+            ease: Power4.inOut
+          },
+          '+=1.0'
+        )
+        .to('.slide-2 .project-content', 1, {
+          y: 0,
+          opacity: 1,
+          ease: Power4.inOut
+        })
+        .to('.slide-2 .project-title', 0.5, {
+          y: 0,
+          opacity: 1,
+          ease: Power3.inOut
+        })
+        .to('.slide-2 .project-type', 0.4, {
+          y: 70,
+          opacity: 1,
+          ease: Power3.inOut
+        });
       this.setState({
         count: nextProps.activeSlide
       });
@@ -240,24 +285,40 @@ class HomeCarousel extends Component {
       );
     } else if (nextProps.activeSlide === 2 && nextProps.direction === 'up') {
       this.slideAnimation3
-        .to('.slide-3 .project-title', 0.2, {
-          y: -150,
-          opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-3 .project-type', 0.2, {
-          y: 90,
-          opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-3 .carousel-img-clip', 0.5, {
+
+        .to('.slide-3 .carousel-img-clip', 0.2, {
           clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        })
+        .to('.slide-3 .project-title', 0.5, {
+          y: 20,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-3 .project-type', 0.4, {
+          y: 80,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-3 .project-content', 0.2, {
+          y: 100,
+          opacity: 0,
           ease: Power4.inOut
         });
 
       this.slideAnimation2
-        .to('.slide-2 .carousel-img-clip', 0.5, {
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+        .to(
+          '.slide-2 .carousel-img-clip',
+          1,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+            ease: Power4.inOut
+          },
+          '+=1.0'
+        )
+        .to('.slide-2 .project-content', 1, {
+          y: 0,
+          opacity: 1,
           ease: Power4.inOut
         })
         .to('.slide-2 .project-title', 0.2, {
@@ -265,12 +326,12 @@ class HomeCarousel extends Component {
           opacity: 1,
           ease: Power1.inOut
         })
-        .to(
-          '.slide-2 .project-type',
-          0.2,
-          { y: 70, opacity: 1, ease: Power1.inOut },
-          '-=0.1'
-        )
+        .to('.slide-2 .project-type', 0.2, {
+          y: 70,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+
         .set('.fca-white', { className: '+=fca-black' });
       this.setState({
         count: nextProps.activeSlide
@@ -291,37 +352,73 @@ class HomeCarousel extends Component {
     //Slide 3 start
     if (nextProps.activeSlide === 3 && nextProps.direction === 'down') {
       this.slideAnimation2
-        .to('.slide-2 .project-title', 0.2, {
-          y: -150,
+        .to(
+          '.slide-2 .carousel-img-clip',
+          0.2,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+            ease: Power4.inOut
+          },
+          '-=0.5'
+        )
+        .to('.slide-2 .project-title', 0.5, {
+          y: -80,
           opacity: 0,
-          ease: Power1.inOut
+          ease: Power3.inOut
         })
-        .to('.slide-2 .project-type', 0.2, {
-          y: 90,
+        .to('.slide-2 .project-type', 0.4, {
+          y: -20,
           opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-2 .carousel-img-clip', 0.5, {
-          clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
-          ease: Power4.inOut
-        });
-
-      this.slideAnimation3
-        .to('.slide-3 .carousel-img-clip', 0.5, {
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-          ease: Power4.inOut
-        })
-        .to('.slide-3 .project-title', 0.2, {
-          y: 0,
-          opacity: 1,
-          ease: Power1.inOut
+          ease: Power3.inOut
         })
         .to(
-          '.slide-3 .project-type',
+          '.slide-2 .project-content',
           0.2,
-          { y: 70, opacity: 1, ease: Power1.inOut },
-          '-=0.1'
+          {
+            y: -100,
+            opacity: 0,
+            ease: Power4.inOut
+          },
+          '-=0.5'
         );
+
+      this.slideAnimation3
+        .to(
+          '.slide-3 .carousel-img-clip',
+          1,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+            ease: Power4.inOut
+          },
+          '+=1.0'
+        )
+
+        .to(
+          '.slide-3 .project-content',
+          1,
+          {
+            y: 0,
+            opacity: 1,
+            ease: Power4.inOut
+          },
+          '+=0.5'
+        )
+        .to(
+          '.slide-3 .project-title',
+          0.5,
+          {
+            y: 0,
+            opacity: 1,
+            ease: Power3.inOut
+          },
+          '+=0.5'
+        )
+        .to('.slide-3 .project-type', 0.4, {
+          y: 70,
+          opacity: 1,
+          ease: Power3.inOut
+        });
+
       this.setState({
         count: nextProps.activeSlide
       });
@@ -337,24 +434,41 @@ class HomeCarousel extends Component {
       );
     } else if (nextProps.activeSlide === 3 && nextProps.direction === 'up') {
       this.slideAnimation4
-        .to('.slide-4 .project-title', 0.2, {
-          y: -150,
-          opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-4 .project-type', 0.2, {
-          y: 90,
-          opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-4 .carousel-img-clip', 0.5, {
+
+        .to('.slide-4 .carousel-img-clip', 0.2, {
           clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+          ease: Power4.inOut
+        })
+        .to('.slide-4 .project-title', 0.5, {
+          y: 20,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-4 .project-type', 0.4, {
+          y: 80,
+          opacity: 0,
+          ease: Power1.inOut
+        })
+        .to('.slide-4 .project-content', 0.2, {
+          y: 100,
+          opacity: 0,
           ease: Power4.inOut
         });
 
       this.slideAnimation3
-        .to('.slide-3 .carousel-img-clip', 0.5, {
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+        .to(
+          '.slide-3 .carousel-img-clip',
+          1,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+            ease: Power4.inOut
+          },
+          '+=1.0'
+        )
+
+        .to('.slide-3 .project-content', 1, {
+          y: 0,
+          opacity: 1,
           ease: Power4.inOut
         })
         .to('.slide-3 .project-title', 0.2, {
@@ -362,12 +476,12 @@ class HomeCarousel extends Component {
           opacity: 1,
           ease: Power1.inOut
         })
-        .to(
-          '.slide-3 .project-type',
-          0.2,
-          { y: 70, opacity: 1, ease: Power1.inOut },
-          '-=0.1'
-        )
+        .to('.slide-3 .project-type', 0.2, {
+          y: 70,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+
         .set('.fca-white', { className: '+=fca-black' });
       this.setState({
         count: nextProps.activeSlide
@@ -388,36 +502,77 @@ class HomeCarousel extends Component {
     //Slide 4 start
     if (nextProps.activeSlide === 4 && nextProps.direction === 'down') {
       this.slideAnimation3
-        .to('.slide-3 .project-title', 0.2, {
-          y: -150,
+        .to(
+          '.slide-3 .carousel-img-clip',
+          0.2,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
+            ease: Power4.inOut
+          },
+          '-=0.5'
+        )
+        .to('.slide-3 .project-title', 0.5, {
+          y: -80,
           opacity: 0,
-          ease: Power1.inOut
+          ease: Power3.inOut
         })
-        .to('.slide-3 .project-type', 0.2, {
-          y: 90,
+        .to('.slide-3 .project-type', 0.4, {
+          y: -20,
           opacity: 0,
-          ease: Power1.inOut
-        })
-        .to('.slide-3 .carousel-img-clip', 0.5, {
-          clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
-          ease: Power4.inOut
-        });
-      this.slideAnimation4
-        .to('.slide-4 .carousel-img-clip', 0.5, {
-          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-          ease: Power4.inOut
-        })
-        .to('.slide-4 .project-title', 0.2, {
-          y: 0,
-          opacity: 1,
-          ease: Power1.inOut
+          ease: Power3.inOut
         })
         .to(
-          '.slide-4 .project-type',
+          '.slide-3 .project-content',
           0.2,
-          { y: 80, opacity: 1, ease: Power1.inOut },
-          '-=0.1'
+          {
+            y: -100,
+            opacity: 0,
+            ease: Power4.inOut
+          },
+          '-=0.5'
         );
+
+      this.slideAnimation4
+        .to(
+          '.slide-4 .carousel-img-clip',
+          1,
+          {
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+            ease: Power4.inOut
+          },
+          '+=1.0'
+        )
+        .to(
+          '.slide-4 .project-content',
+          1,
+          {
+            y: 0,
+            opacity: 1,
+            ease: Power4.inOut
+          },
+          '+=0.5'
+        )
+        .to(
+          '.slide-4 .project-title',
+          0.5,
+          {
+            y: 0,
+            opacity: 1,
+            ease: Power3.inOut
+          },
+          '+=0.5'
+        )
+        .to(
+          '.slide-4 .project-type',
+          0.4,
+          {
+            y: 80,
+            opacity: 1,
+            ease: Power3.inOut
+          },
+          '+=0.2'
+        );
+
       this.setState({
         count: nextProps.activeSlide
       });
@@ -444,29 +599,28 @@ class HomeCarousel extends Component {
       this.slideAnimation4
         .to(
           '.slide-4 .carousel-img-clip',
-          0.5,
+          1,
           {
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
             ease: Power4.inOut
           },
-          '+=0.5'
+          '+=1'
         )
-        .to(
-          '.slide-4 .project-title',
-          0.2,
-          {
-            y: 0,
-            opacity: 1,
-            ease: Power1.inOut
-          },
-          '+=0.1'
-        )
-        .to(
-          '.slide-4 .project-type',
-          0.2,
-          { y: 80, opacity: 1, ease: Power1.inOut },
-          '+=0.1'
-        )
+        .to('.slide-4 .project-content', 1, {
+          y: 0,
+          opacity: 1,
+          ease: Power4.inOut
+        })
+        .to('.slide-4 .project-title', 0.2, {
+          y: 0,
+          opacity: 1,
+          ease: Power1.inOut
+        })
+        .to('.slide-4 .project-type', 0.2, {
+          y: 80,
+          opacity: 1,
+          ease: Power1.inOut
+        })
         .to(
           '.carouse-pagination-wrapper',
           0.2,
@@ -494,16 +648,26 @@ class HomeCarousel extends Component {
         ease: Power2.inOut
       });
       this.slideAnimation4
-        .to('.slide-4 .project-title', 0.1, {
-          y: -150,
+        .to('.slide-4 .project-title', 0.5, {
+          y: -80,
           opacity: 0,
-          ease: Power1.inOut
+          ease: Power3.inOut
         })
-        .to('.slide-4 .project-type', 0.1, {
-          y: 90,
+        .to('.slide-4 .project-type', 0.4, {
+          y: -20,
           opacity: 0,
-          ease: Power1.inOut
+          ease: Power3.inOut
         })
+        .to(
+          '.slide-4 .project-content',
+          0.2,
+          {
+            y: -100,
+            opacity: 0,
+            ease: Power4.inOut
+          },
+          '-=0.5'
+        )
         .to('.slide-4 .carousel-img-clip', 0.1, {
           clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
           ease: Power4.inOut

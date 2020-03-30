@@ -84,6 +84,12 @@
                 transition-duration: 0.5s;
                 transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
                 margin-top: -10%;
+                .project-content{
+                    opacity: 0;
+                    transition-property: all;
+                    transition-duration: 1s;
+                    transition-timing-function: cubic-bezier(0,.96,.38,.16);
+                }
                 .project-title {
                     position: absolute;
                     font-size: 4.2em;
