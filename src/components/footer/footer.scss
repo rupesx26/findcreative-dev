@@ -126,6 +126,11 @@ $base: 0.8rem;
             display: inline-block;
             width: 5px;
         }
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+        }
     }
     .footer-social-icons {
         height: 22px;

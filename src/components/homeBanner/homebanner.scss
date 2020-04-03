@@ -28,14 +28,14 @@
     bottom: 4em;
     width: 50px;
     text-align: center;
-    height: 180px;
+    height: 130px;
     cursor: pointer;
     opacity: 0;
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     transition: all .7s ease-in-out;
     padding-top: 20px;
     .text {
-        font: 600 14px/18px Work Sans;
+        font: 600 .7em/18px Work Sans;
         letter-spacing: 5.45px;
         color: #000000;
         text-transform: uppercase;
@@ -43,10 +43,10 @@
         display: block;
     }
     .down-arrow {
-        width: 50px;
+        width: 35px;
         position: absolute;
         bottom: 0;
-        margin-left: -25px;
+        margin-left: -15px;
         left: 50%;
     }
 }

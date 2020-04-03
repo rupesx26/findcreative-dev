@@ -79,6 +79,7 @@ import Footer from '../components/footer';
 import Navigation from '../components/navigation';
 //import { ScrollMagic } from 'scrollscene';
 //import {isMobile} from 'react-device-detect'; is for mobile devices
+import Pagination from '../components/verticalpagination';
 
 class Home extends Component {
   constructor(props) {
@@ -93,14 +94,17 @@ class Home extends Component {
       showSayHello: true,
       footerBgColor: 'dark',
       inversionColor: false,
-      footerActive: false
+      footerActive: false,
+      count: 0,
+      totalCount: 4,
+      hidePagination: true
     };
   }
 
   fullpageWrapper() {
     return (
       <ReactFullpage
-        scrollingSpeed={1800}
+        scrollingSpeed={1350}
         navigationTooltips={this.anchors}
         keyboardScrolling={true}
         touchSensitivity={100}
@@ -156,15 +160,81 @@ class Home extends Component {
   static getDerivedStateFromProps(props, state) {
     //console.log(props)
     //console.log(state)
+
+    if (state.currentSlide === 0) {
+      return {
+        hidePagination: true
+      };
+    }
+    if (state.currentSlide === 0 && state.currentDirection === 'up') {
+      return {
+        hidePagination: true
+      };
+    }
+    if (state.currentSlide === 1 && state.currentDirection === 'down') {
+      return {
+        count: 1,
+        hidePagination: false
+      };
+    }
+    if (state.currentSlide === 2 && state.currentDirection === 'down') {
+      return {
+        count: 2,
+        hidePagination: false
+      };
+    }
+    if (state.currentSlide === 3 && state.currentDirection === 'down') {
+      return {
+        count: 3,
+        hidePagination: false
+      };
+    }
+    if (state.currentSlide === 4 && state.currentDirection === 'down') {
+      return {
+        count: 4,
+        hidePagination: false
+      };
+    }
+    if (state.currentSlide === 1 && state.currentDirection === 'up') {
+      return {
+        count: 1,
+        hidePagination: false,
+        footerActive: true
+      };
+    }
+    if (state.currentSlide === 2 && state.currentDirection === 'up') {
+      return {
+        count: 2,
+        hidePagination: false,
+        footerActive: true
+      };
+    }
+    if (state.currentSlide === 3 && state.currentDirection === 'up') {
+      return {
+        count: 3,
+        hidePagination: false,
+        footerActive: true
+      };
+    }
+    if (state.currentSlide === 4 && state.currentDirection === 'up') {
+      return {
+        count: 4,
+        hidePagination: false,
+        toggleHeader: false,
+        footerActive: true
+      };
+    }
+
     if (state.currentSlide === 5 && state.currentDirection === 'down') {
       return {
         toggleHeader: true,
-        footerActive: true
+        footerActive: true,
+        hidePagination: true
       };
     } else {
       return {
         toggleHeader: false,
-        footerActive: false
+        hidePagination: false
       };
     }
     return null;
@@ -181,6 +251,11 @@ class Home extends Component {
         <Navigation
           toggleHeader={this.state.toggleHeader}
           showSayHello={this.state.showSayHello}
+        />
+        <Pagination
+          hidePagination={this.state.hidePagination}
+          totalCount={this.state.totalCount}
+          count={this.state.count}
         />
         <div className="home-page page-wrapper">{this.fullpageWrapper()}</div>
       </PageAnimWrapper>

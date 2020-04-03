@@ -49,14 +49,14 @@ class Footer extends Component {
           '-=0.1'
         );
     }
-    if (props.activeSlide === 4) {
-      // console.log('here==>',props)
-      animation2
-        .to('.copy-writes', 0.2, { opacity: 0, y: 50, ease: Power0.inOut })
-        .to('.footer-icons', 0.2, { opacity: 0, y: 50, ease: Power0.inOut })
-        .to('.footer-title', 0.5, { opacity: 0, y: 100, ease: Power0.inOut })
-        .to('.footer-subtitle', 0.5, { opacity: 0, y: 50, ease: Power0.inOut });
-    }
+    // if (props.activeSlide === 4) {
+    //   // console.log('here==>',props)
+    //   animation2
+    //     .to('.copy-writes', 0.2, { opacity: 0, y: 50, ease: Power0.inOut })
+    //     .to('.footer-icons', 0.2, { opacity: 0, y: 50, ease: Power0.inOut })
+    //     .to('.footer-title', 0.2, { opacity: 0, y: 100, ease: Power0.inOut })
+    //     .to('.footer-subtitle', 0.2, { opacity: 0, y: 50, ease: Power0.inOut });
+    // }
     return null;
   }
 
@@ -79,7 +79,12 @@ class Footer extends Component {
               </address>
               <span className="copy-writes">
                 © <span>{new Date().getFullYear()}</span>
-                <span className="space"></span> FINDCreative Avenues LLP.{' '}
+                <span className="space"></span>
+                <span>FINDCreative Avenues LLP. </span>
+                <span className="space"></span>
+                <span>
+                  <a href="">Privacy Policy</a>
+                </span>
               </span>
               <div className="footer-social-icons footer-icons">
                 <div className="icon-box">

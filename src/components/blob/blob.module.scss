@@ -21,7 +21,7 @@
     width: calc(100% - 30px);
     display:inline-block;
     height: calc(100% - 30px);
-    animation: bloblayer1 40s linear infinite;
+    animation: bloblayer1 30s linear infinite;
     position: absolute;
     top: 2em;
     left: -2em;
@@ -33,7 +33,7 @@
     display:inline-block;
     height: calc(100% - 50px);
     /*background-size:cover;*/
-    animation: bloblayer2 40s linear infinite;
+    animation: bloblayer2 30s linear infinite;
     position: absolute;
     top: 4em;
     right: 7em;
@@ -47,7 +47,7 @@
     border-width: 1px;
     border-style: solid;
     opacity: 0.1;
-    animation: bloblayer3 40s linear infinite;
+    animation: bloblayer3 30s linear infinite;
     position: absolute;
     top: 5em;
     left: -2em;
@@ -61,7 +61,7 @@
     // background:rgb(48, 195, 229);
     margin-top: 20%;
     /*background-size:cover;*/
-    animation: blob 40s linear infinite;
+    animation: blob 30s linear infinite;
     position: absolute;
     top: 0em;
     left: 0em;

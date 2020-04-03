@@ -30,38 +30,36 @@ class SubHeadingSlider extends Component {
     subtitleTimeline
       .fromTo(
         '.sub-slide-1',
-        1,
+        2,
         { opacity: 0, y: 20, ease: Power0.easeInOut },
         { opacity: 1, y: 0, ease: Power0.easeInOut },
         '+=1'
       )
       .to(
         '.sub-slide-1',
-        1,
+        2,
         { opacity: 0, y: -20, ease: Power0.easeInOut },
         '+=1'
       )
       .to(
         '.sub-slide-2',
-        1,
+        2,
         { opacity: 1, y: 0, ease: Power0.easeInOut },
         '+=1'
       )
-      .fromTo(
-        '.type-1',
-        1.5,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0 },
-        '+=.5'
-      )
-      .to('.type-1', 2, { opacity: 0, y: -20 }, '+=.6')
-      .to('.type-2', 2, { opacity: 1, y: 0 }, '+=.5')
-      .to('.type-2', 2, { opacity: 0, y: -20 }, '+=.6')
-      .to('.type-3', 2, { opacity: 1, y: 0 }, '+=.5')
-      .to('.type-3', 2, { opacity: 0, y: -20 }, '+=.6')
-      .to('.for-last', 0.5, { opacity: 0, y: -20 }, '+=.6')
-      .to('.last', 0.5, { opacity: 0, x: -35 }, '+=.5')
-      .to('.last', 2, { opacity: 1, y: 0 }, '+=.5')
+      .fromTo('.type-1', 2, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, '+=1')
+      .to('.type-1', 2.5, { opacity: 1 })
+      .to('.type-1', 2.5, { opacity: 0, y: -20 }, '+=1')
+      .to('.type-2', 2.5, { opacity: 1, y: 0 }, '+=1')
+      .to('.type-2', 2.5, { opacity: 1 })
+      .to('.type-2', 2.5, { opacity: 0, y: -20 }, '+=1')
+      .to('.type-3', 2.5, { opacity: 1, y: 0 }, '+=1')
+      .to('.type-3', 2.5, { opacity: 1 })
+      .to('.type-3', 2.5, { opacity: 0, y: -20 }, '+=1')
+      .to('.sub-slide-2', 1, { left: '-50px' })
+      .to('.for-last', 1, { opacity: 0, y: -20 }, '+=1')
+      .to('.last', 1, { opacity: 0, x: -35 }, '+=1')
+      .to('.last', 2.5, { opacity: 1, y: 0 }, '+=1')
       .to(
         '.sub-slide-2',
         1,

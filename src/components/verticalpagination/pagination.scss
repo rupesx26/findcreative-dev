@@ -1,5 +1,5 @@
 .carouse-pagination-wrapper {
-    position: absolute;
+    position: fixed;
     height: 230px;
     top: 50%;
     right: 4.16666667vw;
@@ -9,6 +9,15 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    transition-property: all;
+    transition-duration: 0.7s;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    &.deactive {
+        opacity: 0;
+    }
+    &.active {
+        opacity: 1;
+    }
     .slide-count {
         width: 100%;
         height: 20px;
@@ -31,9 +40,9 @@
             left: 0;
             top: 0;
             background-color: #000;
-            // transition-property: all;
-            // transition-duration: 0.5s;
-            // transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+            transition-property: all;
+            transition-duration: 0.7s;
+            transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
         }
     }
 }

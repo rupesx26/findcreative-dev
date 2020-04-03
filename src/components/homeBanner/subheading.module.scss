@@ -9,6 +9,8 @@
     font-family: 'Nexa-Light';
     word-spacing: 0.2em;
     margin-bottom: 1.8em;
+    position: relative;
+    z-index: 1000;
 }
 .animation-slide .slide {
     position: absolute;
