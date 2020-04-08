@@ -51,8 +51,9 @@ $break-large: 1441px;
  @mixin grid-generator($size, $grid-columns) {
 	@for $i from 1 through $grid-columns {
 		.col-#{$size}-#{$i} {
-			width: percentage($i / $grid-columns);
-			float: left;
+      width: percentage($i / $grid-columns);
+      //flex-basis: percentage($i / $grid-columns);
+			//flex: left;
 		}
 	}
 }
@@ -65,15 +66,15 @@ $break-large: 1441px;
  */
  @mixin respond-from($media) {
 	@if $media == xs {
-		@media (min-width: 0px)  { @content; }
+		@media screen and (min-width: 0px)  { @content; }
 	} @else if $media == sm {
-		@media (min-width: 768px) { @content; }
+		@media screen and (min-width: 768px) { @content; }
 	} @else if $media == md {
-		@media (min-width: 1200) { @content; }
+		@media screen and (min-width: 1200px) { @content; }
 	} @else if $media == lg {
-		@media (min-width: 1440) { @content; }
+		@media screen and (min-width: 1440px) { @content; }
 	} @else if $media == xl {
-		@media (min-width: 1800) { @content; }
+		@media screen and (min-width: 1800px) { @content; }
 	}
 }
 

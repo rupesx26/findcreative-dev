@@ -11,14 +11,17 @@ const LoadableHome = Loadable({
 
 const LoadableDifference = Loadable({
   loader: async () =>
-    await import(
-      /* webpackChunkName: 'about' */ './pages/difference/Difference'
-    ),
+    await import(/* webpackChunkName: 'difference' */ './pages/difference'),
   loading: () => <div>Loading...</div>
 });
 
 const LoadableWork = Loadable({
-  loader: () => import(/* webpackChunkName: 'services' */ './pages/work'),
+  loader: () => import(/* webpackChunkName: 'work' */ './pages/work'),
+  loading: () => <div>Loading...</div>
+});
+
+const LoadableConnect = Loadable({
+  loader: () => import(/* webpackChunkName: 'connect' */ './pages/connect'),
   loading: () => <div>Loading...</div>
 });
 
@@ -33,6 +36,7 @@ const Routes = () => {
       <Route exact path="/" component={LoadableHome} />
       <Route path="/difference" component={LoadableDifference} />
       <Route path="/work" component={LoadableWork} />
+      <Route path="/connect" component={LoadableConnect} />
       <Route component={LoadableNotFound} />
     </Switch>
   );

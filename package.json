@@ -96,6 +96,7 @@
     "sass-loader": "^8.0.0",
     "scrollmagic": "^2.0.7",
     "scrollscene": "0.0.12",
+    "smooth-scrollbar": "^8.5.2",
     "style-loader": "^1.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.3",

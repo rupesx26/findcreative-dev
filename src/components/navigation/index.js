@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TimelineMax, Power0, Power2, Power1 } from 'gsap/dist/gsap';
+import { TimelineMax, Power0, Power2, Power1 } from 'gsap';
 import { imagePath } from '../../utils/assetUtils';
 import { Link } from 'react-router-dom';
 import SayHello from '../sayhello';
@@ -91,21 +91,6 @@ class Navigation extends Component {
   //     return null
   //    }
 
-  static getDerivedStateFromProps(props, state) {
-    // console.log(props)
-    // console.log(state)
-    if (props.toggleHeader) {
-      return {
-        colorUpdate: 'light'
-      };
-    } else {
-      return {
-        colorUpdate: 'dark'
-      };
-    }
-    return null;
-  }
-
   menuListAnimation() {
     return menu.map((val, index) => {
       const delay = 0.3 + index / 10;
@@ -127,7 +112,8 @@ class Navigation extends Component {
         toggleMenu: !this.state.menuOpen ? 'menu-open' : 'menu-close',
         logoClass: !this.state.menuOpen
           ? 'fca-white handleClick'
-          : 'fca-white handleClick'
+          : 'fca-white handleClick',
+        colorUpdate: !this.state.menuOpen ? 'light' : 'dark'
       });
     } else if (!this.props.toggleHeader) {
       this.setState({
@@ -135,7 +121,8 @@ class Navigation extends Component {
         toggleMenu: !this.state.menuOpen ? 'menu-open' : 'menu-close',
         logoClass: !this.state.menuOpen
           ? 'fca-white handleClick2'
-          : 'fca-black handleClick2'
+          : 'fca-black handleClick2',
+        colorUpdate: !this.state.menuOpen ? 'light' : 'dark'
       });
     } else {
       this.setState({
@@ -143,7 +130,8 @@ class Navigation extends Component {
         toggleMenu: !this.state.menuOpen ? 'menu-open' : 'menu-close',
         logoClass: !this.state.menuOpen
           ? 'fca-white handleClick3'
-          : 'fca-black handleClick3'
+          : 'fca-black handleClick3',
+        colorUpdate: !this.state.menuOpen ? 'light' : 'dark'
       });
     }
     //console.log(this.state.logoClass)
@@ -167,6 +155,23 @@ class Navigation extends Component {
     this.isVisible = !this.state.menuOpen ? 'isVisible' : '';
   }
 
+  static getDerivedStateFromProps(props, state) {
+    //console.log(props)
+    //console.log(state)
+    if (props.toggleHeader || state.toggleMenu === 'menu-open') {
+      return {
+        colorUpdate: 'light',
+        logoClass: 'fca-white'
+      };
+    } else {
+      return {
+        colorUpdate: 'dark',
+        logoClass: 'fca-black'
+      };
+    }
+    return null;
+  }
+
   renderMenuList() {
     return menu.map((val, index) => {
       const links = val.toLowerCase();
@@ -186,7 +191,6 @@ class Navigation extends Component {
   }
 
   render() {
-    //console.log('render==>', this.state.logoClass)
     return (
       <nav className={`fca-navigation ${this.state.toggleMenu}`}>
         <div className="nav-view">

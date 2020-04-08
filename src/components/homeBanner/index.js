@@ -5,16 +5,7 @@ import './homebanner.scss';
 import Blob from '../blob/Blob';
 import { imagePath } from '../../utils/assetUtils';
 
-import {
-  TimelineMax,
-  TimelineLite,
-  Power0,
-  Power1,
-  Power2,
-  Power3,
-  Power4,
-  TweenMax
-} from 'gsap/dist/gsap';
+import { TimelineMax, Power0 } from 'gsap';
 
 class Banner extends Component {
   constructor(props) {

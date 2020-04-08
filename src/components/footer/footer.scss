@@ -2,7 +2,7 @@ $base: 0.8rem;
 
 
 .page-footer {
-    position: fixed;
+    
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -19,7 +19,10 @@ $base: 0.8rem;
         transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
         top: 0;
         left: 0;
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        &.footerAnimation {
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        }
+        
         &.dark {
             background-color: rgb(0, 0, 0);
             color: #fff;

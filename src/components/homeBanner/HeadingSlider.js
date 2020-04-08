@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  TweenMax,
-  TimelineLite,
-  TimelineMax,
-  Power0,
-  Expo
-} from 'gsap/dist/gsap';
+import { TweenMax, TimelineLite, TimelineMax, Power0, Expo } from 'gsap';
 import styles from './heading.module.scss';
 import Blob from '../blob/Blob';
 

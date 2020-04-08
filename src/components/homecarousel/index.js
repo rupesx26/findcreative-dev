@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  TimelineMax,
-  Power0,
-  Power1,
-  Power2,
-  Power3,
-  Power4,
-  TweenMax
-} from 'gsap/dist/gsap';
+import { TimelineMax, Power0, Power1, Power3, Power4 } from 'gsap';
 import { workImagePath } from '../../utils/assetUtils';
 import './wrapper.scss';
 
@@ -22,10 +14,10 @@ class HomeCarousel extends Component {
     this.slideAnimation3 = new TimelineMax();
     this.slideAnimation4 = new TimelineMax();
     this.footerAnimation = new TimelineMax();
-    this.image1 = workImagePath('hrx.jpg');
-    this.image2 = workImagePath('nihar-gold.jpg');
-    this.image3 = workImagePath('coco-soul.jpg');
-    this.image4 = workImagePath('sussegado.jpg');
+    this.image1 = workImagePath('hrx-tile.jpg');
+    this.image2 = workImagePath('nihargold-tile.jpg');
+    this.image3 = workImagePath('cocosoul-tile.jpg');
+    this.image4 = workImagePath('sussegado-tile.jpg');
   }
 
   componentDidMount() {

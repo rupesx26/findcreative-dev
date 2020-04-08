@@ -2,27 +2,30 @@ import React, { Component } from 'react';
 import Icon from '../icons';
 
 import './footer.scss';
-import { TimelineMax, Power0, Power2, Power1 } from 'gsap/dist/gsap';
+import { TimelineMax, Power0 } from 'gsap';
 
 class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      footerBgColor: this.props.footerBgColor
+      footerBgColor: this.props.footerBgColor,
+      fullpageAnimationStatus: this.props.fullpageAnimation
     };
   }
   componentDidMount() {
-    const animation2 = new TimelineMax();
-    animation2
-      .to('.footer-subtitle', 0, { opacity: 0, y: 100 })
-      .to('.footer-title', 0, { opacity: 0, y: 50 })
-      .to('.copy-writes', 0, { opacity: 0, y: 50 })
-      .to('.footer-icons', 0, { opacity: 0, y: 50 });
+    if (this.state.fullpageAnimationStatus) {
+      const animation2 = new TimelineMax();
+      animation2
+        .to('.footer-subtitle', 0, { opacity: 0, y: 100 })
+        .to('.footer-title', 0, { opacity: 0, y: 50 })
+        .to('.copy-writes', 0, { opacity: 0, y: 50 })
+        .to('.footer-icons', 0, { opacity: 0, y: 50 });
+    }
   }
 
   static getDerivedStateFromProps(props, state) {
     const animation2 = new TimelineMax();
-    if (props.footerActive) {
+    if (props.footerActive && state.fullpageAnimationStatus) {
       animation2
         .to(
           '.footer-subtitle',
@@ -49,14 +52,6 @@ class Footer extends Component {
           '-=0.1'
         );
     }
-    // if (props.activeSlide === 4) {
-    //   // console.log('here==>',props)
-    //   animation2
-    //     .to('.copy-writes', 0.2, { opacity: 0, y: 50, ease: Power0.inOut })
-    //     .to('.footer-icons', 0.2, { opacity: 0, y: 50, ease: Power0.inOut })
-    //     .to('.footer-title', 0.2, { opacity: 0, y: 100, ease: Power0.inOut })
-    //     .to('.footer-subtitle', 0.2, { opacity: 0, y: 50, ease: Power0.inOut });
-    // }
     return null;
   }
 
@@ -64,8 +59,13 @@ class Footer extends Component {
     const footerBgColor =
       this.state.footerBgColor === 'dark' ? 'dark' : 'light';
     return (
-      <section className="page-footer section">
-        <div id="footer-view" className={footerBgColor}>
+      <section className="page-footer section" id="fca-footer">
+        <div
+          id="footer-view"
+          className={`${
+            this.state.fullpageAnimation ? 'footerAnimation' : ' '
+          }${footerBgColor}`}
+        >
           <div className="inside-wrapper">
             <div className="page-footer-wrapper">
               <div className="page-footer-content">{this.props.children}</div>

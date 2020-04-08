@@ -68,7 +68,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { TimelineMax, Power0, Power2, Power1 } from 'gsap/dist/gsap';
+import { TimelineMax } from 'gsap';
 
 //Import Components
 import Head from './Head';
@@ -97,7 +97,8 @@ class Home extends Component {
       footerActive: false,
       count: 0,
       totalCount: 4,
-      hidePagination: true
+      hidePagination: true,
+      fullpageAnimation: true
     };
   }
 
@@ -128,6 +129,7 @@ class Home extends Component {
                 toggleHeader={this.state.toggleHeader}
               />
               <Footer
+                fullpageAnimation={this.state.fullpageAnimation}
                 activeSlide={this.state.currentSlide}
                 direction={this.state.currentDirection}
                 footerBgColor={this.state.footerBgColor}

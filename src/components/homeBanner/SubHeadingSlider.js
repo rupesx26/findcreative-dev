@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TweenMax, TimelineLite, TimelineMax, Power0 } from 'gsap/dist/gsap';
+import { TweenMax, TimelineLite, TimelineMax, Power0 } from 'gsap';
 import styles from './subheading.module.scss';
 class SubHeadingSlider extends Component {
   constructor(props) {
