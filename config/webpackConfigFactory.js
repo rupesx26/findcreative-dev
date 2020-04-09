@@ -156,23 +156,32 @@ module.exports = function(envType) {
       }
     ].filter(Boolean)
   };
-
-  config.optimization = IS_DEV
-    ? {}
-    : {
-        minimizer: [
-          new UglifyJsPlugin({
-            parallel: true,
-            sourceMap: true,
-            uglifyOptions: {
-              output: {
-                comments: false
+  (config.resolve = {
+    modules: ['node_modules'],
+    alias: {
+      'debug.addIndicators': path.resolve(
+        'node_modules',
+        'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js'
+      )
+    },
+    extensions: ['.js', '.jsx', '.json', '.scss']
+  }),
+    (config.optimization = IS_DEV
+      ? {}
+      : {
+          minimizer: [
+            new UglifyJsPlugin({
+              parallel: true,
+              sourceMap: true,
+              uglifyOptions: {
+                output: {
+                  comments: false
+                }
               }
-            }
-          }),
-          new OptimizeCSSAssetsPlugin({})
-        ]
-      };
+            }),
+            new OptimizeCSSAssetsPlugin({})
+          ]
+        });
 
   config.plugins = [
     new webpack.DefinePlugin(env.forWebpackDefinePlugin),

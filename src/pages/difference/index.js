@@ -6,10 +6,23 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-
+import {
+  TimelineMax,
+  TimelineLite,
+  TweenMax,
+  Power2,
+  Linear,
+  Power1,
+  Power4,
+  Power0
+} from 'gsap';
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
+//import 'debug.addIndicators';
 class About extends Component {
   constructor(props) {
     super(props);
+    this.ScrollMagic = null;
+    this.controller = null;
     this.mainWrapper = React.createRef();
     this.footerWrapper = React.createRef();
     this.handleScroll = this.handleScroll.bind(this);
@@ -21,6 +34,37 @@ class About extends Component {
   }
 
   componentDidMount() {
+    require('debug.addIndicators');
+
+    this.ScrollMagic = require('scrollmagic');
+    this.controller = new this.ScrollMagic.Controller();
+    ScrollMagicPluginGsap(this.ScrollMagic, TweenMax, TimelineMax);
+
+    TweenMax.from('.char-img', 1.5, {
+      autoAlpha: 0.1,
+      scale: 1.5,
+      y: 0,
+      ease: Power2.easeOut
+    });
+    TweenMax.fromTo(
+      '.char-img',
+      2.8,
+      { y: 0 },
+      { y: 120, repeat: -1, yoyo: true, ease: Linear.easeNone }
+    );
+
+    const animation2 = new TimelineLite().fromTo(
+      '.fold-1',
+      1,
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, ease: Power4.easeOut },
+      '-=.95'
+    );
+
+    new this.ScrollMagic.Scene({ triggerElement: '.fold-1', reverse: true })
+      .setTween(animation2)
+      .addTo(this.controller);
+    //.addIndicators()
     window.addEventListener('scroll', this.handleScroll);
   }
   componentWillUnmount() {
@@ -61,7 +105,7 @@ class About extends Component {
             ref={this.mainWrapper}
           >
             <h1 className={styles.title}>About page</h1>
-            <h1>Scrolling inside sections</h1>
+            <h1 className="char-img">Scrolling inside sections</h1>
             <p>
               Eu nec ferri molestie consequat, vel at alia dolore putant. Labore
               philosophia ut vix. In vis nostrud interesset appellantur, vis et
@@ -118,6 +162,18 @@ class About extends Component {
               percipitur no, sed errem maiestatis te. Sed porro epicuri te, ad
               nam malorum verterem. Ea zril aliquip euismod sed. test2
             </p>
+            <div
+              className="fold-1"
+              style={{ height: '300px', border: '4px solid red' }}
+            >
+              <p>
+                olumus definitionem mel ne. Nobis audiam civibus ius at. Ei eum
+                hinc mutat inciderint. Cu maluisset assentior per, graecis
+                ponderum no mel. Eum eu vitae quando gloriatur, cum graece
+                percipitur no, sed errem maiestatis te. Sed porro epicuri te, ad
+                nam malorum verterem. Ea zril aliquip euismod sed. test2
+              </p>
+            </div>
             <p>
               Eu nec ferri molestie consequat, vel at alia dolore putant. Labore
               philosophia ut vix. In vis nostrud interesset appellantur, vis et

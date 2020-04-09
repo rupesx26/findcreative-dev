@@ -9,7 +9,6 @@ import Hamburger from './hamburger';
 import Icon from '../icons';
 
 import './navigation.scss';
-import { P } from '@fullpage/react-fullpage';
 
 const menu = ['Difference', 'Work', 'Connect'];
 

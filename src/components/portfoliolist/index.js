@@ -106,7 +106,9 @@ class PortfolioList extends Component {
   }
 
   componentDidMount() {
-    this.pageAmimation();
+    if (typeof window !== 'undefined') {
+      this.pageAmimation();
+    }
   }
 
   pageAmimation() {

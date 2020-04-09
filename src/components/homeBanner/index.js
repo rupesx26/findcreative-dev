@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SubHeadingSlider from './SubHeadingSlider';
 import HeadingSlider from './HeadingSlider';
 import './homebanner.scss';
-import Blob from '../blob/Blob';
 import { imagePath } from '../../utils/assetUtils';
 
 import { TimelineMax, Power0 } from 'gsap';

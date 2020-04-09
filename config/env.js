@@ -36,17 +36,6 @@ function getAppEnv() {
   return { raw, forIndexHtml, forWebpackDefinePlugin };
 }
 
-const mySpecialWindowFunction = () => {
-  /* START HACK */
-  if (!process.env.BROWSER) {
-    global.window = {}; // Temporarily define window for server-side
-  }
-  /* END HACK */
-
-  return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-};
-
 module.exports = {
-  getAppEnv,
-  mySpecialWindowFunction
+  getAppEnv
 };
