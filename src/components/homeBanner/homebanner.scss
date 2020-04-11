@@ -1,6 +1,11 @@
+@import '../../styles/mixins';
+
 .banner-wrapper {
     height: 100vh;
     position: relative;
+    @include respond-until(sm) {
+        // height: 70vh;
+    }
 }
 
 .banner-wrapper .row {
@@ -14,6 +19,7 @@
     align-items: center;
     padding-bottom: 20vh;
     position: relative;
+    
 }
 
 .banner-wrapper .banner .view {
@@ -21,7 +27,6 @@
     flex-direction: column;
     width: 100%;
 }
-
 .scroll-down {
     position: absolute;
     right: 2em;
@@ -30,10 +35,17 @@
     text-align: center;
     height: 130px;
     cursor: pointer;
+    z-index: 5;
     opacity: 0;
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     transition: all .7s ease-in-out;
     padding-top: 20px;
+    @include respond-until(sm) {
+        right: 50%;
+        margin-right: -80px;
+        height: 95px;
+        width: 160px;
+    }
     .text {
         font: 600 .7em/18px Work Sans;
         letter-spacing: 5.45px;
@@ -41,6 +53,9 @@
         text-transform: uppercase;
         transform: rotate(90deg);
         display: block;
+        @include respond-until(sm) {
+            transform: rotate(0deg);
+        }
     }
     .down-arrow {
         width: 35px;
@@ -48,5 +63,8 @@
         bottom: 0;
         margin-left: -15px;
         left: 50%;
+        @include respond-until(sm) {
+            margin-left: -19px;
+        }
     }
 }

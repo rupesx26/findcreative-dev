@@ -1,0 +1,53 @@
+
+@import '../../styles/mixins';
+
+.sub-head-banner {
+    margin-bottom: 1.3em;
+    @include respond-until(sm) {
+        padding: 0 5vw;
+    }
+}
+.sub-head-banner .sub-title {
+    font-size: 1.4vw;
+    line-height: 1;
+    color: #000000;
+    font-family: 'Nexa-Light';
+    word-spacing: 0.2em;
+    margin-bottom: 1.8em;
+    position: relative;
+    z-index: 1000;
+
+    @include respond-until(sm) {
+        font-size:1.1em;
+        text-align: left;
+        display: block;
+        word-spacing: 0.1em;
+    }
+}
+.animation-slide {
+    .slideWrap {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        @include respond-until(sm) {
+            position: relative;
+            text-align: left;
+            display: block;
+        }
+    }
+}
+
+.type {
+    position: absolute;
+    @include respond-until(sm) {
+        position: unset;
+    }
+}
+
+.mobile-subhead-wrapper {
+    .slide-mob{
+        position: absolute;
+        line-height: 1.4;
+    }
+}

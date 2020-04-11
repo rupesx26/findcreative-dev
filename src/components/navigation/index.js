@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TimelineMax, Power0, Power2, Power1 } from 'gsap';
+import { TimelineMax, Power0, Power1 } from 'gsap';
 import { imagePath } from '../../utils/assetUtils';
 import { Link } from 'react-router-dom';
 import SayHello from '../sayhello';
@@ -168,7 +168,6 @@ class Navigation extends Component {
         logoClass: 'fca-black'
       };
     }
-    return null;
   }
 
   renderMenuList() {
@@ -231,13 +230,18 @@ class Navigation extends Component {
 
         <div className="footer-social-icons nav-icons menu-social-icons">
           <div className="icon-box">
-            <a target="_blank" href="https://www.facebook.com/findcreative.in/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/findcreative.in/"
+            >
               <Icon icon="facebook" />
             </a>
           </div>
           <div className="icon-box">
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.instagram.com/findcreativeave/"
             >
               <Icon icon="instagram" />
@@ -246,13 +250,18 @@ class Navigation extends Component {
           <div className="icon-box">
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://www.linkedin.com/company/13384828/admin/"
             >
               <Icon icon="linkedin2" />
             </a>
           </div>
           <div className="icon-box">
-            <a target="_blank" href="https://twitter.com/findcreativeave">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/findcreativeave"
+            >
               <Icon icon="twitter" />
             </a>
           </div>

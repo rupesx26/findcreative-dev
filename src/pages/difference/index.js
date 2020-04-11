@@ -12,9 +12,7 @@ import {
   TweenMax,
   Power2,
   Linear,
-  Power1,
-  Power4,
-  Power0
+  Power4
 } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 //import 'debug.addIndicators';

@@ -1,0 +1,50 @@
+
+@import '../../styles/mixins';
+
+.head-banner {
+    .title {
+        font-size: 6.5vw;
+        text-align: center;
+        color: #000000;
+        margin: 0 auto;
+        line-height: 1;
+        font-family: 'Nexa-bold';
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: -.01783333em;
+        // width: 49vw;
+        position: relative;
+        @include respond-until(sm) {
+            font-size: 2.5em;
+            text-emphasis: left;
+        }
+    }
+    
+} 
+.animation-slide-head {
+
+    .slide-wrap {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        opacity: 0;
+        @include respond-until(sm) {
+            padding: 0 0.3em;
+        }
+        &.head-slide-4 {
+            @include respond-until(sm) {
+                opacity: 1;
+                text-align: left;
+            }
+        }
+        div {
+            display: inline-block; 
+            opacity: 0;
+            @include respond-until(sm) {
+                opacity: 1;
+            }
+        }
+    }
+}
+

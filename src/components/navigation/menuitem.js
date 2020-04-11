@@ -14,13 +14,13 @@ class MenuItem extends Component {
   }
 
   render() {
-    const styles = {
-      pos: {
-        opacity: this.state.hover ? '1' : '0',
-        bottom: this.state.hover ? '67%' : '60%',
-        transition: 'all 0.4s ease-in-out'
-      }
-    };
+    // const styles = {
+    //   pos: {
+    //     opacity: this.state.hover ? '1' : '0',
+    //     bottom: this.state.hover ? '67%' : '60%',
+    //     transition: 'all 0.4s ease-in-out'
+    //   }
+    // };
 
     return (
       <li className="list-item-wrapper">

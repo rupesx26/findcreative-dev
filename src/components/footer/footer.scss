@@ -1,3 +1,4 @@
+@import '../../styles/mixins';
 $base: 0.8rem;
 
 
@@ -65,6 +66,9 @@ $base: 0.8rem;
                         position: relative;
                         color: #e91c23;
                         line-height: 1.04;
+                        @include respond-until(sm) { 
+                            font-size: 3.5em;
+                        }
                         &:before {
                             content: attr(data-text);
                             position: absolute;
@@ -103,8 +107,11 @@ $base: 0.8rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    @include respond-until(sm) {
+        flex-direction: column;
+    } 
     address {
         font-style: normal;
         font-weight: 300;
@@ -112,9 +119,13 @@ $base: 0.8rem;
         width: 15%;
         display: flex;
         flex-direction: column;
+        height: 10px;
         span {
             font-weight: 500;
-        }   
+        }  
+        @include respond-until(sm) {
+            display: none;
+        } 
     }
 
     .copy-writes {
@@ -125,6 +136,10 @@ $base: 0.8rem;
         font-family: 'Work Sans', sans-serif;
         display: flex;
         justify-content: center;
+        @include respond-until(sm) {
+            display: block;
+            width: 100%;
+        } 
         .space {
             display: inline-block;
             width: 5px;
@@ -140,8 +155,14 @@ $base: 0.8rem;
         width: 15%;
         text-align: center;
         display: flex;
-        justify-content: right;
+        justify-content: center;
         cursor: pointer;
+        align-content: flex-end;  
+        @include respond-until(sm) {
+            width: 100%;
+            align-content: flex-start;
+            margin-bottom: 2em;
+        }
         .icon-box {
             /* display: flex; */
             flex-basis: 22%;
@@ -149,6 +170,10 @@ $base: 0.8rem;
             text-align: right;
             svg {
                 width: 15px;
+            }
+            @include respond-until(sm) {
+                justify-content: center;
+                text-align: center;
             }
         }
     }

@@ -1,3 +1,4 @@
+@import '../../styles/mixins';
 .carouse-pagination-wrapper {
     position: fixed;
     height: 230px;
@@ -12,6 +13,9 @@
     transition-property: all;
     transition-duration: 0.7s;
     transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    @include respond-until(sm) { 
+        display: none;
+    }
     &.deactive {
         opacity: 0;
     }

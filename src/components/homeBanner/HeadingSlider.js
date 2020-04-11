@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { TweenMax, TimelineLite, TimelineMax, Power0, Expo } from 'gsap';
-import styles from './heading.module.scss';
+import { isMobile } from 'react-device-detect'; //is for mobile devices
+import './heading.scss';
 import Blob from '../blob/Blob';
 
 // * to create is to unite
@@ -22,8 +23,10 @@ class HeadingSlider extends Component {
   }
 
   componentDidMount() {
-    this.bannerAnimationHead();
-    this.blobAnimation();
+    if (!isMobile) {
+      this.bannerAnimationHead();
+      this.blobAnimation();
+    }
   }
 
   bannerAnimationHead() {
@@ -372,7 +375,7 @@ class HeadingSlider extends Component {
 
   render() {
     return (
-      <div className={styles.headBanner}>
+      <div className="head-banner">
         <Blob
           thinline={false}
           blobAnimClass="banner-blob"
@@ -383,10 +386,10 @@ class HeadingSlider extends Component {
           bb2BgColor="#ccdef2"
           bb3BgColor="#ccdef2"
         />
-        <div className={styles.title}>
-          <div className={styles.animationSlideHead}>
+        <div className="title">
+          <div className="animation-slide-head">
             <h1>
-              <div className={`${styles.slide} head-slide-1`}>
+              <div className="slide-wrap head-slide-1">
                 <div>to&nbsp;</div>
                 <div>create&nbsp;</div>
                 <div>is&nbsp;</div>
@@ -394,19 +397,19 @@ class HeadingSlider extends Component {
                 <div>to&nbsp;</div>
                 <div className="uniq">unite</div>
               </div>
-              <div className={`${styles.slide} head-slide-2`}>
+              <div className="slide-wrap head-slide-2">
                 <div>now&nbsp;</div>
                 <div>is&nbsp;</div>
                 <div className="uniq">everything</div>
               </div>
-              <div className={`${styles.slide} head-slide-3`}>
+              <div className="slide-wrap head-slide-3">
                 <div>we&nbsp;</div>
                 <div>make&nbsp;</div>
                 <div>product&nbsp;</div>
                 <div>and&nbsp;</div> <div>package&nbsp;</div>
                 <div className="uniq">design</div>
               </div>
-              <div className={`${styles.slide} head-slide-4`}>
+              <div className="slide-wrap head-slide-4">
                 <div>we&nbsp;</div>
                 <div>make&nbsp;</div>
                 <div>branding&nbsp;</div>
@@ -414,7 +417,7 @@ class HeadingSlider extends Component {
                 <div>digital&nbsp;</div>
                 <div className="uniq">content</div>
               </div>
-              <div className={`${styles.slide} head-slide-5`}>
+              <div className="slide-wrap head-slide-5">
                 <div className="uniq">audit&nbsp;</div>
                 <div>and&nbsp;</div>
                 <div>research&nbsp;</div>
@@ -424,14 +427,14 @@ class HeadingSlider extends Component {
                 <div className="uniq">great&nbsp;</div>
                 <div>design</div>
               </div>
-              <div className={`${styles.slide} head-slide-6`}>
+              <div className="slide-wrap head-slide-6">
                 <div>our&nbsp;</div>
                 <div>strategy&nbsp;</div>
                 <div>is&nbsp;</div>
                 <div>always&nbsp;</div>
                 <div className="uniq">design-led</div> 
               </div>
-              <div className={`${styles.slide} head-slide-7`}>
+              <div className="slide-wrap head-slide-7">
                 <div>our&nbsp;</div>
                 <div>approach&nbsp;</div>
                 <div>is&nbsp;</div>
@@ -440,7 +443,7 @@ class HeadingSlider extends Component {
                 <div>&amp;&nbsp;</div>
                 <div className="uniq">execute</div>
               </div>
-              <div className={`${styles.slide} head-slide-8`}>
+              <div className="slide-wrap head-slide-8">
                 <div>branding&nbsp;</div>
                 <div>is&nbsp;</div>
                 <br />
@@ -448,7 +451,7 @@ class HeadingSlider extends Component {
                 <div className="uniq">middle&nbsp;</div>
                 <div>name</div>
               </div>
-              <div className={`${styles.slide} head-slide-9`}>
+              <div className="slide-wrap head-slide-9">
                 <div>crazy&nbsp;</div>
                 <div>client&nbsp;</div>
                 <div>brings&nbsp;</div>

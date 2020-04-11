@@ -10,9 +10,9 @@ body {
   margin: 0;
  text-rendering: optimizeLegibility;
 }
-// body::-webkit-scrollbar { 
-//   display: none; 
-// }
+body::-webkit-scrollbar { 
+  display: none; 
+}
 
 #root {
   min-height: 100%;
@@ -110,3 +110,23 @@ img {
 .none {
   display: none!important;
 }
+
+@include respond-until(sm) {
+  .home-page {
+    overflow-x: hidden;
+  }
+}
+
+.scrollbar-thumb {
+  background-color: rgba($color: #ccc, $alpha: 0.4)!important;
+}
+
+.main {
+  overflow: hidden;
+}
+
+// .fp-auto-height.fp-section,
+// .fp-auto-height .fp-slide,
+// .fp-auto-height .fp-tableCell{
+//     height: auto !important;
+// }

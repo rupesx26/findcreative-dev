@@ -46,7 +46,10 @@
     // position: absolute!important;
     width: 100%;
     height: 100%;
-    background-color: #fff;  
+    background-color: #fff;
+    @include respond-until(sm) {
+        height: 100vh;
+    }
 }
 .carousel-wrapper {
     pointer-events: none;
@@ -62,6 +65,10 @@
     display: -ms-flexbox;
     display: flex;
     z-index: 2;
+    @include respond-until(sm) {
+        position: unset;
+        transform: none;
+    }
     a {
         pointer-events: auto;
         width: 100%;
@@ -72,7 +79,12 @@
             padding: 0 8.33333333vw 0 16.66666667vw;
             display: flex;
             align-items: center;
-            
+            @include respond-until(sm) {
+                padding: 0;
+                height: 100vh;
+                width: 100%;
+                flex-direction: column;
+            }
             .carousel-left-content {
                 width: calc(25.33333333vw + 33px);
                 z-index: 1;
@@ -84,10 +96,19 @@
                 @include respond-until(xlg) {
                    width: calc(25vw + 33px);
                   }
+
+                @include respond-until(sm) {
+                    width: 100%;
+                    height: 100%;
+                }
+                
                 &:after {
                     content: '';
                     display: block;
                     padding-bottom: 135.93%;
+                    @include respond-until(sm) {
+                        padding-bottom: 0;
+                    }
                 }
                 .carousel-img-clip {
                     background-color: coral;
@@ -99,6 +120,9 @@
                     transition-property: all;
                     transition-duration: 0.5s;
                     transition-timing-function: cubic-bezier(0,.61,.57,.99);
+                    @include respond-until(sm) {
+                        position: unset;
+                    }
                     .img-container  {
                         width: 100%;
                         height: 100%;
@@ -120,11 +144,20 @@
                 transition-duration: 0.5s;
                 transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
                 margin-top: -10%;
+                @include respond-until(sm) {
+                    margin-top: 0;
+                    margin-bottom: 5vh;
+                    width: 100%;
+                    padding: 1em 1.3em;
+                }
                 .project-content{
                     opacity: 0;
                     transition-property: all;
                     transition-duration: 1s;
                     transition-timing-function: cubic-bezier(0,.96,.38,.16);
+                    @include respond-until(sm) {
+                        opacity: 1;
+                    }
                 }
                 .project-title {
                     position: absolute;
@@ -138,6 +171,11 @@
                     transition-timing-function: cubic-bezier(0,.61,.57,.99);
                     opacity: 0;
                     //transform: translate3d(0, -50%, 0);
+                    @include respond-until(sm) {
+                        position: unset;
+                        opacity: 1;
+                        font-size: 2em;
+                    }
                 }
                 .project-type {
                     font-size: 1.3vw;
@@ -149,6 +187,11 @@
                     transition-timing-function: cubic-bezier(0,.61,.57,.99);
                     //transform: translate3d(0, -45%, 0);
                     opacity: 0;
+                    @include respond-until(sm) {
+                        position: unset;
+                        opacity: 1;
+                        font-size: 1em;
+                    }
                 }
             }
         }

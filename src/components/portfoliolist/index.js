@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { gsap, TimelineMax, TweenMax, Power1, Power4, Power0 } from 'gsap';
-import { ScrollScene, addIndicators } from 'scrollscene';
+import { TimelineMax, TweenMax, Power1, Power4, Linear } from 'gsap';
+import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 
 import { workImagePath } from '../../utils/assetUtils';
 
 class PortfolioList extends Component {
   constructor(props) {
     super(props);
+    this.ScrollMagic = null;
+    this.controller = null;
     this.pageAmimation = this.pageAmimation.bind(this);
     this.HrithikRoshanTile = workImagePath('hrx-tile.jpg');
     this.NiharGoldTile = workImagePath('nihargold-tile.jpg');
     this.KateSpadeTile = workImagePath('katespade-tile.jpg');
-    this.ThambbiTile = workImagePath('thambbi-tile.jpg');
+    this.ThambbiTile = workImagePath('thambbi-tile-2.jpg');
     this.HeroTalkiesTile = workImagePath('herotalkies-tile.jpg');
     this.CocoSoulTile = workImagePath('cocosoul-tile.jpg');
     this.SussegadoCoffeeTile = workImagePath('sussegado-tile.jpg');
@@ -106,9 +108,11 @@ class PortfolioList extends Component {
   }
 
   componentDidMount() {
-    if (typeof window !== 'undefined') {
-      this.pageAmimation();
-    }
+    require('debug.addIndicators');
+    this.ScrollMagic = require('scrollmagic');
+    this.controller = new this.ScrollMagic.Controller();
+    ScrollMagicPluginGsap(this.ScrollMagic, TweenMax, TimelineMax);
+    this.pageAmimation();
   }
 
   pageAmimation() {
@@ -131,13 +135,13 @@ class PortfolioList extends Component {
             {
               y: 0,
               clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-              ease: Power1.easeOut
+              ease: Linear.easeNone
             },
             '+=200'
           )
           .to(`#${item.route}.work-wrapper-0`, 1, {
             x: 0,
-            y: -30,
+            //y: -30,
             z: 0,
             ease: Power4.easeInOut
           })
@@ -151,7 +155,12 @@ class PortfolioList extends Component {
           .to(
             `#${item.route}.work-wrapper-1`,
             1,
-            { x: 0, y: -30, z: 0, ease: Power4.easeInOut },
+            {
+              x: 0,
+              //y: -30,
+              z: 0,
+              ease: Power4.easeInOut
+            },
             '-=1'
           )
           .to(
@@ -160,7 +169,7 @@ class PortfolioList extends Component {
             {
               y: 0,
               clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-              ease: Power1.easeOut
+              ease: Linear.easeNone
             },
             '-=5'
           )
@@ -170,44 +179,74 @@ class PortfolioList extends Component {
             { y: 0, opacity: 1, ease: Power1.easeInOut },
             '+=1'
           );
+      });
 
+      new this.ScrollMagic.Scene({
+        triggerElement: slidesWrapper[idx],
+        triggerHook: 1,
+        duration: '50%',
+        reverse: false
+      })
+        .setTween(animationType)
+        .addTo(this.controller);
+      // .addIndicators({
+      //   colorTrigger: "black",
+      //   colorStart: "black",
+      //   colorEnd: "black",
+      //   indent: 10
+      // })
+
+      if (idx % 2) {
         animationTypeTwo
           .fromTo(
-            `#${item.route}.work-wrapper-0`,
-            0.5,
-            { y: 0 },
-            { y: -80, ease: Power0.easeInOut }
+            `._block-${idx} .work-wrapper-0`,
+            1,
+            { y: -50 },
+            { y: -20, ease: Linear.easeNone }
           )
           .fromTo(
-            `#${item.route}.work-wrapper-1`,
-            0.5,
-            { y: 0 },
-            { y: -70, ease: Power0.easeInOut }
+            `._block-${idx} .work-wrapper-1`,
+            1,
+            { y: 120 },
+            { y: 50, ease: Linear.easeNone }
           );
-
-        const workScroll2 = new ScrollScene({
-          triggerElement: document.getElementById(item.route),
-          triggerHook: 0.2,
-          //duration: 1000,
-          gsap: {
-            timeline: animationTypeTwo,
-            reverseSpeed: 1
-          }
-        });
-
-        const workScroll = new ScrollScene({
-          triggerElement: document.getElementById(item.route),
+        new this.ScrollMagic.Scene({
+          triggerElement: slidesWrapper[idx],
           triggerHook: 1,
-          duration: 300,
-          reverse: false,
-          scene: {
-            reverse: false
-          },
-          gsap: {
-            timeline: animationType
-          }
-        });
-      });
+          duration: '80%',
+          reverse: true
+        })
+          .setTween(animationTypeTwo)
+          .addTo(this.controller);
+        // .addIndicators({
+        //   colorTrigger: "black",
+        //   colorStart: "black",
+        //   colorEnd: "black",
+        //   indent: 10
+        // })
+      } else {
+        animationTypeTwo
+          .fromTo(
+            `._block-${idx} .work-wrapper-0`,
+            1,
+            { y: -20 },
+            { y: 50, ease: Linear.easeNone }
+          )
+          .fromTo(
+            `._block-${idx} .work-wrapper-1`,
+            1,
+            { y: -100 },
+            { y: -50, ease: Linear.easeNone }
+          );
+        new this.ScrollMagic.Scene({
+          triggerElement: slidesWrapper[idx],
+          triggerHook: 1,
+          duration: '80%',
+          reverse: true
+        })
+          .setTween(animationTypeTwo)
+          .addTo(this.controller);
+      }
     });
   }
 
@@ -240,13 +279,6 @@ class PortfolioList extends Component {
     });
     return (
       <div className="col-md-8 col-lg-8 no-gutters">
-        <div
-          className="scrollTrigger"
-          style={{ height: '530px', marginTop: '300px', display: 'none' }}
-        >
-          <div className="test-text">This is text</div>
-        </div>
-
         <div className="portfolio-list">
           {finalData.map((arr, i) => {
             const oddEvenClass = i % 2 ? 'odd' : 'even';
@@ -254,11 +286,10 @@ class PortfolioList extends Component {
               <div
                 key={i}
                 id={oddEvenClass + i}
-                className={`row no-gutters work-wrapper-2 _wrap-${oddEvenClass}`}
+                className={`row no-gutters work-wrapper-2 _block-${i} _wrap-${oddEvenClass}`}
                 style={{ width: '100%' }}
               >
                 {arr.map((item, idx) => {
-                  const oddEvenClassAnchor = i % 2 ? '_odd' : '_even';
                   return (
                     <Link
                       to={item.route + idx}
@@ -267,7 +298,7 @@ class PortfolioList extends Component {
                       key={idx}
                     >
                       <div ref={this.workWrapper} className="work-image">
-                        {item.tile && <img src={item.tile} />}
+                        {item.tile && <img alt={item.tile} src={item.tile} />}
                       </div>
                       <div className="work-details">
                         <h5 className="sub-title">{item.subtitle}</h5>

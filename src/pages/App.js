@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import Routes from '../routes';
-import Navigation from '../components/navigation';
+// import Navigation from '../components/navigation';
 const App = () => {
   return (
     <div className="app">

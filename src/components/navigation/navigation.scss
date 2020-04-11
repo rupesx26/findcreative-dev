@@ -1,4 +1,4 @@
-
+@import '../../styles/mixins';
 
 .fca-navigation {
     position: fixed;
@@ -23,6 +23,11 @@
         top: 42px;
         left: 42px;
         position: fixed;
+        @include respond-until(sm) {
+            width: 50px;
+            top: 22px;
+            left: 22px;
+        }
         
         img {
             position: absolute;
@@ -55,7 +60,10 @@
         top: 56px;
         right: 52px;
         cursor: pointer;
-        
+        @include respond-until(sm) {
+            top: 38px;
+            right: 32px;
+        }
         .line {
             transition: background .2s linear .5s;        
         }
@@ -104,12 +112,19 @@
         margin: 0; 
         padding: 12.333333vw 14.666667vw;
         list-style: none;
+        @include respond-until(sm) {
+            padding: 29.333333vw 4.666667vw;
+        }
         
         .list-item-wrapper {
             font-size: 5.5em;
             font-weight: bold;
             line-height: 1.23;
             text-align: left;
+            @include respond-until(sm) {
+                line-height: 1;
+                font-size: 2.5em;
+            }
             a {
                 text-decoration: none;
                 color: #eee;
@@ -144,6 +159,9 @@
                 position: relative;
                 color: #A0A0A0;
                 transition: color 0.2s ease-in-out;
+                @include respond-until(sm) {
+                    margin-bottom: 10px;
+                }
             }
           }
     }
@@ -152,6 +170,7 @@
         width: 600px;
         right: -2em;
         top: 44%;
+        z-index: -1;
     }
 
     .footer-social-icons {
@@ -165,6 +184,10 @@
         right: 3.5em;
         bottom: 20px;
         z-index: 10;
+        @include respond-until(sm) { 
+            left: 35px;
+            right: auto;
+        }
         .icon-box {
             /* display: flex; */
             flex-basis: 22%;
@@ -173,6 +196,9 @@
             svg {
                 width: 15px;
                 fill: #fff;
+            }
+            @include respond-until(sm) { 
+                margin-right: 1em;
             }
         }
     }

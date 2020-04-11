@@ -77,16 +77,18 @@ import HomeCarousel from '../components/homecarousel';
 import PageAnimWrapper from '../components/pagetransition';
 import Footer from '../components/footer';
 import Navigation from '../components/navigation';
-//import { ScrollMagic } from 'scrollscene';
-//import {isMobile} from 'react-device-detect'; is for mobile devices
+import { isMobile } from 'react-device-detect'; //is for mobile devices
 import Pagination from '../components/verticalpagination';
-
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.mainWrapper = React.createRef();
+    this.footerWrapper = React.createRef();
     this.anchors = ['firstPage', 'secondPage', 'thirdPage'];
     this.fullpageWrapper = this.fullpageWrapper.bind(this);
     this.slideAnimation = new TimelineMax({ paused: true });
+    this.mainWrapper = React.createRef();
+    this.footerWrapper = React.createRef();
     this.state = {
       currentSlide: 0,
       currentDirection: 'down',
@@ -98,17 +100,26 @@ class Home extends Component {
       count: 0,
       totalCount: 4,
       hidePagination: true,
-      fullpageAnimation: true
+      fullpageAnimation: true,
+      mobileView: null
     };
+  }
+
+  componentDidMount() {
+    if (isMobile) {
+      this.setState({
+        mobileView: isMobile
+      });
+    }
   }
 
   fullpageWrapper() {
     return (
       <ReactFullpage
         scrollingSpeed={1350}
-        navigationTooltips={this.anchors}
+        //navigationTooltips={this.anchors}
         keyboardScrolling={true}
-        touchSensitivity={100}
+        // touchSensitivity={100}
         onLeave={(origin, destination, direction) => {
           this.setState({
             currentSlide: destination.index,
@@ -116,6 +127,7 @@ class Home extends Component {
           });
         }}
         render={({ state, fullpageApi }) => {
+          this.state.mobileView && fullpageApi.setAutoScrolling(true);
           return (
             <div>
               <Banner
@@ -124,11 +136,14 @@ class Home extends Component {
                 direction={this.state.currentDirection}
               />
               <HomeCarousel
+                mobileView={this.state.mobileView}
                 activeSlide={this.state.currentSlide}
                 direction={this.state.currentDirection}
                 toggleHeader={this.state.toggleHeader}
               />
+
               <Footer
+                mobileView={this.state.mobileView}
                 fullpageAnimation={this.state.fullpageAnimation}
                 activeSlide={this.state.currentSlide}
                 direction={this.state.currentDirection}
@@ -160,8 +175,8 @@ class Home extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    //console.log(props)
-    //console.log(state)
+    // console.log(props)
+    // console.log(state)
 
     if (state.currentSlide === 0) {
       return {
@@ -239,7 +254,6 @@ class Home extends Component {
         hidePagination: false
       };
     }
-    return null;
   }
 
   render() {
@@ -259,7 +273,9 @@ class Home extends Component {
           totalCount={this.state.totalCount}
           count={this.state.count}
         />
-        <div className="home-page page-wrapper">{this.fullpageWrapper()}</div>
+        <div className="home-page page-wrapper" ref={this.mainWrapper}>
+          {this.fullpageWrapper()}
+        </div>
       </PageAnimWrapper>
     );
   }

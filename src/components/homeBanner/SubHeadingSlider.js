@@ -1,14 +1,50 @@
 import React, { Component } from 'react';
 import { TweenMax, TimelineLite, TimelineMax, Power0 } from 'gsap';
-import styles from './subheading.module.scss';
+import { isMobile } from 'react-device-detect'; //is for mobile devices
+import './subheading.scss';
 class SubHeadingSlider extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.bannerAnimation = this.bannerAnimation.bind(this);
+    this.bannerAnimationMobile = this.bannerAnimationMobile.bind(this);
+    this.subHeadingDesktop = this.subHeadingDesktop.bind(this);
+    this.subHeadingMobile = this.subHeadingMobile.bind(this);
   }
 
   componentDidMount() {
-    this.bannerAnimation();
+    if (!isMobile) {
+      this.bannerAnimation();
+    }
+    // } else {
+    //   this.bannerAnimationMobile()
+    // }
+  }
+
+  bannerAnimationMobile() {
+    TweenMax.to('.slide-mob', 0.1, { opacity: 0, y: 20 });
+    const mobtTimelineMax = new TimelineMax({ paused: true, repeat: -1 });
+    const mobtTimelineLite = new TimelineLite();
+    mobtTimelineLite
+      .to('.sub-mob-slide-1', 2.5, { opacity: 1, y: 0 })
+      .to('.sub-mob-slide-1', 2.5, { opacity: 0, y: -20 }, '+=1')
+      .to('.sub-mob-slide-2', 2.5, { opacity: 1, y: 0 })
+      .to('.sub-mob-slide-2', 2.5, { opacity: 0, y: -20 }, '+=1')
+      .to('.sub-mob-slide-3', 2.5, { opacity: 1, y: 0 })
+      .to('.sub-mob-slide-3', 2.5, { opacity: 0, y: -20 }, '+=1')
+      .to('.sub-mob-slide-4', 2.5, { opacity: 1, y: 0 })
+      .to('.sub-mob-slide-4', 2.5, { opacity: 0, y: -20 }, '+=1')
+      .to('.sub-mob-slide-5', 2.5, { opacity: 1, y: 0 })
+      .to('.sub-mob-slide-5', 2.5, { opacity: 0, y: -20 }, '+=1');
+    mobtTimelineMax.add(mobtTimelineLite);
+
+    // delay start of slider for 2 seconds
+    TweenMax.delayedCall(
+      1,
+      function(tl) {
+        tl.restart(true, false);
+      },
+      [mobtTimelineMax]
+    );
   }
 
   bannerAnimation() {
@@ -16,8 +52,7 @@ class SubHeadingSlider extends Component {
     TweenMax.to('.sub-slide-2, .type', 0.1, {
       y: 20,
       opacity: 0,
-      x: 10,
-      position: 'absolute'
+      x: 10
     });
     TweenMax.from(
       `.animation-slide`,
@@ -80,27 +115,43 @@ class SubHeadingSlider extends Component {
     );
   }
 
+  subHeadingDesktop() {
+    return (
+      <h2>
+        <span className="slideWrap sub-slide-1">We are findcreative Ave.</span>
+        <span className="slideWrap sub-slide-2">
+          <span className="init-text">
+            findcreative Ave <span className="for-last">is a</span>{' '}
+          </span>
+          <span>
+            <span className="type type-1">design agency</span>
+            <span className="type type-2">creative agency</span>
+            <span className="type type-3">digital agency</span>
+            <span className="type last">loves crazy</span>
+          </span>
+        </span>
+      </h2>
+    );
+  }
+
+  subHeadingMobile() {
+    return (
+      <div className="mobile-subhead-wrapper">
+        <h2 className="sub-mob-slide-1 slide-mob">We are findcreative Ave.</h2>
+        {/* <h2 className='sub-mob-slide-2 slide-mob'>findcreative Ave is a design agency</h2>
+        <h2 className='sub-mob-slide-3 slide-mob'>findcreative Ave is a creative agency</h2>
+        <h2 className='sub-mob-slide-4 slide-mob'>findcreative Ave is a digital agency</h2>
+        <h2 className='sub-mob-slide-5 slide-mob'>findcreative Ave loves crazy</h2> */}
+      </div>
+    );
+  }
+
   render() {
     return (
-      <div className={styles.subHeadBanner}>
-        <div className={styles.subTitle}>
-          <div className={styles.animationSlide}>
-            <h2>
-              <span className={`${styles.slide} sub-slide-1`}>
-                We are findcreative Ave.
-              </span>
-              <span className={`${styles.slide} sub-slide-2`}>
-                <span className="init-text">
-                  findcreative Ave <span className="for-last">is a</span>{' '}
-                </span>
-                <span className={styles.bucket}>
-                  <span className="type type-1">design agency</span>
-                  <span className="type type-2">creative agency</span>
-                  <span className="type type-3">digital agency</span>
-                  <span className="type last">loves crazy</span>
-                </span>
-              </span>
-            </h2>
+      <div className="sub-head-banner">
+        <div className="sub-title">
+          <div className="animation-slide">
+            {!isMobile ? this.subHeadingDesktop() : this.subHeadingMobile()}
           </div>
         </div>
       </div>
