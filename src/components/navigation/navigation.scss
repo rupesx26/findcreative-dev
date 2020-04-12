@@ -187,6 +187,7 @@
         @include respond-until(sm) { 
             left: 35px;
             right: auto;
+            bottom: 70px;
         }
         .icon-box {
             /* display: flex; */

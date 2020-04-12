@@ -25,7 +25,10 @@ class Footer extends Component {
 
   static getDerivedStateFromProps(props, state) {
     const animation2 = new TimelineMax();
-    if (props.footerActive && state.fullpageAnimationStatus) {
+    if (
+      (props.footerActive && state.fullpageAnimationStatus) ||
+      props.mobileView
+    ) {
       animation2
         .to(
           '.footer-subtitle',

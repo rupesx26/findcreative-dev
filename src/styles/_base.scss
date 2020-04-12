@@ -114,6 +114,7 @@ img {
 @include respond-until(sm) {
   .home-page {
     overflow-x: hidden;
+    padding-top: 55.5px;
   }
 }
 

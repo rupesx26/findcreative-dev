@@ -4,7 +4,6 @@ import PageAnimWrapper from '../../components/pagetransition';
 import Head from '../Head';
 import Navigation from '../../components/navigation';
 import Footer from '../../components/footer';
-
 import PortfolioList from '../../components/portfoliolist';
 //import { ScrollScene, addIndicators } from 'scrollscene';
 

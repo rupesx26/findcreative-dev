@@ -4,7 +4,7 @@
     height: 100vh;
     position: relative;
     @include respond-until(sm) {
-        // height: 70vh;
+        height: 70vh;
     }
 }
 
@@ -20,6 +20,11 @@
     padding-bottom: 20vh;
     position: relative;
     
+    @include respond-until(sm) {
+        padding-bottom: 10vh;
+        height: 70vh;
+        z-index: 0;
+    }
 }
 
 .banner-wrapper .banner .view {
@@ -45,6 +50,7 @@
         margin-right: -80px;
         height: 95px;
         width: 160px;
+        display: none;
     }
     .text {
         font: 600 .7em/18px Work Sans;

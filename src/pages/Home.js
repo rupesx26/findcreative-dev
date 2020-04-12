@@ -86,9 +86,11 @@ class Home extends Component {
     this.footerWrapper = React.createRef();
     this.anchors = ['firstPage', 'secondPage', 'thirdPage'];
     this.fullpageWrapper = this.fullpageWrapper.bind(this);
+    this.mobileContent = this.mobileContent.bind(this);
     this.slideAnimation = new TimelineMax({ paused: true });
     this.mainWrapper = React.createRef();
     this.footerWrapper = React.createRef();
+    this.handleScroll = this.handleScroll.bind(this);
     this.state = {
       currentSlide: 0,
       currentDirection: 'down',
@@ -106,11 +108,49 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
     if (isMobile) {
       this.setState({
         mobileView: isMobile
       });
     }
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    const mainWrapperElem = this.mainWrapper.current;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (mainWrapperElem.offsetHeight === winScroll) {
+      this.setState({
+        toggleHeader: true
+      });
+    } else {
+      this.setState({
+        toggleHeader: false
+      });
+    }
+  }
+
+  mobileContent() {
+    return (
+      <div>
+        <Banner
+          //moveslide={fullpageApi}
+          activeSlide={this.state.currentSlide}
+          direction={this.state.currentDirection}
+        />
+        <HomeCarousel
+          mobileView={this.state.mobileView}
+          activeSlide={this.state.currentSlide}
+          direction={this.state.currentDirection}
+          toggleHeader={this.state.toggleHeader}
+        />
+      </div>
+    );
   }
 
   fullpageWrapper() {
@@ -257,6 +297,10 @@ class Home extends Component {
   }
 
   render() {
+    const mobileView = isMobile;
+    const renderContent = mobileView
+      ? this.mobileContent()
+      : this.fullpageWrapper();
     return (
       <PageAnimWrapper>
         <Head
@@ -274,8 +318,33 @@ class Home extends Component {
           count={this.state.count}
         />
         <div className="home-page page-wrapper" ref={this.mainWrapper}>
-          {this.fullpageWrapper()}
+          {renderContent}
         </div>
+        {isMobile && (
+          <Footer
+            mobileView={this.state.mobileView}
+            fullpageAnimation={this.state.fullpageAnimation}
+            activeSlide={this.state.currentSlide}
+            direction={this.state.currentDirection}
+            footerBgColor={this.state.footerBgColor}
+            toggleHeader={this.state.toggleHeader}
+            footerActive={this.state.footerActive}
+            ref={this.footerWrapper}
+            onScroll={this.handleScroll}
+          >
+            <small className="footer-subtitle subtitle">
+              Interested in more?
+            </small>
+            <Link to="/" data-text="view work" className={`title footer-title`}>
+              View Work
+              <div className="footer-arrow">
+                <div className="chevron"></div>
+                <div className="chevron"></div>
+                <div className="chevron"></div>
+              </div>
+            </Link>
+          </Footer>
+        )}
       </PageAnimWrapper>
     );
   }

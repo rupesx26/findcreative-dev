@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { TimelineMax, TweenMax, Power1, Power4, Linear } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
-
+import { isMobile } from 'react-device-detect'; //is for mobile devices
 import { workImagePath } from '../../utils/assetUtils';
 
 class PortfolioList extends Component {
@@ -108,11 +108,13 @@ class PortfolioList extends Component {
   }
 
   componentDidMount() {
-    require('debug.addIndicators');
-    this.ScrollMagic = require('scrollmagic');
-    this.controller = new this.ScrollMagic.Controller();
-    ScrollMagicPluginGsap(this.ScrollMagic, TweenMax, TimelineMax);
-    this.pageAmimation();
+    if (!isMobile) {
+      //require('debug.addIndicators');
+      this.ScrollMagic = require('scrollmagic');
+      this.controller = new this.ScrollMagic.Controller();
+      ScrollMagicPluginGsap(this.ScrollMagic, TweenMax, TimelineMax);
+      this.pageAmimation();
+    }
   }
 
   pageAmimation() {

@@ -7,6 +7,10 @@
   	.portfolio-list {
 		margin: 300px 0 0;
 		position: relative;
+		@include respond-until(sm) {
+			margin-top: 40px;
+			padding-top: 55.5px;
+		}
 	}
 
 	.work-list {
@@ -47,6 +51,12 @@
 				height: 100%;
 				transform: scale(1.06)
 			}
+			@include respond-until(sm) {
+				height: 70vh;
+				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+				text-align: center;
+				margin-bottom: 0;
+			}
 		}
 		&:hover {
 			img {
@@ -56,9 +66,16 @@
 		.work-details {
 			width: 100%;
 			opacity: 0;
+			@include respond-until(sm) {
+				opacity: 1;
+				padding: 1em 1em 1.8em;
+			}
 			.title {
 				font-family: $font-nexa-bdrg;
 				font-size: 2.2em;
+				@include respond-until(sm) {
+					font-size: 1.8em;
+				}
 			}
 			.sub-title {
 				font-weight: 400;
@@ -66,6 +83,7 @@
 				line-height: 1.68;
 				letter-spacing: -0.05em;
 				font-family: $font-work-sans;
+				
 			}
 		}
 	}
@@ -94,7 +112,10 @@
 		width: 100%;
 		position: relative;
 		min-height: 100vh;
-
+		@include respond-until(sm) { 
+			flex-direction: column;
+			margin-bottom: 0;
+		}
 		&._wrap-odd {
 			.work-wrapper:first-child{
 				left: 10em;
@@ -119,7 +140,11 @@
 			display: block;
 		    width: 25vw;
 		    position: absolute;
-		    // top: 100vh;
+			// top: 100vh;
+			@include respond-until(sm) { 
+				width: 100vw;
+				position: unset;
+			}
 		}
 	}
 	
