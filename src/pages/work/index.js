@@ -26,7 +26,8 @@ class Work extends Component {
       showSayHello: true,
       footerBgColor: 'dark',
       inversionColor: false,
-      footerActive: null
+      footerActive: false,
+      fullpageAnimation: true
     };
   }
 
@@ -44,7 +45,8 @@ class Work extends Component {
 
     if (mainWrapperElem.offsetHeight === winScroll) {
       this.setState({
-        toggleHeader: true
+        toggleHeader: true,
+        footerActive: true
       });
     } else {
       this.setState({
@@ -79,6 +81,7 @@ class Work extends Component {
             footerBgColor={this.state.footerBgColor}
             toggleHeader={this.state.toggleHeader}
             footerActive={this.state.footerActive}
+            fullpageAnimation={this.state.fullpageAnimation}
             ref={this.footerWrapper}
             onScroll={this.handleScroll}
           >

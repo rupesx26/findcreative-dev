@@ -27,6 +27,9 @@ $base: 0.8rem;
         &.dark {
             background-color: rgb(0, 0, 0);
             color: #fff;
+            a {
+                color: #fff;
+            }
             svg {
                 fill: #fff;
             }
@@ -34,6 +37,9 @@ $base: 0.8rem;
         &.light {
             background-color: rgb(255, 255, 255);
             color: #000;
+            a{
+                color: #000;
+            }
             svg {
                 fill: #000;
             }
@@ -145,7 +151,6 @@ $base: 0.8rem;
             width: 5px;
         }
         a {
-            color: #fff;
             text-decoration: none;
             font-weight: 400;
         }

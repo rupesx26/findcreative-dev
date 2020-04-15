@@ -54,7 +54,13 @@ $break-large: 1441px;
       width: percentage($i / $grid-columns);
       //flex-basis: percentage($i / $grid-columns);
 			//flex: left;
-		}
+    }
+    .col-offset-#{$size}-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+      //flex-basis: percentage($i / $grid-columns);
+			//flex: left;
+    }
+    
 	}
 }
 

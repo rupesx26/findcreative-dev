@@ -13,6 +13,7 @@
     left: 2.3em;
     cursor: pointer;
     transition: color .5s linear .5s;
+    text-decoration: none;
     &.dark {
         color: #000000;
     }

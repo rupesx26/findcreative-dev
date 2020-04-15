@@ -52,7 +52,7 @@
 				transform: scale(1.06)
 			}
 			@include respond-until(sm) {
-				height: 70vh;
+				height: 75vh;
 				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 				text-align: center;
 				margin-bottom: 0;
