@@ -1,0 +1,292 @@
+@import '../../styles/work-details';
+@import '../../styles/mixins';
+
+.hrx{
+
+	img{
+		max-width: 100%;
+	}
+
+	.bg-bdr {
+		height: 40px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		background: #000;
+		left: 0;
+		z-index: 0;
+	}
+
+	&.work-details-page {
+		.work-description {
+			padding-bottom: 50px;
+		}
+	} 
+	.page-header {
+		position: relative;
+	
+		.char-img {
+			position: absolute;
+			bottom: 0;
+			width: 70vw;
+			margin-left: -35vw;
+			left: 50%;
+			@include respond-until(sm) {
+				width: 100vh;
+				margin-left: -35vh;
+			}
+		}
+		.banner-text {
+			width: 55vw;
+			position: absolute;
+			left: 50%;
+			margin-left: -27.5vw;
+			z-index: 1;
+			font-size: 6vw;
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-family: $font-work-sans;
+		}
+		&.bg{
+			background-size: cover; 
+			background-position: bottom;
+			background-repeat: repeat-x;
+			animation: bgMoves 30s linear infinite;
+			@include respond-until(sm) {
+				animation: none;
+			}
+		}
+		.hrx-bg {
+			position: absolute;
+			background-repeat: repeat-x;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%; 
+		}
+	}
+
+	.fold-5-bg {
+		background-size: cover; 
+		background-position: center center;
+		background-repeat: no-repeat;
+		height: 100vh;
+		width: 100%;
+	}
+
+	.fold-2{
+		width: 100%;
+		position: relative;
+		height: 100vh;
+		clear: both;
+		.project-image-container {
+			display: flex;
+			position: relative;
+			z-index: 5;
+		 	min-height: 70vh;
+		}
+		.work-title {
+			position: relative;
+   			top: 300px;
+		 }
+		.graphic-bg {
+			background-size: cover; 
+		}
+		.project-content {
+			height: 100vh;
+			display: flex;
+			z-index: 10;
+			position: relative;
+			padding-top: 55vh;
+			p {
+				font-size: 1.2em;
+				font-weight: 400;
+			}
+		}
+		
+		.fold-2-bg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: top left; 
+			height: calc(100vh + 100em);
+		}
+	}
+	.fold-3 {
+		width: 100%;
+		min-height: 100vh;
+		position: relative;
+		overflow: hidden;
+		// margin-bottom: 10em;
+		// .slick-next {
+		// 	right: 0;
+		// 	border: 1px solid red;
+		// }
+		// .slick-prev {
+		// 	left: 0;
+		// 	border: 1px solid red;
+		// }
+		.container {
+			min-height: 100vh;
+			.row {
+				align-items: center;
+				.view {
+					width: 100%;
+					height: 62vh;
+					@include respond-until(sm) {
+						height: 41vh;
+					}
+				}
+			}
+		}
+
+		.slide {
+			height: inherit;
+		}
+
+		// .slider-2 {
+		// 	.slick-slide {
+		// 		transform: scale(1);
+		// 	}
+		// }
+		// .slick-slide {
+		// 	filter: blur(8px);
+		// 	transition: all 1s ease-in-out;
+		// 	transform: scale(.9);
+		// 	&::after {
+		// 		opacity: 0;
+		// 	}
+		// }
+		// .slick-center {
+		// 	filter: none;
+		// 	transform: scale(1.2);
+		// 	transition: all 1s ease-in-out;
+		// 	z-index: 1000;
+		// 	position: relative;
+		// 	img {
+		// 		box-shadow: 0px 17px 37px -9px rgba(0, 0, 0, 0.3);
+		// 	}
+		// }
+		.slideBg {
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: 50vw;
+			// padding: 3em;
+			img{
+				width: 100%;
+			}
+			@include respond-until(sm) {
+				width: 100vw;
+			}
+		}
+	}
+
+	.masonry { 
+		display: flex;
+		flex-flow: row wrap;
+		width: 100%;
+	  }
+	  
+	  .masonry-brick {
+		flex: auto;
+		height: 80vh;
+		min-width: 150px;
+		// margin: 0 8px 8px 0; /* Some gutter */
+	  }
+
+	  .masonry-img {
+		width: 100%;
+		height: 100%;
+		}
+
+	  .masonry-brick:nth-child(1), 
+	  .masonry-brick:nth-child(2)
+	   {
+			width: 50vw;
+	  	}
+
+	  .masonry-brick:nth-child(1), 
+	  .masonry-brick:nth-child(2) {
+		height: 66vh;
+	  }
+
+	  .masonry-brick:nth-child(4),
+	  .masonry-brick:nth-child(7)
+	   {
+		  width: 50vw;
+		  height: 66vh;
+	  }
+
+
+	  .masonry-brick:nth-child(3), 
+	  .masonry-brick:nth-child(5),
+	  .masonry-brick:nth-child(6),
+	  .masonry-brick:nth-child(8)
+	  {
+		width: 25vw;
+		height: 66vh;
+	  }
+
+	  .masonry-brick:nth-child(11)
+	   {
+		  width: 48vw;
+		  height: 66vh;
+	  }
+
+
+	  .masonry-brick:nth-child(9),
+	  .masonry-brick:nth-child(10)
+	   {
+		width: 26vw;
+		height: 66vh;
+	   }
+
+	   .fold-5 {
+		   height: 100vh;
+		   position: relative;
+		   width: 100%;
+		   .fold-5-img {
+			   margin-top: 100px;
+		   }
+		   
+	   }
+
+	   .fold-4 {
+		height: 100vh;
+		position: relative;
+		width: 100%;
+		.fold-4-img {
+			margin-top: 100px;
+		}
+	}
+
+	.fold-6 {
+		margin-top: 100px;
+		margin-bottom: 100px;
+		.project-image-container {
+			display: flex;
+		}
+		@include respond-until(sm) {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+.full-page-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+@keyframes bgMoves {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}

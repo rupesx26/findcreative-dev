@@ -24,11 +24,8 @@ class Footer extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    console.log(props);
-
     const animation2 = new TimelineMax();
     if (props.footerActive || props.mobileView) {
-      console.log('he');
       animation2
         .to(
           '.footer-subtitle',

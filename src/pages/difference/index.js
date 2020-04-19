@@ -226,7 +226,6 @@ class About extends Component {
     const mainWrapperElem = this.mainWrapper.current;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-
     if (mainWrapperElem.offsetHeight === winScroll) {
       this.setState({
         toggleHeader: false,

@@ -30,6 +30,11 @@ const LoadableNotFound = Loadable({
   loading: () => <div>Loading...</div>
 });
 
+const LoadableHrx = Loadable({
+  loader: () => import(/* webpackChunkName: 'hrx' */ './pages/hrx'),
+  loading: () => <div>Loading...</div>
+});
+
 const Routes = () => {
   return (
     <Switch>
@@ -37,6 +42,7 @@ const Routes = () => {
       <Route path="/difference" component={LoadableDifference} />
       <Route path="/work" component={LoadableWork} />
       <Route path="/connect" component={LoadableConnect} />
+      <Route exact path="/hrithik-roshan" component={LoadableHrx} />
       <Route component={LoadableNotFound} />
     </Switch>
   );

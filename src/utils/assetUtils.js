@@ -12,6 +12,10 @@ export function differImagePath(assetName) {
   return `${process.env.PUBLIC_URL}/images/difference/${assetName}`;
 }
 
+export function hrxImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/hrx/${assetName}`;
+}
+
 export function fontPath(assetName) {
   return `${process.env.PUBLIC_URL}/fonts/${assetName}`;
 }

@@ -119,7 +119,6 @@ class PortfolioList extends Component {
 
   pageAmimation() {
     const data = this.state.data;
-
     const slidesWrapper = document.querySelectorAll('.work-wrapper-2');
     const finalData = this.groupBy(data, function(item) {
       return [item.row];
@@ -294,7 +293,7 @@ class PortfolioList extends Component {
                 {arr.map((item, idx) => {
                   return (
                     <Link
-                      to={item.route + idx}
+                      to={`${item.route}`}
                       id={item.route}
                       className={`work-wrapper work-wrapper-${idx}`}
                       key={idx}

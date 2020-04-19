@@ -29,7 +29,6 @@ class Navigation extends Component {
     this.menuToggle = new TimelineMax({ paused: true, reversed: true });
     this.logoToggle = new TimelineMax();
     this.menuItemToggle = new TimelineMax({ paused: true, reversed: true });
-    //this.blobAnimation = TimelineMax({paused: true, reversed: true})
   }
 
   componentDidMount() {
@@ -68,27 +67,6 @@ class Navigation extends Component {
     //.reverse();
     this.menuListAnimation();
   }
-
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  // //  console.log('getDerivedStateFromProps',nextProps)
-  // // // console.log('getDerivedStateFromProps',nextProps)
-  //    if(nextProps.toggleHeader) {
-  //     return {
-  //       toggleHeader:  true
-  //     }
-  //   } else {
-  //     return {
-  //       toggleHeader:  false
-  //     }
-  //   }
-  // //else {
-  // //     return {
-  // //       toggleHeader:  false,
-  // //     }
-  // //   }
-
-  //     return null
-  //    }
 
   menuListAnimation() {
     return menu.map((val, index) => {
@@ -133,15 +111,6 @@ class Navigation extends Component {
         colorUpdate: !this.state.menuOpen ? 'light' : 'dark'
       });
     }
-    //console.log(this.state.logoClass)
-
-    // this.logoToggle.fromTo(
-    //   '.logo',
-    //   .5,
-    //   { opacity: 0 },
-    //   { opacity: 1, ease: Power0.inOut },
-    //   '+=.6'
-    // );
 
     this.state.menuOpen
       ? this.menuItemToggle.reverse(false)
@@ -157,6 +126,7 @@ class Navigation extends Component {
   static getDerivedStateFromProps(props, state) {
     //console.log(props)
     //console.log(state)
+
     if (props.toggleHeader || state.toggleMenu === 'menu-open') {
       return {
         colorUpdate: 'light',
@@ -223,7 +193,7 @@ class Navigation extends Component {
             open={this.state.menuOpen}
             onClick={() => this.handleMenuClick()}
           />
-          {this.state.sayHelloStatus && (
+          {this.props.showSayHello && (
             <SayHello colorUpdate={this.state.colorUpdate} />
           )}
         </div>
