@@ -35,6 +35,11 @@ const LoadableHrx = Loadable({
   loading: () => <div>Loading...</div>
 });
 
+const LoadableNiharGold = Loadable({
+  loader: () => import(/* webpackChunkName: 'nihargold' */ './pages/nihargold'),
+  loading: () => <div>Loading...</div>
+});
+
 const Routes = () => {
   return (
     <Switch>
@@ -43,6 +48,7 @@ const Routes = () => {
       <Route path="/work" component={LoadableWork} />
       <Route path="/connect" component={LoadableConnect} />
       <Route exact path="/hrithik-roshan" component={LoadableHrx} />
+      <Route exact path="/nihar-gold" component={LoadableNiharGold} />
       <Route component={LoadableNotFound} />
     </Switch>
   );

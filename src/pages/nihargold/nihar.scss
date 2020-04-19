@@ -1,0 +1,119 @@
+@import '../../styles/mixins';
+@import '../../styles/work-details';
+
+.nihar-gold { 
+    
+	img{
+		max-width: 100%;
+	}
+	.bg{
+		background-size: cover; 
+		background-position: bottom;
+		background-repeat: no-repeat;
+    }
+    &.work-details-page {
+		.work-description {
+			padding-bottom: 50px;
+		}
+	}
+	.nihar-intro {
+		background: #eef8ee;
+		min-height: 1000px;
+		padding-top: 15vh;
+		.nihar-ribbon-bg {
+			background-size:contain;
+			background-position: bottom center; 
+			width: 100%;
+			padding-bottom: 66vh;
+            background-repeat: no-repeat;
+            @include respond-until(sm) {
+                padding-bottom: 7vh;
+            }
+            .nihar-front {
+                @include respond-until(sm) {
+                    margin-bottom: 40px;
+                }
+            }
+		}
+	}
+
+	.nihar-product-details {
+		.row {
+			align-items: center;
+		}
+	}
+	.nihar-product {
+		margin-top: 20vh;
+		margin-bottom: 30vh;
+	}
+
+	.page-header {
+		position: relative;
+		.banner-img-container {
+			width: 80vh;
+			text-align: center;
+		}
+	}
+	.fold-2 {
+		width:  100%;
+		position: relative;
+		padding-top: 150px;
+        min-height: 100vh;
+        @include respond-until(sm) {
+            padding-top: 55.5px;
+        }
+		.img-container {
+			z-index: 2;
+		}
+		.pos-absolute {
+			position: absolute;
+		}
+		.nihar-gold-front, .nihar-gold-back {
+			height: calc(100vh + 12em);
+			//height: 100vh;
+		}
+		.nihar-gold-front, .nihar-gold-back {
+			width: 36.8vh;
+		}
+		.nihar-gold-front,  .coconut-oil-logo {
+			left: 0;
+		}
+		.nihar-gold-back, .nihar-gold-logo {
+			right: 0;
+		}
+		.nihar-gold-logo {
+			width: 48vh;
+            margin: 0 auto;
+            @include respond-until(sm) {
+                width: 35vh;
+            }
+		}
+		.coconut-oil-logo {
+			width: 54vh;
+		}
+		.fold-2-bg {
+			background: #EBF7EC;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 100vh;
+			
+		}
+		
+	}
+	.fold-3 {
+		padding-bottom: 150px;
+        background: #f0f0f0;
+        @include respond-until(sm) {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+		.text {
+			margin-top: 10vh;
+			font-size: 1.2em;
+			font-family: $font-work-sans;
+			font-weight: 300;
+		}
+	}
+}

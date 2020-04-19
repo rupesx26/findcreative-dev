@@ -16,6 +16,10 @@ export function hrxImagePath(assetName) {
   return `${process.env.PUBLIC_URL}/images/hrx/${assetName}`;
 }
 
+export function niharImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/nihar-gold/${assetName}`;
+}
+
 export function fontPath(assetName) {
   return `${process.env.PUBLIC_URL}/fonts/${assetName}`;
 }
