@@ -40,6 +40,16 @@ const LoadableNiharGold = Loadable({
   loading: () => <div>Loading...</div>
 });
 
+const LoadableKateSpade = Loadable({
+  loader: () => import(/* webpackChunkName: 'katespade' */ './pages/katespade'),
+  loading: () => <div>Loading...</div>
+});
+
+const LoadableThambbi = Loadable({
+  loader: () => import(/* webpackChunkName: 'thambbi' */ './pages/thambbi'),
+  loading: () => <div>Loading...</div>
+});
+
 const Routes = () => {
   return (
     <Switch>
@@ -49,6 +59,8 @@ const Routes = () => {
       <Route path="/connect" component={LoadableConnect} />
       <Route exact path="/hrithik-roshan" component={LoadableHrx} />
       <Route exact path="/nihar-gold" component={LoadableNiharGold} />
+      <Route exact path="/kate-spade" component={LoadableKateSpade} />
+      <Route exact path="/thambbi" component={LoadableThambbi} />
       <Route component={LoadableNotFound} />
     </Switch>
   );

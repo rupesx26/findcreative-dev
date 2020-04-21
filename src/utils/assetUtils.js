@@ -20,6 +20,14 @@ export function niharImagePath(assetName) {
   return `${process.env.PUBLIC_URL}/images/nihar-gold/${assetName}`;
 }
 
+export function kateImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/kate/${assetName}`;
+}
+
+export function thambbiImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/thambbi/${assetName}`;
+}
+
 export function fontPath(assetName) {
   return `${process.env.PUBLIC_URL}/fonts/${assetName}`;
 }

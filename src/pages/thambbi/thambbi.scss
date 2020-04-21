@@ -1,0 +1,79 @@
+
+@import '../../styles/mixins';
+@import '../../styles/work-details';
+
+.thambbi {
+	img {
+		max-width: 100%;
+	}
+	.bg{
+		background-size: cover; 
+		background-position: bottom;
+		background-repeat: no-repeat;
+		@include respond-until(sm) {
+			min-height: 50vh;
+		}
+	}
+	&.work-details-page {
+		.work-description {
+			padding-bottom: 50px;
+		}
+	} 
+
+	
+	.fold-2, .fold-5{
+		width: 100%;
+		position: relative;
+		&.is-active {
+			background: #44a26e;
+		}
+		img {
+			 max-width: 100%;
+		}
+		.mobile-thambbi {
+			@include respond-until(sm) {
+				background-color: #5c7845;
+				margin-left: -15px;
+				margin-right: -15px;
+				img {
+					padding: 20px;
+				}
+			}
+		}
+		.fold-2-bg {
+			position: absolute;
+			left: 0;
+			bottom: 5%;
+			width: 100%;
+			// background: #44a26e;
+			height: calc(100vh + 100em);
+			
+		}
+		.project-image-container {
+			display: flex;
+			position: relative;
+			z-index: 5;
+			min-height: 55.5vh;
+			@include respond-until(sm) {
+				min-height: auto;
+			}
+			&.text {
+				color: #000;
+				font-size: 1.10em;
+				min-height: auto;
+			}
+		}
+	}
+	.fold-4 {
+		height: 100vh;
+		@include respond-until(sm) {
+			height: auto;
+		}
+		.project-image-container {
+			margin-top: 20vh;
+			@include respond-until(sm) {
+				margin-top: 0;
+			}
+		}
+	}
+}
