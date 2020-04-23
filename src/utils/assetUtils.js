@@ -28,6 +28,14 @@ export function thambbiImagePath(assetName) {
   return `${process.env.PUBLIC_URL}/images/thambbi/${assetName}`;
 }
 
+export function heroImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/hero/${assetName}`;
+}
+
+export function cocoImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/coco/${assetName}`;
+}
+
 export function fontPath(assetName) {
   return `${process.env.PUBLIC_URL}/fonts/${assetName}`;
 }

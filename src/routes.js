@@ -50,6 +50,16 @@ const LoadableThambbi = Loadable({
   loading: () => <div>Loading...</div>
 });
 
+const LoadableHero = Loadable({
+  loader: () => import(/* webpackChunkName: 'hero' */ './pages/hero'),
+  loading: () => <div>Loading...</div>
+});
+
+const LoadableCoco = Loadable({
+  loader: () => import(/* webpackChunkName: 'coco' */ './pages/cocosoul'),
+  loading: () => <div>Loading...</div>
+});
+
 const Routes = () => {
   return (
     <Switch>
@@ -61,6 +71,8 @@ const Routes = () => {
       <Route exact path="/nihar-gold" component={LoadableNiharGold} />
       <Route exact path="/kate-spade" component={LoadableKateSpade} />
       <Route exact path="/thambbi" component={LoadableThambbi} />
+      <Route exact path="/hero-talkies" component={LoadableHero} />
+      <Route exact path="/cocosoul" component={LoadableCoco} />
       <Route component={LoadableNotFound} />
     </Switch>
   );

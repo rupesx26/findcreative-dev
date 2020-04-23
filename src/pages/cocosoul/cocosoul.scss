@@ -1,0 +1,111 @@
+@import '../../styles/mixins';
+@import '../../styles/work-details';
+
+
+.coco {
+	&.work-details-page {
+		.work-description {
+			padding-bottom: 50px;
+		}
+	}
+
+	.bg{
+		background-size: cover; 
+		background-position: bottom;
+		background-repeat: repeat-x;
+	}
+	.sec-title {
+		margin-top: 100px;
+		margin-bottom: 75px;
+		@include respond-until(sm) {
+			margin-top: 0px;
+			margin-bottom: 40px;
+		}
+	}
+	.coco-intro {
+		.sec-title {
+			color: #4d985c;
+		}
+
+		.fold-3 {
+			width: 100%;
+			position: relative;
+			height: inherit;
+			overflow: hidden;
+			margin-bottom: 0;
+			.slide {
+				background: #fff;
+				padding-bottom: 10vh;
+			}
+			.slideBg {
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+				width: 90%;
+				height: 90vh;
+				margin: 0 auto;
+				@include respond-until(sm) {
+					height: 34vh;
+				}
+			}
+		}
+		
+	}
+	.coco-script {
+		.sec-title {
+			color: #794831;
+		}
+	}
+	.coco-story-board {
+		.sec-title {
+			color: #000;
+		}
+	}
+	.coco-intro, .coco-script, .coco-story-board {
+		position: relative;
+		img {
+			max-width: 100%;
+		}
+		.coco-nut {
+			position: absolute;
+			top: -35px;
+			right: 22px;
+			width: 300px;
+		}
+		.side-leaf-left {
+			position: absolute;
+			left: 0;
+			bottom: 50px;
+			width: 150px;
+			@include respond-until(sm) {
+				width: 70px;
+			}
+		}
+
+		.side-leaf-right {
+			position: absolute;
+			right: 0;
+			top: 250px;
+			width: 150px;
+			z-index: 1000;
+			@include respond-until(sm) {
+				width: 70px;
+			}
+		}
+
+		.script-content {
+			p {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	.fold-5 {
+		position: relative;
+		// height: 100vh;
+		overflow: hidden;
+		width: 100%;
+		margin: 0vh 0 15vh;
+	}
+}
+

@@ -456,7 +456,7 @@ class HomeCarousel extends Component {
       <React.Fragment>
         <section className="section slide-wrapper slide-1">
           <div className="carousel-wrapper">
-            <Link to="/">
+            <Link to="/hrithik-roshan">
               <div className="carousel-container">
                 <div className="carousel-left-content">
                   <div className="carousel-img-clip">
@@ -478,7 +478,7 @@ class HomeCarousel extends Component {
         </section>
         <section className="section slide-wrapper slide-2">
           <div className="carousel-wrapper">
-            <Link to="/">
+            <Link to="/nihar-gold">
               <div className="carousel-container">
                 <div className="carousel-left-content">
                   <div className="carousel-img-clip">
@@ -500,7 +500,7 @@ class HomeCarousel extends Component {
         </section>
         <section className="section slide-wrapper slide-3">
           <div className="carousel-wrapper">
-            <Link to="/">
+            <Link to="/cocosoul">
               <div className="carousel-container">
                 <div className="carousel-left-content">
                   <div className="carousel-img-clip">
@@ -522,7 +522,7 @@ class HomeCarousel extends Component {
         </section>
         <section className="section slide-wrapper slide-4">
           <div className="carousel-wrapper">
-            <Link to="/">
+            <Link to="/sussegado-coffee">
               <div className="carousel-container">
                 <div className="carousel-left-content">
                   <div className="carousel-img-clip">

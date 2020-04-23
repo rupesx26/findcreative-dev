@@ -1,0 +1,74 @@
+@import '../../styles/mixins';
+@import '../../styles/work-details';
+
+.hero {
+	img{
+		max-width: 100%;
+	}
+	&.work-details-page {
+		.work-description {
+			padding-bottom: 50px;
+		}
+	}
+	.page-header {
+		background: #020102;
+		background: -moz-linear-gradient(45deg,  #020102 0%, #1a2454 22%, #351830 64%, #5a3222 100%);
+		background: -webkit-linear-gradient(45deg,  #020102 0%,#1a2454 22%,#351830 64%,#5a3222 100%);
+		background: linear-gradient(45deg,  #020102 0%,#1a2454 22%,#351830 64%,#5a3222 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020102', endColorstr='#5a3222',GradientType=1 );
+		
+		.banner-img-container {
+			width: 90vh;
+			text-align: center;
+			@include respond-until(sm) {
+				width: 40vh;
+			}
+		}
+	}
+	.fold-3{
+		width: 100%;
+		position: relative;
+		margin-bottom: 150px;
+		@include respond-until(sm) {
+			margin-bottom: 50px;
+		}
+		.project-image-container {
+			display: flex;
+			position: relative;
+			z-index: 5;
+			 height: 58vh;
+			 @include respond-until(sm) {
+				height: auto;
+			}
+		}
+	}
+
+	.fold-4 {
+		.img-grid {
+			display: flex;
+			margin-top: 100px;
+			@include respond-until(sm) {
+				margin-top: 50px;
+			}
+		}
+		// .cust-mart-50 {
+		// 	margin-top: 100px;
+		// }
+	}
+
+	.fold-5 {
+		.page-header {
+			background: transparent;
+			@include respond-until(sm) {
+				background: #000;
+			}
+		}
+	}
+	.fold-6 {
+		padding-top: 150px;
+		@include respond-until(sm) {
+			padding-top: 50px;
+		}
+	}
+
+}
