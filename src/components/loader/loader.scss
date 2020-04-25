@@ -1,0 +1,16 @@
+.loader-wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo-container {
+        width: 100px;
+    }
+    .loader-text {
+        margin-left: 15px;
+        font-size: 1.4em;
+        margin-left: 20px;
+    }
+}

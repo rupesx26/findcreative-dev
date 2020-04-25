@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Template from '../../components/template';
-
+import PageLoader from '../../components/loader';
 class Connect extends Component {
   constructor(props) {
     super(props);
@@ -18,17 +18,21 @@ class Connect extends Component {
   }
   render() {
     return (
-      <Template
-        toggleHeader={this.state.toggleHeader}
-        showSayHello={this.state.showSayHello}
-        footerLink="/home"
-        footerText="Home"
-        footerBgColor={this.state.footerBgColor}
-      >
-        <div style={{ height: '100vh', width: '100%', display: 'flex' }}>
-          hello
-        </div>
-      </Template>
+      <div>
+        <PageLoader />
+      </div>
+
+      // <Template
+      //   toggleHeader={this.state.toggleHeader}
+      //   showSayHello={this.state.showSayHello}
+      //   footerLink="/home"
+      //   footerText="Home"
+      //   footerBgColor={this.state.footerBgColor}
+      // >
+      //   <div style={{ height: '100vh', width: '100%', display: 'flex' }}>
+      //     hello
+      //   </div>
+      // </Template>
     );
   }
 }

@@ -1,63 +1,64 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import PageLoader from './components/loader';
 // import { AnimatePresence } from 'framer-motion';
 
 const LoadableHome = Loadable({
   loader: async () =>
     await import(/* webpackChunkName: 'home' */ './pages/Home'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableDifference = Loadable({
   loader: async () =>
     await import(/* webpackChunkName: 'difference' */ './pages/difference'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableWork = Loadable({
   loader: () => import(/* webpackChunkName: 'work' */ './pages/work'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableConnect = Loadable({
   loader: () => import(/* webpackChunkName: 'connect' */ './pages/connect'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableNotFound = Loadable({
   loader: () => import(/* webpackChunkName: 'notfound' */ './pages/Notfound'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableHrx = Loadable({
   loader: () => import(/* webpackChunkName: 'hrx' */ './pages/hrx'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableNiharGold = Loadable({
   loader: () => import(/* webpackChunkName: 'nihargold' */ './pages/nihargold'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableKateSpade = Loadable({
   loader: () => import(/* webpackChunkName: 'katespade' */ './pages/katespade'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableThambbi = Loadable({
   loader: () => import(/* webpackChunkName: 'thambbi' */ './pages/thambbi'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableHero = Loadable({
   loader: () => import(/* webpackChunkName: 'hero' */ './pages/hero'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const LoadableCoco = Loadable({
   loader: () => import(/* webpackChunkName: 'coco' */ './pages/cocosoul'),
-  loading: () => <div>Loading...</div>
+  loading: () => <PageLoader />
 });
 
 const Routes = () => {
