@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Icon from '../icons';
+import { Link } from 'react-router-dom';
 
 import './footer.scss';
 import { TimelineMax, Power0 } from 'gsap';
@@ -117,7 +118,7 @@ class Footer extends Component {
                 <span>FINDCreative Avenues LLP. </span>
                 <span className="space"></span>
                 <span>
-                  <a href="">Privacy Policy</a>
+                  <Link to="/policy">Privacy Policy</Link>
                 </span>
               </span>
 

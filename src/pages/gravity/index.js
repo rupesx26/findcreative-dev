@@ -8,11 +8,11 @@ import Navigation from '../../components/navigation';
 import { TimelineLite, TweenMax, Power2, Linear, Power4 } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
-import { niharImagePath } from '../../utils/assetUtils';
+import { gravityImagePath } from '../../utils/assetUtils';
 import WorkPageNavigation from '../../components/workpagenav';
-import './nihar.scss';
+import './gravity.scss';
 
-class NiharGold extends Component {
+class Gravity extends Component {
   constructor(props) {
     super(props);
     this.ScrollMagic = null;
@@ -23,12 +23,11 @@ class NiharGold extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.pageAnimation = this.pageAnimation.bind(this);
 
-    this.HeroBanner = niharImagePath('hero-background.jpg');
-    this.GoldLogo = niharImagePath('gold-logo-min.png');
-    this.Ribbon = niharImagePath('ribbon.jpg');
-    this.NiharGoldBack = niharImagePath('nihar-bottle-back.jpg');
-    this.NiharGoldFront = niharImagePath('nihar-bottle-front.jpg');
-    this.NiharGoldJar = niharImagePath('nihar-gold-jar.jpg');
+    this.HeroBanner = gravityImagePath('hero-background.jpg');
+    this.GravityIntro = gravityImagePath('background.jpg');
+    this.GravityText = gravityImagePath('gravity-text.png');
+    this.GravityBar = gravityImagePath('gravity-bars-new.png');
+    this.GravityBarBox = gravityImagePath('gravity-barbox.jpg');
 
     this.state = {
       toggleHeader: true,
@@ -67,53 +66,20 @@ class NiharGold extends Component {
     this.ScrollMagic = require('scrollmagic');
     this.controller = new this.ScrollMagic.Controller();
     ScrollMagicPluginGsap(this.ScrollMagic, TweenMax, TimelineLite);
-    const niharProductAmination = new TimelineLite();
-    niharProductAmination
+    const gravityBarBox = new TimelineLite();
+    gravityBarBox
       .fromTo(
-        '.nihar-gold-logo',
-        2,
-        { opacity: 0, y: 100 },
-        { y: 0, opacity: 1, ease: Power4.easeOut },
-        '-=1'
-      )
-      .fromTo(
-        '.nihar-front',
-        1.5,
-        { opacity: 0, x: 100 },
-        { x: 0, opacity: 1, ease: Power4.easeOut },
-        '-=.20'
-      )
-      .fromTo(
-        '.nihar-back',
-        1.5,
+        '.gravity-bar-box',
+        1.2,
         { opacity: 0, x: -100 },
         { x: 0, opacity: 1, ease: Power4.easeOut },
         '-=.90'
-      );
-
-    new this.ScrollMagic.Scene({
-      triggerElement: '.fold-2',
-      reverse: false,
-      triggerHook: 0.3
-    })
-      .setTween(niharProductAmination)
-      //.addIndicators()
-      .addTo(this.controller);
-
-    const niharJar = new TimelineLite();
-    niharJar
-      .fromTo(
-        '.nihar-gold-jar',
-        2,
-        { opacity: 0, y: 100 },
-        { y: 0, opacity: 1, ease: Power4.easeOut },
-        '-=.90'
       )
       .fromTo(
-        '.nihar-gold-jar-text',
-        2,
-        { opacity: 0, y: 100 },
-        { y: 0, opacity: 1, ease: Power4.easeOut },
+        '.gravity-bar-box-text',
+        1.2,
+        { opacity: 0, x: 100 },
+        { x: 0, opacity: 1, ease: Power4.easeOut },
         '-=.90'
       );
 
@@ -122,7 +88,41 @@ class NiharGold extends Component {
       reverse: false,
       triggerHook: 0.4
     })
-      .setTween(niharJar)
+      .setTween(gravityBarBox)
+      //.addIndicators()
+      .addTo(this.controller);
+
+    const gravityIntro = new TimelineLite();
+    gravityIntro
+      .fromTo(
+        '.gravity-intro',
+        1.3,
+        { opacity: 0, y: 100 },
+        { y: 0, opacity: 1, ease: Power4.easeOut },
+        '-=.90'
+      )
+      .fromTo(
+        '.gravity-text',
+        1.1,
+        { opacity: 0, y: -300 },
+        { y: 0, opacity: 1, ease: Power4.easeOut },
+        '-=.90'
+      );
+    new this.ScrollMagic.Scene({ triggerElement: '.fold-2', triggerHook: 0.4 })
+      .setTween(gravityIntro)
+      //.addIndicators()
+      .addTo(this.controller);
+
+    const gravityIntroBar = new TimelineLite();
+    gravityIntroBar.fromTo(
+      '.gravity-bar',
+      1.1,
+      { opacity: 0, y: 300 },
+      { y: 0, opacity: 1, ease: Power4.easeOut },
+      '-=.90'
+    );
+    new this.ScrollMagic.Scene({ triggerElement: '.gravity-bar' })
+      .setTween(gravityIntroBar)
       //.addIndicators()
       .addTo(this.controller);
   }
@@ -157,12 +157,12 @@ class NiharGold extends Component {
 
   render() {
     const projectSummaryContent = {
-      workTitle: `Nihar Gold`,
-      client: `Marico, Nihar Gold`,
-      project: `Packaging Design`,
-      brief: `Design a label for Nihar Gold for Bihar market`,
-      para1: `Nihar coconut oil is the market leader in East India, especially in Bihar. They wanted to launch a premium sub-brand called Nihar Gold. For this, we partnered them with packaging design.`,
-      para2: `Our approach was to create something new without losing the familiarity built by the brand over \n so many years. The coconut halves and the hair silhouette announce that it’s a Nihar coconut hair oil product from a mile.  We added a pop of parallel gold streaks to convey that this is a premium sub-brand.`,
+      workTitle: `Socranos Gravity`,
+      client: `Socranos`,
+      project: `Strategy & Packaging Design`,
+      brief: `Strategize & design a chocolate for the Gujarat market`,
+      para1: `Having imported chocolates for many years, Kratos Overseas decided to enter the confectionary market with its own chocolate brand-Socranos. The company discovered that the Gujarat market loved Cadbury Fuse, but abstained from picking it up because of its high price point. \n As a solution to this, Gravity was born. A chocolate that tastes like Fuse, but is a lot more affordable.`,
+      para2: `Keeping this in mind, our strategy was to carefully create packaging design with the familiar memory structures already created by Fuse.`,
       para3: ` `
     };
     return (
@@ -179,7 +179,7 @@ class NiharGold extends Component {
           />
 
           <div
-            className="page-wrapper work-details-page nihar-gold"
+            className="page-wrapper work-details-page gravity"
             ref={this.mainWrapper}
           >
             <div
@@ -189,8 +189,8 @@ class NiharGold extends Component {
               style={{ backgroundImage: `url(${this.HeroBanner})` }}
             >
               <WorkPageNavigation
-                prevLink="/work/hrithik-roshan"
-                nextLink="/work/kate-spade"
+                prevLink="/work/rapid-rupee"
+                nextLink="/work/hrithik-roshan"
               />
             </div>
             <div className="full-page-wrapper work-content">
@@ -204,29 +204,19 @@ class NiharGold extends Component {
                 brief={projectSummaryContent.brief}
               />
 
-              <div className="fold-2">
-                <div className="container">
-                  <div className="row justify-content-center no-gutters nihar-intro">
-                    <div
-                      className="nihar-ribbon-bg"
-                      style={{ backgroundImage: `url(${this.Ribbon})` }}
-                    >
-                      <div className="nihar-gold-logo align-center">
-                        <img src={this.GoldLogo} alt="nihar gold" />
+              <div className="fold-2 full-width">
+                <div
+                  className="row justify-content-center no-gutters gravity-intro bg"
+                  style={{ backgroundImage: `url(${this.GravityIntro})` }}
+                >
+                  <div className="col-md-10">
+                    <div className="project-image-container">
+                      <div className="gravity-text">
+                        <img src={this.GravityText} className="img" />
                       </div>
-                      <div className="row justify-content-center no-gutters nihar-product">
-                        <div className="col-md-10 col-xs-12">
-                          <div className="row">
-                            <div className="col-md-5 col-xs-12 nihar-front">
-                              <img src={this.NiharGoldFront} alt="nihar gold" />
-                            </div>
-                            <div className="col-md-2"></div>
-                            <div className="col-md-5 col-xs-12 nihar-back">
-                              <img src={this.NiharGoldBack} alt="nihar gold" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="clear"></div>
+
+                      <div className="gravity-bar">
+                        <img src={this.GravityBar} className="img" />
                       </div>
                     </div>
                   </div>
@@ -234,24 +224,23 @@ class NiharGold extends Component {
               </div>
 
               <div className="fold-3">
-                <div className="container">
-                  <div className="row justify-content-center no-gutters nihar-product-details">
-                    <div className="col-md-10 col-xs-12">
-                      <div className="row">
-                        <div className="col-md-5 col-xs-12 nihar-gold-jar">
-                          <img src={this.NiharGoldJar} alt="nihar gold" />
+                <div className="row justify-content-center no-gutters">
+                  <div className="col-md-10 col-xs-12">
+                    <div className="row">
+                      <div className="col-md-5 col-xs-12">
+                        <div className="project-image-container gravity-bar-box">
+                          <img src={this.GravityBarBox} className="img" />
                         </div>
-                        <div className="col-md-2"></div>
-                        <div className="col-md-5 col-xs-12 text nihar-gold-jar-text">
-                          <p>
-                            Along with the bottle design, we also designed the
-                            jar packaging. These jars are a boon especially{' '}
-                            <br />
-                            during the winters because their wide mouths make it
-                            easy to scoop out the oil which tends to <br />
-                            solidify when the temperature drops.
-                          </p>
-                        </div>
+                      </div>
+                      <div className="col-md-2"></div>
+                      <div className="col-md-4 col-xs-12 gravity-bar-box-text">
+                        <p>
+                          This worked wonders for the brand. <br /> How do we
+                          know?
+                          <br /> Well, this new design was the only
+                          communication that the Client has relied on for sales
+                          (over 5 lakh and counting). Now, isn’t that sweet?{' '}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -271,11 +260,11 @@ class NiharGold extends Component {
           >
             <small className="footer-subtitle subtitle">Next Project?</small>
             <Link
-              to="/work/kate-spade"
-              data-text="Kate Spade"
+              to="/work/hrithik-roshan"
+              data-text="Hrithik Roshan's"
               className={`title footer-title ${this.state.footerColor} `}
             >
-              Kate Spade
+              Hrithik Roshan's
               <div className="footer-arrow">
                 <div className="chevron"></div>
                 <div className="chevron"></div>
@@ -288,4 +277,4 @@ class NiharGold extends Component {
     );
   }
 }
-export default NiharGold;
+export default Gravity;

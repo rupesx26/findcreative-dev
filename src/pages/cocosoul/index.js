@@ -46,7 +46,8 @@ class Cocosoul extends Component {
       showSayHello: false,
       footerBgColor: 'dark',
       footerActive: false,
-      fullpageAnimation: true
+      fullpageAnimation: true,
+      footerColor: ''
     };
   }
 
@@ -55,6 +56,18 @@ class Cocosoul extends Component {
     if (!isMobile) {
       this.pageAnimation();
     }
+    const classArray = [
+      'color1',
+      'color2',
+      'color3',
+      'color4',
+      'color5',
+      'color6'
+    ];
+    const random = classArray[Math.floor(Math.random() * classArray.length)];
+    this.setState({
+      footerColor: random
+    });
   }
 
   componentWillUnmount() {
@@ -231,8 +244,8 @@ class Cocosoul extends Component {
               style={{ backgroundImage: `url(${this.HeroBanner})` }}
             >
               <WorkPageNavigation
-                prevLink="/hero-talkies"
-                nextLink="/sussegado-coffee"
+                prevLink="/work/hero-talkies"
+                nextLink="/work/sussegado-coffee"
               />
             </div>
             <div className="full-page-wrapper work-content">
@@ -391,11 +404,13 @@ class Cocosoul extends Component {
             ref={this.footerWrapper}
             onScroll={this.handleScroll}
           >
-            <small className="footer-subtitle subtitle">
-              Interested in more?
-            </small>
-            <Link to="/" data-text="view work" className={`title footer-title`}>
-              View Work
+            <small className="footer-subtitle subtitle">Next Project?</small>
+            <Link
+              to="/work/sussegado-coffee"
+              data-text="Sussegado Coffee"
+              className={`title footer-title ${this.state.footerColor} `}
+            >
+              Sussegado Coffee
               <div className="footer-arrow">
                 <div className="chevron"></div>
                 <div className="chevron"></div>

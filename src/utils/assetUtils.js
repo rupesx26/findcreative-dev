@@ -36,6 +36,18 @@ export function cocoImagePath(assetName) {
   return `${process.env.PUBLIC_URL}/images/coco/${assetName}`;
 }
 
+export function sussegadoImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/jars/${assetName}`;
+}
+
+export function rapidrupeeImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/rapid-rupee/${assetName}`;
+}
+
+export function gravityImagePath(assetName) {
+  return `${process.env.PUBLIC_URL}/images/gravity/${assetName}`;
+}
+
 export function fontPath(assetName) {
   return `${process.env.PUBLIC_URL}/fonts/${assetName}`;
 }

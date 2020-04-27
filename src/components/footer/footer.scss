@@ -64,14 +64,32 @@ $base: 0.8rem;
                     .title {
                         font-family: 'Nexa-bold';
                         font-size: 6.2em;
-                        text-transform: lowercase;
                         font-weight: 600;
+                        text-transform: lowercase;
                         margin: 0;
                         display: block;
                         text-decoration: none;
                         position: relative;
                         color: #e91c23;
                         line-height: 1.04;
+                        &.color1 {
+                            color: #f4db09;
+                        }
+                        &.color2{
+                            color: #00b3da;
+                        }
+                        &.color3 {
+                            color: #e82e81;
+                        }
+                        &.color4 {
+                            color: #5e2b87;
+                        }
+                        &.color5 {
+                            color: #4545f5;
+                        }
+                        &.color6{
+                            color: #e91c23;
+                        }
                         @include respond-until(sm) { 
                             font-size: 3.5em;
                         }
@@ -94,6 +112,18 @@ $base: 0.8rem;
                                 color: #fff;
                             }
                           }
+
+                          &.invert {
+                            &:hover {
+                             &:before {
+                                 color: #000;
+                             }
+                            }
+                            .chevron:before,
+                            .chevron:after {
+                                background: #000;
+                            } 
+                         }
                     }
                 }   
             }

@@ -61,19 +61,79 @@ const LoadableCoco = Loadable({
   loading: () => <PageLoader />
 });
 
+const LoadableSussegado = Loadable({
+  loader: () => import(/* webpackChunkName: 'sussegado' */ './pages/sussegado'),
+  loading: () => <PageLoader />
+});
+
+const LoadableRapidrupee = Loadable({
+  loader: () =>
+    import(/* webpackChunkName: 'rapidrupee' */ './pages/rapidrupee'),
+  loading: () => <PageLoader />
+});
+
+const LoadableGravity = Loadable({
+  loader: () => import(/* webpackChunkName: 'gravity' */ './pages/gravity'),
+  loading: () => <PageLoader />
+});
+
+const LoadableCareers = Loadable({
+  loader: () => import(/* webpackChunkName: 'career' */ './pages/careers'),
+  loading: () => <PageLoader />
+});
+
+const LoadableCareersInternal = Loadable({
+  loader: () =>
+    import(/* webpackChunkName: 'career' */ './pages/careers/internal'),
+  loading: () => <PageLoader />
+});
+
+const LoadablePolicy = Loadable({
+  loader: () =>
+    import(/* webpackChunkName: 'policy' */ './pages/policy/policy'),
+  loading: () => <PageLoader />
+});
+
+const LoadableTerms = Loadable({
+  loader: () => import(/* webpackChunkName: 'terms' */ './pages/policy/terms'),
+  loading: () => <PageLoader />
+});
+
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={LoadableHome} />
-      <Route path="/difference" component={LoadableDifference} />
-      <Route path="/work" component={LoadableWork} />
-      <Route path="/connect" component={LoadableConnect} />
-      <Route exact path="/hrithik-roshan" component={LoadableHrx} />
-      <Route exact path="/nihar-gold" component={LoadableNiharGold} />
-      <Route exact path="/kate-spade" component={LoadableKateSpade} />
-      <Route exact path="/thambbi" component={LoadableThambbi} />
-      <Route exact path="/hero-talkies" component={LoadableHero} />
-      <Route exact path="/cocosoul" component={LoadableCoco} />
+      <Route exact path="/difference" component={LoadableDifference} />
+      <Route exact path="/work" component={LoadableWork} />
+      <Route exact path="/connect" component={LoadableConnect} />
+      <Route exact path="/work/hrithik-roshan" component={LoadableHrx} />
+      <Route exact path="/work/nihar-gold" component={LoadableNiharGold} />
+      <Route exact path="/work/kate-spade" component={LoadableKateSpade} />
+      <Route exact path="/work/thambbi" component={LoadableThambbi} />
+      <Route exact path="/work/hero-talkies" component={LoadableHero} />
+      <Route exact path="/work/cocosoul" component={LoadableCoco} />
+      <Route
+        exact
+        path="/work/sussegado-coffee"
+        component={LoadableSussegado}
+      />
+      <Route exact path="/work/rapid-rupee" component={LoadableRapidrupee} />
+      <Route exact path="/work/socranos-gravity" component={LoadableGravity} />
+      <Route exact path="/policy" component={LoadablePolicy} />
+      <Route exact path="/terms" component={LoadableTerms} />
+      <Route
+        path="/careers"
+        render={({ match: { path } }) => (
+          <div>
+            <Route exact path={path} component={LoadableCareers} />
+            <Route
+              exact
+              path={`${path}/:id`}
+              component={LoadableCareersInternal}
+            />
+          </div>
+        )}
+      />
       <Route component={LoadableNotFound} />
     </Switch>
   );

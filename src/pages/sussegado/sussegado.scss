@@ -1,0 +1,103 @@
+@import '../../styles/mixins';
+@import '../../styles/work-details';
+
+
+.jars {
+	img{
+		max-width: 100%;
+	}
+	&.work-details-page {
+		.work-description {
+			@include respond-until(sm) {
+				padding-bottom: 50px;
+			}
+		}
+	} 
+	.project-image-container-list {
+		display: flex;
+		@include respond-until(sm) {
+			flex-direction: column;
+		}
+		.project-image-container {
+			flex-basis: 19.66%;
+			max-width: 19.66%;
+			display: flex;
+			align-content: center;
+			justify-content: center;
+			@include respond-until(sm) {
+				max-width: 100%;
+				flex-basis: 100%;
+			}
+			span {
+				display: block;
+				text-align: center;
+				font-family: $font-work-sans;
+				color: #908f8f;
+				text-transform: uppercase;
+				padding-right: 20px;
+				font-size: 1.15em;
+				font-weight: 400;
+			}
+		}
+	}
+	.page-header {
+		background: #343303;
+		.banner-img-container {
+			width: 150vh;
+			text-align: center;
+			@include respond-until(sm) {
+				width: 60vh;
+			}
+		}
+	}
+	.project-content{
+		p{
+			margin-bottom: 50px;
+			font-size: 1.13em;
+		}
+	}
+	
+	.fold-3 {
+		width: 100%;
+		position: relative;
+		height: 100vh;
+		overflow: hidden;
+		margin-bottom: 150px;
+		@include respond-until(sm) {
+			margin-bottom: 80px;
+			height: 60vh;
+		}
+		.slide {
+			background: #E6E7E8;
+			padding-bottom: 10vh;
+		}
+		.slideBg {
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: 90%;
+			height: 90vh;
+			margin: 0 auto;
+			@include respond-until(sm) {
+				width: 100%;
+    			height: 50vh;
+			}
+		}
+	}
+	.fold-4 {
+		ul, li {
+			list-style: none;
+		}
+		.project-image-container {
+			display: flex;
+			margin-bottom: 30px;
+		}
+	}
+	.fold-5 {
+		position: relative;
+		// height: 100vh;
+		overflow: hidden;
+		width: 100%;
+		margin: 10vh 0;
+	}
+}

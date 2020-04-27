@@ -1,0 +1,79 @@
+@import '../../styles/mixins';
+@import '../../styles/work-details';
+
+.rapid-rupee {
+	img{
+		max-width: 100%;
+	}
+	&.work-details-page {
+		.work-description {
+			@include respond-until(sm) {
+				padding-bottom: 50px;
+			}
+		}
+	} 
+	.page-header {
+		background: #682F92;
+		.banner-img-container {
+			width: 85vh;
+			text-align: center;
+			@include respond-until(sm) {
+				width: 40vh;
+			}
+		}
+	}
+	.fold-2 {
+		min-height: 100vh;
+		position: relative;
+		width: 100%;
+		margin-top: 30vh;
+		.diagonal-bg {
+			width: 100%;
+			height: 60%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: #4B4F7A;
+			transform: skewY(-35deg);
+			z-index: 0;
+			@include respond-until(sm) {
+				height: 20%;
+			}
+			&:after {
+				content: '';
+				width: 70%;
+				position: absolute;
+				left: 0;
+				bottom: -18%;
+				background:#CEB069;
+				transform: skewY(0deg);
+				z-index: 10;
+				height: 20%;
+			}
+		}
+
+		.project-image-container{
+			z-index: 10;
+			position: relative;
+			&.img-grid {
+				.right-img {
+					margin-top: 35vh;
+					@include respond-until(sm) {
+						margin-top: 0;
+					}
+				}
+			}
+		} 
+	}
+	.fold-3 {
+		margin-top: 100px;
+		min-height: 100vh;
+		width: 100%;
+		@include respond-until(sm) {
+			margin-top: 0;
+		}
+		.project-image-container {
+			display: flex;
+		}
+	}
+}

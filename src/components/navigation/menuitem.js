@@ -24,7 +24,7 @@ class MenuItem extends Component {
 
     return (
       <li className="list-item-wrapper">
-        <Link to={this.props.route} onClick={this.props.onClick}>
+        <Link to={`/${this.props.route}`} onClick={this.props.onClick}>
           <span className="pos">{this.props.number}</span>
           <div className="list-item">{this.props.children}</div>
         </Link>

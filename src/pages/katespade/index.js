@@ -54,7 +54,8 @@ class KateSpade extends Component {
       showSayHello: false,
       footerBgColor: 'dark',
       footerActive: false,
-      fullpageAnimation: true
+      fullpageAnimation: true,
+      footerColor: ''
     };
   }
 
@@ -63,6 +64,18 @@ class KateSpade extends Component {
     if (!isMobile) {
       this.pageAnimation();
     }
+    const classArray = [
+      'color1',
+      'color2',
+      'color3',
+      'color4',
+      'color5',
+      'color6'
+    ];
+    const random = classArray[Math.floor(Math.random() * classArray.length)];
+    this.setState({
+      footerColor: random
+    });
   }
 
   componentWillUnmount() {
@@ -242,11 +255,7 @@ class KateSpade extends Component {
       document.body.scrollTop || document.documentElement.scrollTop;
     const bannerElement = this.bannerWrapper.current;
     const darkArea = this.darkArea.current;
-    console.log(darkArea.offsetTop);
-    console.log(darkArea.offsetHeight);
-    console.log('height', darkArea.offsetTop + darkArea.offsetHeight);
-    console.log(winScroll);
-    console.log('condition', darkArea.offsetTop < winScroll);
+
     if (mainWrapperElem.offsetHeight === winScroll) {
       this.setState({
         toggleHeader: true,
@@ -282,7 +291,6 @@ class KateSpade extends Component {
   }
 
   render() {
-    console.log('toogleHeader', this.state.toggleHeader);
     const projectSummaryContent = {
       workTitle: `Kate Spade`,
       client: `Sprintler`,
@@ -315,7 +323,10 @@ class KateSpade extends Component {
               <div className="banner-img-container">
                 <img src={this.KateHero} />
               </div>
-              <WorkPageNavigation prevLink="/nihar-gold" nextLink="/thambbi" />
+              <WorkPageNavigation
+                prevLink="/work/nihar-gold"
+                nextLink="/work/thambbi"
+              />
             </div>
             <div className="full-page-wrapper work-content">
               <ProjectPageSummary
@@ -496,11 +507,13 @@ class KateSpade extends Component {
             ref={this.footerWrapper}
             onScroll={this.handleScroll}
           >
-            <small className="footer-subtitle subtitle">
-              Interested in more?
-            </small>
-            <Link to="/" data-text="view work" className={`title footer-title`}>
-              View Work
+            <small className="footer-subtitle subtitle">Next Project?</small>
+            <Link
+              to="/work/thambbi"
+              data-text="Thambbi"
+              className={`title footer-title ${this.state.footerColor} `}
+            >
+              Thambbi
               <div className="footer-arrow">
                 <div className="chevron"></div>
                 <div className="chevron"></div>

@@ -195,7 +195,7 @@ class Home extends Component {
                   Interested in more?
                 </small>
                 <Link
-                  to="/"
+                  to="/work"
                   data-text="view work"
                   className={`title footer-title`}
                 >
@@ -335,7 +335,11 @@ class Home extends Component {
             <small className="footer-subtitle subtitle">
               Interested in more?
             </small>
-            <Link to="/" data-text="view work" className={`title footer-title`}>
+            <Link
+              to="/work"
+              data-text="view work"
+              className={`title footer-title`}
+            >
               View Work
               <div className="footer-arrow">
                 <div className="chevron"></div>

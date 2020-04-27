@@ -48,7 +48,8 @@ class About extends Component {
       showSayHello: true,
       footerBgColor: 'light',
       footerActive: false,
-      fullpageAnimation: true
+      fullpageAnimation: true,
+      footerColor: ''
     };
   }
 
@@ -59,19 +60,19 @@ class About extends Component {
     });
   }
 
-  // addLineBreaks = string => {
-
-  //     string.split('<br/>').map((text, index) => (
-  //       //console.log(text)
-
-  //         // <React.Fragment key={`${text}-${index}`}>
-  //         // {text}
-  //         // <br />
-  //         // </React.Fragment>
-  //     ));
-  // }
-
   componentDidMount() {
+    const classArray = [
+      'color1',
+      'color2',
+      'color3',
+      'color4',
+      'color5',
+      'color6'
+    ];
+    const random = classArray[Math.floor(Math.random() * classArray.length)];
+    this.setState({
+      footerColor: random
+    });
     window.addEventListener('scroll', this.handleScroll);
     if (!isMobile) {
       //require('debug.addIndicators');
@@ -545,8 +546,12 @@ class About extends Component {
             <small className="footer-subtitle subtitle">
               Interested in more?
             </small>
-            <Link to="/" data-text="view work" className={`title footer-title`}>
-              View Work
+            <Link
+              to="/work"
+              data-text="view work"
+              className={`title footer-title invert`}
+            >
+              view work
               <div className="footer-arrow">
                 <div className="chevron"></div>
                 <div className="chevron"></div>

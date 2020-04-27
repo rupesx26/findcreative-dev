@@ -293,7 +293,7 @@ class PortfolioList extends Component {
                 {arr.map((item, idx) => {
                   return (
                     <Link
-                      to={`${item.route}`}
+                      to={`/work/${item.route}`}
                       id={item.route}
                       className={`work-wrapper work-wrapper-${idx}`}
                       key={idx}

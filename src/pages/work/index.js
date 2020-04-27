@@ -85,11 +85,13 @@ class Work extends Component {
             ref={this.footerWrapper}
             onScroll={this.handleScroll}
           >
-            <small className="footer-subtitle subtitle">
-              Interested in more?
-            </small>
-            <Link to="/" data-text="view work" className={`title footer-title`}>
-              View Work
+            <small className="footer-subtitle subtitle">Got a project?</small>
+            <Link
+              to="/connect"
+              data-text="let's talk"
+              className={`title footer-title`}
+            >
+              let's talk
               <div className="footer-arrow">
                 <div className="chevron"></div>
                 <div className="chevron"></div>
