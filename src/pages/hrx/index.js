@@ -222,7 +222,7 @@ class About extends Component {
       project: `Graphic Novel Design`,
       brief: `Design a graphic novel for kids inspired from real life stories of Hrithik Roshan`,
       para1: `Hrithik Roshan is extensively involved in charitable initiatives for children. We partnered with him \n in one such event where he wanted to help \n under-confident kids. `,
-      para2: `So, we created and designed a graphic novel that \n he would hand out to the kids. The story is inspired by \n Hrithik’s own struggles as a child and how \n he overcame hurdle after hurdle, \n to become the star he is today.`,
+      para2: `So, we created and designed a graphic novel that \n he would hand out to the kids. The story is inspired \n by Hrithik’s own struggles as a child and how \n he overcame hurdle after hurdle, \n to become the star he is today.`,
       para3: ` `
     };
     return (

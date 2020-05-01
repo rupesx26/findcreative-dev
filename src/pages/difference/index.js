@@ -31,7 +31,7 @@ class About extends Component {
     this.Hero = differImagePath('Hero.png');
     this.Hritik = differImagePath('Hritik.png');
     this.Humsafar = differImagePath('Humsafar.png');
-    this.jSW = differImagePath('jSw.png');
+    this.jSW = differImagePath('jsw-2.png');
     this.Kratos = differImagePath('Kratos.png');
     this.Marico = differImagePath('Marico.png');
     this.RR = differImagePath('RR.png');

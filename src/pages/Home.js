@@ -196,7 +196,7 @@ class Home extends Component {
                 </small>
                 <Link
                   to="/work"
-                  data-text="view work"
+                  data-text="View Work"
                   className={`title footer-title`}
                 >
                   View Work
@@ -337,7 +337,7 @@ class Home extends Component {
             </small>
             <Link
               to="/work"
-              data-text="view work"
+              data-text="View Work"
               className={`title footer-title`}
             >
               View Work

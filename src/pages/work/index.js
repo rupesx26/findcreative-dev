@@ -88,10 +88,10 @@ class Work extends Component {
             <small className="footer-subtitle subtitle">Got a project?</small>
             <Link
               to="/connect"
-              data-text="let's talk"
+              data-text="Let's Talk"
               className={`title footer-title`}
             >
-              let's talk
+              Let's Talk
               <div className="footer-arrow">
                 <div className="chevron"></div>
                 <div className="chevron"></div>

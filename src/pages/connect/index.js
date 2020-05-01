@@ -158,7 +158,7 @@ class Connect extends Component {
                           <h5>Visit us</h5>
                           <div className="details">
                             <address>
-                              A 904/905, Kanakia Wall Street, <br />
+                              A Wing 904 - 905, Kanakia Wall Street, <br />
                               Chakala, Andheri (E), <br /> Mumbai 400093.
                             </address>
                           </div>
