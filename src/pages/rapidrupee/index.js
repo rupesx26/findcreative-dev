@@ -169,7 +169,11 @@ class Rapidrupee extends Component {
       });
     }
     if (isMobile) {
-      if (mainWrapperElem.offsetHeight < winScroll) {
+      const newWinScroll = Math.round(winScroll);
+      if (
+        mainWrapperElem.offsetHeight < newWinScroll ||
+        mainWrapperElem.offsetHeight === newWinScroll
+      ) {
         this.setState({
           toggleHeader: true
         });

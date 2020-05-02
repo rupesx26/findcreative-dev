@@ -101,3 +101,19 @@
 		margin: 10vh 0;
 	}
 }
+
+.page-footer {
+	#footer-view {
+		.inside-wrapper {
+			.page-footer-wrapper{
+				.page-footer-content {
+					.title{
+						@include respond-until(sm) {
+							line-height: 1.3;
+						}
+					  }
+				}
+			}
+		}
+	}
+}     

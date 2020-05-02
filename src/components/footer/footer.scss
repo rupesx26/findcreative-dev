@@ -9,7 +9,9 @@ $base: 0.8rem;
     justify-content: center;
     align-items: center;
     // z-index: -1;
-   
+    @include respond-until(sm) { 
+        padding-top: 2em;
+    }
     #footer-view {
         position: absolute;
         // height: 100%;

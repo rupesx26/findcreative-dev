@@ -55,8 +55,11 @@ class Work extends Component {
       });
     }
     if (isMobile) {
-      const newWinScroll = winScroll.toFixed(2);
-      if (mainWrapperElem.offsetHeight < newWinScroll) {
+      const newWinScroll = Math.round(winScroll);
+      if (
+        mainWrapperElem.offsetHeight < newWinScroll ||
+        mainWrapperElem.offsetHeight === newWinScroll
+      ) {
         this.setState({
           toggleHeader: true
         });

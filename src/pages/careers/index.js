@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import OpeningAPI from './openingApi';
-
 import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
