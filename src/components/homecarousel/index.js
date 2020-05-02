@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { TimelineMax, Power0, Power1, Power3, Power4 } from 'gsap';
+import { TimelineMax, Power0, Power1, Power3, Power4, CSSPlugin } from 'gsap';
 import { workImagePath } from '../../utils/assetUtils';
 import { isMobile } from 'react-device-detect';
 import './wrapper.scss';
+const plugins = [CSSPlugin];
 
 class HomeCarousel extends Component {
   constructor(props) {

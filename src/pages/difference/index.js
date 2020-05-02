@@ -13,10 +13,12 @@ import {
   TweenMax,
   Power2,
   Linear,
-  Power4
+  Power4,
+  CSSPlugin
 } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import { differImagePath } from '../../utils/assetUtils';
+const plugins = [CSSPlugin];
 
 //import 'debug.addIndicators';
 class About extends Component {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { isMobile } from 'react-device-detect'; //is for mobile devices
 import PageAnimWrapper from '../../components/pagetransition';
 import Head from '../Head';
 import Navigation from '../../components/navigation';
@@ -52,6 +53,14 @@ class Work extends Component {
       this.setState({
         toggleHeader: false
       });
+    }
+    if (isMobile) {
+      const newWinScroll = winScroll.toFixed(2);
+      if (mainWrapperElem.offsetHeight < newWinScroll) {
+        this.setState({
+          toggleHeader: true
+        });
+      }
     }
   }
 

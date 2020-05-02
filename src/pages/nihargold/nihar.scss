@@ -60,7 +60,7 @@
 		padding-top: 150px;
         min-height: 100vh;
         @include respond-until(sm) {
-            padding-top: 55.5px;
+            //padding-top: 55.5px;
         }
 		.img-container {
 			z-index: 2;

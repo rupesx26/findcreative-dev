@@ -5,12 +5,20 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import { TimelineLite, TweenMax, Power2, Linear, Power4 } from 'gsap';
+import {
+  TimelineLite,
+  TweenMax,
+  Power2,
+  Linear,
+  Power4,
+  CSSPlugin
+} from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { niharImagePath } from '../../utils/assetUtils';
 import WorkPageNavigation from '../../components/workpagenav';
 import './nihar.scss';
+const plugins = [CSSPlugin];
 
 class NiharGold extends Component {
   constructor(props) {
@@ -152,6 +160,14 @@ class NiharGold extends Component {
         toggleHeader: false,
         showSayHello: true
       });
+    }
+
+    if (isMobile) {
+      if (mainWrapperElem.offsetHeight < winScroll) {
+        this.setState({
+          toggleHeader: true
+        });
+      }
     }
   }
 

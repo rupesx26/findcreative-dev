@@ -5,12 +5,20 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import { TimelineLite, TweenMax, Power1, Linear, Power4 } from 'gsap';
+import {
+  TimelineLite,
+  TweenMax,
+  Power1,
+  Linear,
+  Power4,
+  CSSPlugin
+} from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { rapidrupeeImagePath } from '../../utils/assetUtils';
 import WorkPageNavigation from '../../components/workpagenav';
 import './rapidrupee.scss';
+const plugins = [CSSPlugin];
 
 class Rapidrupee extends Component {
   constructor(props) {
@@ -159,6 +167,13 @@ class Rapidrupee extends Component {
         toggleHeader: false,
         showSayHello: true
       });
+    }
+    if (isMobile) {
+      if (mainWrapperElem.offsetHeight < winScroll) {
+        this.setState({
+          toggleHeader: true
+        });
+      }
     }
   }
 

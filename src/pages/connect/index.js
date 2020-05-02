@@ -1,27 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { isMobile } from 'react-device-detect'; //is for mobile devices
 import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineMax,
-  TimelineLite,
-  TweenMax,
-  Power2,
-  Linear,
-  Power4
-} from 'gsap';
-import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import './connect.scss';
 
 //import 'debug.addIndicators';
 class Connect extends Component {
   constructor(props) {
     super(props);
-    this.ScrollMagic = null;
-    this.controller = null;
     this.mainWrapper = React.createRef();
     this.footerWrapper = React.createRef();
     this.handleScroll = this.handleScroll.bind(this);
@@ -45,12 +33,6 @@ class Connect extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    if (!isMobile) {
-      //require('debug.addIndicators');
-      this.ScrollMagic = require('scrollmagic');
-      this.controller = new this.ScrollMagic.Controller();
-      ScrollMagicPluginGsap(this.ScrollMagic, TweenMax, TimelineMax);
-    }
   }
 
   componentWillUnmount() {

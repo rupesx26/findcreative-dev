@@ -13,6 +13,9 @@
         margin-bottom: 87px;
         letter-spacing: normal;
         padding-left: 13px;
+        @include respond-until(sm) {
+            font-size: 2em;
+        }
     }
 
     h3 {

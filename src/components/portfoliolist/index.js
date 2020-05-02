@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { TimelineMax, TweenMax, Power1, Power4, Linear } from 'gsap';
+import { TimelineMax, TweenMax, Power1, Power4, Linear, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import { isMobile } from 'react-device-detect'; //is for mobile devices
 import { workImagePath } from '../../utils/assetUtils';
+const plugins = [CSSPlugin];
 
 class PortfolioList extends Component {
   constructor(props) {

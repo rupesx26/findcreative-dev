@@ -8,8 +8,7 @@
 		margin: 200px 0 0;
 		position: relative;
 		@include respond-until(sm) {
-			margin-top: 40px;
-			padding-top: 55.5px;
+			margin-top: 100px;
 		}
 	}
 

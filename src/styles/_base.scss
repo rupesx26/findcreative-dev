@@ -115,11 +115,10 @@ img {
   display: none!important;
 }
 
-@include respond-until(sm) {
-  .home-page {
-    overflow-x: hidden;
-    padding-top: 55.5px;
-  }
+.home-page {
+    @include respond-until(sm) {
+      overflow-x: hidden;
+    }
 }
 
 .scrollbar-thumb {

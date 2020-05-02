@@ -12,13 +12,15 @@ import {
   Power2,
   Power0,
   Linear,
-  Power4
+  Power4,
+  CSSPlugin
 } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { thambbiImagePath } from '../../utils/assetUtils';
 import WorkPageNavigation from '../../components/workpagenav';
 import './thambbi.scss';
+const plugins = [CSSPlugin];
 
 class Thambbi extends Component {
   constructor(props) {
@@ -260,6 +262,13 @@ class Thambbi extends Component {
         toggleHeader: false,
         showSayHello: true
       });
+    }
+    if (isMobile) {
+      if (mainWrapperElem.offsetHeight < winScroll) {
+        this.setState({
+          toggleHeader: true
+        });
+      }
     }
   }
 

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Icon from '../icons';
 import { Link } from 'react-router-dom';
-
+import { isMobile } from 'react-device-detect'; //is for mobile devices
 import './footer.scss';
-import { TimelineMax, Power0 } from 'gsap';
+import { TimelineMax, Power0, CSSPlugin } from 'gsap';
+const plugins = [CSSPlugin];
 
 class Footer extends Component {
   constructor(props) {
@@ -14,13 +15,15 @@ class Footer extends Component {
     };
   }
   componentDidMount() {
-    if (this.state.fullpageAnimationStatus) {
-      const animation2 = new TimelineMax();
-      animation2
-        .to('.footer-subtitle', 0, { opacity: 0, y: 100 })
-        .to('.footer-title', 0, { opacity: 0, y: 50 })
-        .to('.copy-writes', 0, { opacity: 0, y: 50 })
-        .to('.footer-icons', 0, { opacity: 0, y: 50 });
+    if (!isMobile) {
+      if (this.state.fullpageAnimationStatus) {
+        const animation2 = new TimelineMax();
+        animation2
+          .to('.footer-subtitle', 0, { opacity: 0, y: 100 })
+          .to('.footer-title', 0, { opacity: 0, y: 50 })
+          .to('.copy-writes', 0, { opacity: 0, y: 50 })
+          .to('.footer-icons', 0, { opacity: 0, y: 50 });
+      }
     }
   }
 

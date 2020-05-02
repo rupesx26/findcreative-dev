@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { TweenMax, TimelineLite, TimelineMax, Power0 } from 'gsap';
+import { TweenMax, TimelineLite, TimelineMax, Power0, CSSPlugin } from 'gsap';
 import { isMobile } from 'react-device-detect'; //is for mobile devices
 import './subheading.scss';
+const plugins = [CSSPlugin];
+
 class SubHeadingSlider extends Component {
   constructor(props) {
     super(props);

@@ -4,7 +4,8 @@ import HeadingSlider from './HeadingSlider';
 import './homebanner.scss';
 import { imagePath } from '../../utils/assetUtils';
 import { isMobile } from 'react-device-detect'; //is for mobile devices
-import { TimelineMax, Power0 } from 'gsap';
+import { TimelineMax, Power0, CSSPlugin } from 'gsap';
+const plugins = [CSSPlugin];
 
 class Banner extends Component {
   constructor(props) {

@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { isMobile } from 'react-device-detect'; //is for mobile devices
-import './policy.scss';
 import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineMax,
-  TimelineLite,
-  TweenMax,
-  Power2,
-  Linear,
-  Power4
-} from 'gsap';
-import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
-import { differImagePath } from '../../utils/assetUtils';
+import './policy.scss';
 
 class Policy extends Component {
   constructor(props) {
@@ -48,8 +36,8 @@ class Policy extends Component {
             <section className="full-page-wrapper">
               <div className="container">
                 <div className="row">
-                  <div className="col-md-10 col-offset-md-2">
-                    <div className="col-md-10">
+                  <div className="col-md-10 col-xs-12 col-offset-md-2">
+                    <div className="col-md-10 col-xs-12">
                       <h1>Privacy Policy</h1>
                       <p className="intro">
                         We, FindCreative, a Limited Liability Partnership

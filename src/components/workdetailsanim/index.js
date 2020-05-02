@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { TweenMax, TimelineMax, TimelineLite, Power4 } from 'gsap';
+import { TweenMax, TimelineMax, TimelineLite, Power4, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import { isMobile } from 'react-device-detect'; //is for mobile devices
+const plugins = [CSSPlugin];
 
 class ProjectPageSummary extends Component {
   constructor(props) {

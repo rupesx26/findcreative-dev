@@ -25,7 +25,6 @@ class CareersInternal extends Component {
 
   internalPages(param) {
     const player = OpeningAPI.get(parseInt(param.id, 10));
-    console.log(player);
     const jobRole = player.jobRole ? player.jobRole : null;
     return !player ? (
       <div style={{ padding: '0px 20px' }}>
@@ -66,11 +65,11 @@ class CareersInternal extends Component {
         {player.experience && (
           <div className="job-requirements">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-6 col-xs-12">
                 <div className="title">Experience</div>
                 <div className="details">{player.experience}</div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 col-xs-12">
                 <div className="title">Skills</div>
                 <div className="details">{player.skills}</div>
               </div>

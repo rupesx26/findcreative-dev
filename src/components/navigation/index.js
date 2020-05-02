@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TimelineMax, Power0, Power1 } from 'gsap';
+import { TimelineMax, Power0, Power1, CSSPlugin } from 'gsap';
 import { imagePath } from '../../utils/assetUtils';
 import { Link } from 'react-router-dom';
 import SayHello from '../sayhello';
@@ -11,6 +11,7 @@ import Icon from '../icons';
 import './navigation.scss';
 
 const menu = ['Difference', 'Work', 'Connect'];
+const plugins = [CSSPlugin];
 
 class Navigation extends Component {
   constructor(props) {
@@ -124,9 +125,6 @@ class Navigation extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    //console.log(props)
-    //console.log(state)
-
     if (props.toggleHeader || state.toggleMenu === 'menu-open') {
       return {
         colorUpdate: 'light',

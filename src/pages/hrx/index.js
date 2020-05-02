@@ -5,13 +5,21 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import { TimelineLite, TweenMax, Power2, Linear, Power4 } from 'gsap';
+import {
+  TimelineLite,
+  TweenMax,
+  Power2,
+  Linear,
+  Power4,
+  CSSPlugin
+} from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { hrxImagePath } from '../../utils/assetUtils';
 import WorkPageNavigation from '../../components/workpagenav';
 import HrxSlider from '../../components/pageslider';
 import './hrx.scss';
+const plugins = [CSSPlugin];
 
 //import 'debug.addIndicators';
 class About extends Component {
@@ -212,6 +220,13 @@ class About extends Component {
         toggleHeader: false,
         showSayHello: true
       });
+    }
+    if (isMobile) {
+      if (mainWrapperElem.offsetHeight < winScroll) {
+        this.setState({
+          toggleHeader: true
+        });
+      }
     }
   }
 

@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import { TweenMax, TimelineLite, TimelineMax, Power0, Expo } from 'gsap';
+import {
+  TweenMax,
+  TimelineLite,
+  TimelineMax,
+  Power0,
+  Expo,
+  CSSPlugin
+} from 'gsap';
 import { isMobile } from 'react-device-detect'; //is for mobile devices
 import './heading.scss';
 import Blob from '../blob/Blob';
+const plugins = [CSSPlugin];
 
 // * to create is to unite
 // * now is everything

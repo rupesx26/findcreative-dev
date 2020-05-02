@@ -90,7 +90,7 @@ $base: 0.8rem;
                             color: #e91c23;
                         }
                         @include respond-until(sm) { 
-                            font-size: 3.5em;
+                            font-size: 3.2em;
                         }
                         &:before {
                             content: attr(data-text);
@@ -100,6 +100,9 @@ $base: 0.8rem;
                             transition: width 1s;
                             overflow: hidden;
                             white-space: nowrap;
+                            @include respond-until(sm) { 
+                                opacity: 0;
+                            }
                         }
                         &:hover{
                             // color: gray;
@@ -222,6 +225,9 @@ $base: 0.8rem;
     align-items: center;
     opacity: 0;
     transition: opacity .5s ease-in-out;
+    @include respond-until(sm) { 
+        opacity: 0;
+    }
   }
   .chevron {
     position: absolute;
@@ -232,6 +238,10 @@ $base: 0.8rem;
     animation: moveChevron 3s ease-out infinite;
     left: 50%;
     margin-left: -1.5rem;
+    @include respond-until(sm) { 
+        opacity: 0;
+        animation: none;
+    }
   }
   
   .chevron:first-child {
@@ -250,6 +260,10 @@ $base: 0.8rem;
    height: 100%;
    width: 50%;
    background: rgba(255,255,255, 0.9);
+   @include respond-until(sm) { 
+    opacity: 0;
+    animation: none;
+}
   }
   
   .chevron:before {

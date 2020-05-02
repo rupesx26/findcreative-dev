@@ -68,7 +68,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { TimelineMax } from 'gsap';
 
 //Import Components
 import Head from './Head';
@@ -79,6 +78,7 @@ import Footer from '../components/footer';
 import Navigation from '../components/navigation';
 import { isMobile } from 'react-device-detect'; //is for mobile devices
 import Pagination from '../components/verticalpagination';
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -87,7 +87,6 @@ class Home extends Component {
     this.anchors = ['firstPage', 'secondPage', 'thirdPage'];
     this.fullpageWrapper = this.fullpageWrapper.bind(this);
     this.mobileContent = this.mobileContent.bind(this);
-    this.slideAnimation = new TimelineMax({ paused: true });
     this.mainWrapper = React.createRef();
     this.footerWrapper = React.createRef();
     this.handleScroll = this.handleScroll.bind(this);
@@ -123,7 +122,6 @@ class Home extends Component {
     const mainWrapperElem = this.mainWrapper.current;
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
-
     if (mainWrapperElem.offsetHeight === winScroll) {
       this.setState({
         toggleHeader: true
@@ -132,6 +130,13 @@ class Home extends Component {
       this.setState({
         toggleHeader: false
       });
+    }
+    if (isMobile) {
+      if (mainWrapperElem.offsetHeight < winScroll) {
+        this.setState({
+          toggleHeader: true
+        });
+      }
     }
   }
 
@@ -215,9 +220,6 @@ class Home extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    // console.log(props)
-    // console.log(state)
-
     if (state.currentSlide === 0) {
       return {
         hidePagination: true

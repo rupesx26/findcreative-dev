@@ -12,13 +12,15 @@ import {
   Power2,
   Power0,
   Linear,
-  Power4
+  Power4,
+  CSSPlugin
 } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { kateImagePath } from '../../utils/assetUtils';
 import WorkPageNavigation from '../../components/workpagenav';
 import './kate.scss';
+const plugins = [CSSPlugin];
 
 class KateSpade extends Component {
   constructor(props) {
@@ -287,6 +289,13 @@ class KateSpade extends Component {
         toggleHeader: false,
         showSayHello: true
       });
+    }
+    if (isMobile) {
+      if (mainWrapperElem.offsetHeight < winScroll) {
+        this.setState({
+          toggleHeader: true
+        });
+      }
     }
   }
 

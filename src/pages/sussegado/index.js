@@ -7,12 +7,20 @@ import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
 import SimpleSlider from '../../components/simpleslider';
 import VideoSection from '../../components/videosection';
-import { TimelineLite, TweenMax, Power2, Linear, Power4 } from 'gsap';
+import {
+  TimelineLite,
+  TweenMax,
+  Power2,
+  Linear,
+  Power4,
+  CSSPlugin
+} from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { sussegadoImagePath } from '../../utils/assetUtils';
 import WorkPageNavigation from '../../components/workpagenav';
 import './sussegado.scss';
+const plugins = [CSSPlugin];
 
 class Sussegado extends Component {
   constructor(props) {
@@ -192,6 +200,13 @@ class Sussegado extends Component {
         toggleHeader: false,
         showSayHello: true
       });
+    }
+    if (isMobile) {
+      if (mainWrapperElem.offsetHeight < winScroll) {
+        this.setState({
+          toggleHeader: true
+        });
+      }
     }
   }
 
