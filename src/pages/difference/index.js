@@ -7,15 +7,7 @@ import Blob from '../../components/blob/Blob';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineMax,
-  TimelineLite,
-  TweenMax,
-  Power2,
-  Linear,
-  Power4,
-  CSSPlugin
-} from 'gsap';
+import { TimelineMax, TimelineLite, TweenMax, Power2, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import { differImagePath } from '../../utils/assetUtils';
 const plugins = [CSSPlugin];
@@ -394,44 +386,44 @@ class About extends Component {
                         <div className="box-row">
                           <div className="box-cell"></div>
                           <div className="box-cell">
-                            <img src={this.Marico} />
+                            <img src={this.Marico} alt="client" />
                           </div>
                           <div className="box-cell">
-                            <img src={this.RR} />
+                            <img src={this.RR} alt="client" />
                           </div>
                           <div className="box-cell">
-                            <img src={this.TLC} />
+                            <img src={this.TLC} alt="client" />
                           </div>
                           <div className="box-cell"></div>
                         </div>
                         <div className="box-row">
                           <div className="box-cell jsw">
-                            <img src={this.jSW} />
+                            <img src={this.jSW} alt="client" />
                           </div>
                           <div className="box-cell">
-                            <img src={this.Hritik} />
+                            <img src={this.Hritik} alt="client" />
                           </div>
                           <div className="box-cell">
-                            <img src={this.Thambbi} />
+                            <img src={this.Thambbi} alt="client" />
                           </div>
                           <div className="box-cell">
-                            <img src={this.Kratos} />
+                            <img src={this.Kratos} alt="client" />
                           </div>
                           <div className="box-cell">
-                            <img src={this.Hero} />
+                            <img src={this.Hero} alt="client" />
                           </div>
                         </div>
 
                         <div className="box-row">
                           <div className="box-cell"></div>
                           <div className="box-cell tbwa">
-                            <img src={this.TBWA} />
+                            <img src={this.TBWA} alt="client" />
                           </div>
                           <div className="box-cell adgaonkar">
-                            <img src={this.adgaonkar} />
+                            <img src={this.adgaonkar} alt="client" />
                           </div>
                           <div className="box-cell">
-                            <img src={this.Humsafar} />
+                            <img src={this.Humsafar} alt="client" />
                           </div>
                           <div className="box-cell"></div>
                         </div>
@@ -448,7 +440,7 @@ class About extends Component {
                   <div className="row">
                     <div className="col-md-8 col-xs-12 col-offset-md-2">
                       <div className="founders">
-                        <img src={this.founders} />
+                        <img src={this.founders} alt="client" />
                       </div>
                     </div>
                   </div>

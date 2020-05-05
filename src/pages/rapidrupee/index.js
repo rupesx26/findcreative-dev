@@ -5,14 +5,7 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineLite,
-  TweenMax,
-  Power1,
-  Linear,
-  Power4,
-  CSSPlugin
-} from 'gsap';
+import { TimelineLite, TweenMax, Power1, Power4, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { rapidrupeeImagePath } from '../../utils/assetUtils';
@@ -213,7 +206,7 @@ class Rapidrupee extends Component {
               className="full-page-wrapper page-header bg"
             >
               <div className="banner-img-container">
-                <img src={this.Hero} />
+                <img src={this.Hero} alt="rapidrupee" />
               </div>
               <WorkPageNavigation
                 prevLink="/work/sussegado-coffee"
@@ -238,13 +231,19 @@ class Rapidrupee extends Component {
                       <div className="project-image-container img-grid row">
                         <div className="col-md-6 col-xs-12 no-gutters">
                           <div className="project-image-container mobile-scrn-1 col-md-9 justify-content-left">
-                            <img src={this.RapidRupeeMobileOne} />
+                            <img
+                              src={this.RapidRupeeMobileOne}
+                              alt="rapidrupee"
+                            />
                           </div>
                         </div>
 
                         <div className="col-md-6 col-xs-12 no-gutters">
                           <div className="project-image-container mobile-scrn-2 right-img col-md-9 justify-content-right">
-                            <img src={this.RapidRupeeMobileTwo} />
+                            <img
+                              src={this.RapidRupeeMobileTwo}
+                              alt="rapidrupee"
+                            />
                           </div>
                         </div>
                       </div>
@@ -275,43 +274,64 @@ class Rapidrupee extends Component {
 
                       <div className="project-image-container justify-content-left fold-3-img">
                         <div className="col-md-6 col-xs-12 no-gutters">
-                          <img src={this.RapidRupeeComuteOne} />
+                          <img
+                            src={this.RapidRupeeComuteOne}
+                            alt="rapidrupee"
+                          />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-right fold-3-img">
                         <div className="col-md-6 col-xs-12 no-gutters">
-                          <img src={this.RapidRupeeComuteTwo} />
+                          <img
+                            src={this.RapidRupeeComuteTwo}
+                            alt="rapidrupee"
+                          />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-left fold-3-img">
                         <div className="col-md-6 col-xs-12 no-gutters">
-                          <img src={this.RapidRupeeComuteThree} />
+                          <img
+                            src={this.RapidRupeeComuteThree}
+                            alt="rapidrupee"
+                          />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-right fold-3-img">
                         <div className="col-md-6 col-xs-12 no-gutters">
-                          <img src={this.RapidRupeeComuteFour} />
+                          <img
+                            src={this.RapidRupeeComuteFour}
+                            alt="rapidrupee"
+                          />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-left fold-3-img">
                         <div className="col-md-6 col-xs-12 no-gutters">
-                          <img src={this.RapidRupeeComuteFive} />
+                          <img
+                            src={this.RapidRupeeComuteFive}
+                            alt="rapidrupee"
+                          />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-right fold-3-img">
                         <div className="col-md-6 col-xs-12 no-gutters">
-                          <img src={this.RapidRupeeComuteSix} />
+                          <img
+                            src={this.RapidRupeeComuteSix}
+                            alt="rapidrupee"
+                          />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-left fold-3-img">
                         <div className="col-md-6 col-xs-12 no-gutters">
-                          <img src={this.RapidRupeeComuteSeven} />
+                          <img
+                            src={this.RapidRupeeComuteSeven}
+                            alt="rapidrupee"
+                          />
                         </div>
                       </div>
                     </div>

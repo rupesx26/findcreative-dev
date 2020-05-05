@@ -19,6 +19,39 @@
             text-emphasis: left;
         }
     }
+
+    .blob-outer {
+        @include respond-until(sm) {
+            height: 190px;
+            width: 190px;
+            right: -60px;
+            top: 11em;
+            .blob-layer-1 {
+                width: calc(100% - 60px);
+                height: calc(100% - 60px);
+                top: 1em;
+                left: -1em;
+            }
+            .blob-layer-2 {
+                width: calc(100% - 90px);
+                height: calc(100% - 70px);
+                top: 2em;
+                right: 6em;
+            }
+            .blob {
+                width: calc(100% - 90px);
+                height: calc(100% - 90px);
+                top: 0em;
+                left: 0em;
+            }
+            .blob-layer-3 {
+                width: calc(100% - 100px);
+                height: calc(100% - 100px);
+                top: 42px;
+                left: 8px;
+            }
+        }
+    }
     
 } 
 .animation-slide-head {
@@ -32,7 +65,7 @@
         @include respond-until(sm) {
             padding: 0 0.3em;
         }
-        &.head-slide-4 {
+        &.head-slide-1 {
             @include respond-until(sm) {
                 opacity: 1;
                 text-align: left;

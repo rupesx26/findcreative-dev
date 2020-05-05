@@ -6,14 +6,7 @@ import PageAnimWrapper from '../../components/pagetransition';
 import SimpleSlider from '../../components/simpleslider';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineLite,
-  TweenMax,
-  Power2,
-  Linear,
-  Power4,
-  CSSPlugin
-} from 'gsap';
+import { TimelineLite, TweenMax, Power4, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { cocoImagePath } from '../../utils/assetUtils';
@@ -281,7 +274,7 @@ class Cocosoul extends Component {
                 <div className="container">
                   <div className="row justify-content-center no-gutters coco-intro">
                     <div className="side-leaf-left">
-                      <img src={this.SideLeafLeft} />
+                      <img src={this.SideLeafLeft} alt="cocosoul" />
                     </div>
                     <div className="col-md-9 col-xs-12">
                       <div className="project-image-container">
@@ -294,6 +287,7 @@ class Cocosoul extends Component {
                         <img
                           src={this.CocoIntro}
                           className="img moodboard-img"
+                          alt="cocosoul"
                         />
                       </div>
                     </div>
@@ -349,6 +343,7 @@ class Cocosoul extends Component {
                             <img
                               src={this.CoconutProduct}
                               className="img script-img"
+                              alt="cocosoul"
                             />
                           </div>
                         </div>
@@ -362,7 +357,7 @@ class Cocosoul extends Component {
                 <div className="container">
                   <div className="row justify-content-center no-gutters coco-intro">
                     <div className="side-leaf-right">
-                      <img src={this.SideLeafRight} />
+                      <img src={this.SideLeafRight} alt="cocosoul" />
                     </div>
                     <div className="col-md-9 col-xs-12">
                       <div className="row">
@@ -427,7 +422,7 @@ class Cocosoul extends Component {
             <Link
               to="/work/sussegado-coffee"
               data-text="Sussegado Coffee"
-              className={`title footer-title ${this.state.footerColor} `}
+              className={`title footer-title coco-soul-footer-link ${this.state.footerColor} `}
             >
               Sussegado Coffee
               <div className="footer-arrow">

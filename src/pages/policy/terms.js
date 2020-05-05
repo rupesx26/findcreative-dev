@@ -44,7 +44,7 @@ class Terms extends Component {
                       <div className="content">
                         <p>
                           "www.findcreative.in" (hereinafter, the "Website") is
-                          owned and operated by FindCreative, a Limited
+                          owned and operated by FINDCreative, a Limited
                           Liability Partnership incorporated under the Limited
                           Liability Partnership Act, 2008, having its registered
                           address at ___________________________Mumbai, India

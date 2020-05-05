@@ -5,14 +5,7 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineLite,
-  TweenMax,
-  Power1,
-  Linear,
-  Power4,
-  CSSPlugin
-} from 'gsap';
+import { TimelineLite, TweenMax, Power1, Power4, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { heroImagePath } from '../../utils/assetUtils';
@@ -328,7 +321,7 @@ class NiharGold extends Component {
               className="full-page-wrapper page-header bg"
             >
               <div className="banner-img-container">
-                <img src={this.Hero} />
+                <img src={this.Hero} alt="herotalkies" />
               </div>
               <WorkPageNavigation
                 prevLink="/work/thambbi"
@@ -351,10 +344,10 @@ class NiharGold extends Component {
                   <div className="row justify-content-center no-gutters">
                     <div className="col-md-8 col-xs-12">
                       <div className="project-image-container fold-2-img">
-                        <img src={this.HeroImgOne} />
+                        <img src={this.HeroImgOne} alt="herotalkies" />
                       </div>
                       <div className="project-image-container fold-2-img">
-                        <img src={this.HeroImgTwo} />
+                        <img src={this.HeroImgTwo} alt="herotalkies" />
                       </div>
                     </div>
                   </div>
@@ -367,31 +360,31 @@ class NiharGold extends Component {
                     <div className="col-md-8 col-xs-12">
                       <div className="project-image-container fold-3-img justify-content-right">
                         <div className="col-md-8 col-xs-12 no-gutters">
-                          <img src={this.HeroImgThree} />
+                          <img src={this.HeroImgThree} alt="herotalkies" />
                         </div>
                       </div>
 
                       <div className="project-image-container fold-3-img justify-content-left changeColor">
                         <div className="col-md-8 col-xs-12 no-gutters">
-                          <img src={this.HeroImgFour} />
+                          <img src={this.HeroImgFour} alt="herotalkies" />
                         </div>
                       </div>
 
                       <div className="project-image-container fold-3-img justify-content-right">
                         <div className="col-md-8 col-xs-12 no-gutters">
-                          <img src={this.HeroImgFive} />
+                          <img src={this.HeroImgFive} alt="herotalkies" />
                         </div>
                       </div>
 
                       <div className="project-image-container fold-3-img justify-content-left">
                         <div className="col-md-8 col-xs-12 no-gutters">
-                          <img src={this.HeroImgSix} />
+                          <img src={this.HeroImgSix} alt="herotalkies" />
                         </div>
                       </div>
 
                       <div className="project-image-container fold-3-img justify-content-right">
                         <div className="col-md-8 col-xs-12 no-gutters">
-                          <img src={this.HeroImgSeven} />
+                          <img src={this.HeroImgSeven} alt="herotalkies" />
                         </div>
                       </div>
                     </div>
@@ -405,16 +398,16 @@ class NiharGold extends Component {
                     <div className="col-md-8 col-xs-12">
                       <div className="project-image-container img-grid">
                         <div className="col-md-5 col-xs-12 hero-id-one">
-                          <img src={this.HeroIdOne} />
+                          <img src={this.HeroIdOne} alt="herotalkies" />
                         </div>
                         <div className="col-md-2"></div>
                         <div className="col-md-5 col-xs-12 cust-mart-50">
-                          <img src={this.HeroIdTwo} />
+                          <img src={this.HeroIdTwo} alt="herotalkies" />
                         </div>
                       </div>
 
                       <div className="project-image-container hero-bus">
-                        <img src={this.HeroBus} />
+                        <img src={this.HeroBus} alt="herotalkies" />
                       </div>
                     </div>
                   </div>
@@ -424,7 +417,7 @@ class NiharGold extends Component {
               <div className="fold-5 full-page-wrapper" ref={this.darkArea}>
                 <div className="full-page-wrapper page-header">
                   <div className="banner-img-container">
-                    <img src={this.Hero} />
+                    <img src={this.Hero} alt="herotalkies" />
                   </div>
                 </div>
               </div>
@@ -449,11 +442,11 @@ class NiharGold extends Component {
                         </div>
                       </div>
                       <div className="project-image-container fold-6-img">
-                        <img src={this.HeroTshirt} />
+                        <img src={this.HeroTshirt} alt="herotalkies" />
                       </div>
 
                       <div className="project-image-container fold-6-img">
-                        <img src={this.HeroCup} />
+                        <img src={this.HeroCup} alt="herotalkies" />
                       </div>
                     </div>
                   </div>

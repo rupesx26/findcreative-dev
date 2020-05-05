@@ -73,6 +73,9 @@ $base: 0.8rem;
                         position: relative;
                         color: #e91c23;
                         line-height: 1.04;
+                        @include respond-until(sm) { 
+                            line-height: 1.2;
+                        }
                         &.color1 {
                             color: #f4db09;
                         }

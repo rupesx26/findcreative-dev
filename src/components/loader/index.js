@@ -1,14 +1,7 @@
 import React, { useEffect } from 'react';
 import './loader.scss';
 import { imagePath } from '../../utils/assetUtils';
-import {
-  TimelineMax,
-  TimelineLite,
-  TweenMax,
-  Power2,
-  Linear,
-  Power4
-} from 'gsap';
+import { TweenMax, Linear } from 'gsap';
 
 const PageLoader = () => {
   useEffect(() => {
@@ -40,7 +33,7 @@ const PageLoader = () => {
         />
       </div>
       <div>
-        <div className="loader-text">We are findcreative eve.</div>
+        <div className="loader-text">We are FINDCreative eve.</div>
       </div>
     </div>
   );

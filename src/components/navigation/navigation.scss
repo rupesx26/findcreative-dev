@@ -161,6 +161,9 @@
                     bottom: 60%;
                     opacity: 0;
                     transition: all 0.4s ease-in-out;
+                    @include respond-until(sm) {
+                        display: none;
+                    }
                 }
                 &:hover {
                     color: #fff;

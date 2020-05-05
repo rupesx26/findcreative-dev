@@ -5,16 +5,7 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineLite,
-  TimelineMax,
-  TweenMax,
-  Power2,
-  Power0,
-  Linear,
-  Power4,
-  CSSPlugin
-} from 'gsap';
+import { TimelineLite, TimelineMax, TweenMax, Power4, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { kateImagePath } from '../../utils/assetUtils';
@@ -334,7 +325,7 @@ class KateSpade extends Component {
               className="full-page-wrapper page-header bg"
             >
               <div className="banner-img-container">
-                <img src={this.KateHero} />
+                <img src={this.KateHero} alt="katespade" />
               </div>
               <WorkPageNavigation
                 prevLink="/work/nihar-gold"
@@ -358,13 +349,13 @@ class KateSpade extends Component {
                   <div className="col-md-8 col-xs-12">
                     <div className="project-grid-one">
                       <div className="project-image-container img-one">
-                        <img src={this.KateImgOne} />
+                        <img src={this.KateImgOne} alt="katespade" />
                       </div>
                       <div className="project-image-container img-two">
-                        <img src={this.KateImgTwo} />
+                        <img src={this.KateImgTwo} alt="katespade" />
                       </div>
                       <div className="project-image-container img-three">
-                        <img src={this.KateImgThree} />
+                        <img src={this.KateImgThree} alt="katespade" />
                       </div>
                     </div>
                   </div>
@@ -376,7 +367,7 @@ class KateSpade extends Component {
                       <div className="col-md-6 col-xs-12">
                         <div className="project-image-container justify-content-left">
                           <div className="col-md-11 col-xs-12 img-four">
-                            <img src={this.KateImgFour} />
+                            <img src={this.KateImgFour} alt="katespade" />
                           </div>
                         </div>
                       </div>
@@ -384,7 +375,7 @@ class KateSpade extends Component {
                       <div className="col-md-6 col-xs-12">
                         <div className="project-image-container justify-content-right">
                           <div className="col-md-11 col-xs-12 img-five">
-                            <img src={this.KateImgFive} />
+                            <img src={this.KateImgFive} alt="katespade" />
                           </div>
                         </div>
                       </div>
@@ -396,10 +387,10 @@ class KateSpade extends Component {
                   <div className="col-md-8 col-xs-12">
                     <div className="row">
                       <div className="project-image-container img-six">
-                        <img src={this.KateImgSix} />
+                        <img src={this.KateImgSix} alt="katespade" />
                       </div>
                       <div className="project-image-container img-seven">
-                        <img src={this.KateImgSeven} />
+                        <img src={this.KateImgSeven} alt="katespade" />
                       </div>
                     </div>
                   </div>
@@ -429,11 +420,11 @@ class KateSpade extends Component {
                       </div>
 
                       <div className="project-image-container img-eight">
-                        <img src={this.KateImgEight} />
+                        <img src={this.KateImgEight} alt="katespade" />
                       </div>
 
                       <div className="project-image-container img-nine">
-                        <img src={this.KateImgNine} />
+                        <img src={this.KateImgNine} alt="katespade" />
                       </div>
                     </div>
 
@@ -441,31 +432,31 @@ class KateSpade extends Component {
                       <div className="row">
                         <div className="col-md-6 col-xs-12">
                           <div className="project-image-container img-ten">
-                            <img src={this.KateImgTen} />
+                            <img src={this.KateImgTen} alt="katespade" />
                           </div>
                         </div>
                         <div className="col-md-6 col-xs-12">
                           <div className="project-image-container img-eleven">
-                            <img src={this.KateImgEleven} />
+                            <img src={this.KateImgEleven} alt="katespade" />
                           </div>
                         </div>
 
                         <div className="col-md-6 col-xs-12">
                           <div className="project-image-container img-twelve">
-                            <img src={this.KateImgTwelve} />
+                            <img src={this.KateImgTwelve} alt="katespade" />
                           </div>
                         </div>
 
                         <div className="col-md-6 col-xs-12">
                           <div className="project-image-container img-thirteen">
-                            <img src={this.KateImgThirteen} />
+                            <img src={this.KateImgThirteen} alt="katespade" />
                           </div>
                         </div>
                       </div>
                     </div>
 
                     <div className="project-image-container img-fourteen">
-                      <img src={this.KateImgFourteen} />
+                      <img src={this.KateImgFourteen} alt="katespade" />
                     </div>
                   </div>
                 </div>
@@ -498,7 +489,7 @@ class KateSpade extends Component {
                       className="project-image-container img-fifteen"
                       ref={el => (this.container = el)}
                     >
-                      <img src={this.KateImgFifteen} />
+                      <img src={this.KateImgFifteen} alt="katespade" />
                     </div>
                     <div
                       className="diagonal-bg"

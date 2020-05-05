@@ -7,14 +7,7 @@ import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
 import SimpleSlider from '../../components/simpleslider';
 import VideoSection from '../../components/videosection';
-import {
-  TimelineLite,
-  TweenMax,
-  Power2,
-  Linear,
-  Power4,
-  CSSPlugin
-} from 'gsap';
+import { TimelineLite, TweenMax, Power4, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { sussegadoImagePath } from '../../utils/assetUtils';
@@ -247,7 +240,7 @@ class Sussegado extends Component {
               className="full-page-wrapper page-header bg"
             >
               <div className="banner-img-container">
-                <img src={this.JarsHero} />
+                <img src={this.JarsHero} alt="sussegado" />
               </div>
               <WorkPageNavigation
                 prevLink="/work/cocosoul"
@@ -273,35 +266,35 @@ class Sussegado extends Component {
                       <div className="project-image-container-list jar-list justify-content-center">
                         <div className="project-image-container rapper">
                           <div>
-                            <img src={this.JarRapper} />
+                            <img src={this.JarRapper} alt="sussegado" />
                             <span>Rapper</span>
                           </div>
                         </div>
 
                         <div className="project-image-container hippi">
                           <div>
-                            <img src={this.JarHippi} />
+                            <img src={this.JarHippi} alt="sussegado" />
                             <span>Hippie</span>
                           </div>
                         </div>
 
                         <div className="project-image-container biker">
                           <div>
-                            <img src={this.JarBiker} />
+                            <img src={this.JarBiker} alt="sussegado" />
                             <span>Biker</span>
                           </div>
                         </div>
 
                         <div className="project-image-container tatto">
                           <div>
-                            <img src={this.JarTattoArtist} />
+                            <img src={this.JarTattoArtist} alt="sussegado" />
                             <span>Tattoo Artist</span>
                           </div>
                         </div>
 
                         <div className="project-image-container dj">
                           <div>
-                            <img src={this.JarDj} />
+                            <img src={this.JarDj} alt="sussegado" />
                             <span>DJ</span>
                           </div>
                         </div>
@@ -394,27 +387,39 @@ class Sussegado extends Component {
                           <div className="jar-banners">
                             <div className="project-image-container justify-content-right">
                               <div className="col-md-10 col-xs-12">
-                                <img src={this.JarBikerBanner} />
+                                <img
+                                  src={this.JarBikerBanner}
+                                  alt="sussegado"
+                                />
                               </div>
                             </div>
                             <div className="project-image-container justify-content-right">
                               <div className="col-md-10 col-xs-12">
-                                <img src={this.JarTattoArtistBanner} />
+                                <img
+                                  src={this.JarTattoArtistBanner}
+                                  alt="sussegado"
+                                />
                               </div>
                             </div>
                             <div className="project-image-container justify-content-right">
                               <div className="col-md-10 col-xs-12">
-                                <img src={this.JarDjBanner} />
+                                <img src={this.JarDjBanner} alt="sussegado" />
                               </div>
                             </div>
                             <div className="project-image-container justify-content-right">
                               <div className="col-md-10 col-xs-12">
-                                <img src={this.JarRapperBanner} />
+                                <img
+                                  src={this.JarRapperBanner}
+                                  alt="sussegado"
+                                />
                               </div>
                             </div>
                             <div className="project-image-container justify-content-right">
                               <div className="col-md-10 col-xs-12">
-                                <img src={this.JarHippiBanner} />
+                                <img
+                                  src={this.JarHippiBanner}
+                                  alt="sussegado"
+                                />
                               </div>
                             </div>
                           </div>

@@ -9,9 +9,7 @@ import {
   TimelineLite,
   TimelineMax,
   TweenMax,
-  Power2,
   Power0,
-  Linear,
   Power4,
   CSSPlugin
 } from 'gsap';
@@ -329,19 +327,19 @@ class Thambbi extends Component {
                     <div className="col-md-8 col-xs-12">
                       <div className="project-image-container justify-content-left fold-5-img">
                         <div className="col-md-10 col-xs-12 no-gutters">
-                          <img src={this.ThambbiImgOne} />
+                          <img src={this.ThambbiImgOne} alt="thambbi" />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-right fold-5-img">
                         <div className="col-md-10 col-xs-12 no-gutters align-right">
-                          <img src={this.ThambbiImgTwo} />
+                          <img src={this.ThambbiImgTwo} alt="thambbi" />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-left fold-5-img">
                         <div className="col-md-10 col-xs-12 no-gutters">
-                          <img src={this.ThambbiImgThree} />
+                          <img src={this.ThambbiImgThree} alt="thambbi" />
                         </div>
                       </div>
                     </div>
@@ -356,7 +354,7 @@ class Thambbi extends Component {
                     <div className="col-md-8 col-xs-12">
                       <div className="project-image-container justify-content-center fold-2-img">
                         <div className="col-md-10 col-xs-12 no-gutters align-center">
-                          <img src={this.ThambbiImgFour} />
+                          <img src={this.ThambbiImgFour} alt="thambbi" />
                         </div>
                       </div>
 
@@ -380,31 +378,31 @@ class Thambbi extends Component {
 
                       <div className="project-image-container justify-content-center fold-2-img">
                         <div className="col-md-10 col-xs-12 no-gutters align-center img-">
-                          <img src={this.ThambbiImgFive} />
+                          <img src={this.ThambbiImgFive} alt="thambbi" />
                         </div>
                       </div>
 
                       <div className="project-image-container  justify-content-center fold-2-group mobile-thambbi">
                         <div className="col-md-10 col-xs-12 no-gutters">
-                          <img src={this.ThambbiImgSix} />
+                          <img src={this.ThambbiImgSix} alt="thambbi" />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-center fold-2-img">
                         <div className="col-md-10 col-xs-12 no-gutters align-center">
-                          <img src={this.ThambbiImgSeven} />
+                          <img src={this.ThambbiImgSeven} alt="thambbi" />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-center fold-2-img">
                         <div className="col-md-10 col-xs-12 no-gutters align-center">
-                          <img src={this.ThambbiImgEight} />
+                          <img src={this.ThambbiImgEight} alt="thambbi" />
                         </div>
                       </div>
 
                       <div className="project-image-container justify-content-center fold-2-img">
                         <div className="col-md-10 col-xs-12 no-gutters align-center">
-                          <img src={this.ThambbiImgNine} />
+                          <img src={this.ThambbiImgNine} alt="thambbi" />
                         </div>
                       </div>
                     </div>
@@ -417,7 +415,7 @@ class Thambbi extends Component {
                   <div className="row justify-content-center no-gutters">
                     <div className="project-image-container justify-content-center">
                       <div className="col-md-10 col-xs-12 no-gutters align-center-mar menu-card">
-                        <img src={this.ThambbiImgTen} />
+                        <img src={this.ThambbiImgTen} alt="thambbi" />
                       </div>
                     </div>
                   </div>
@@ -429,7 +427,7 @@ class Thambbi extends Component {
                   <div className="row justify-content-center no-gutters">
                     <div className="project-image-container justify-content-center">
                       <div className="col-md-5 col-xs-5 no-gutters align-center-mar thank-you">
-                        <img src={this.ThambbiThankYou} />
+                        <img src={this.ThambbiThankYou} alt="thambbi" />
                       </div>
                     </div>
                   </div>

@@ -5,14 +5,7 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineLite,
-  TweenMax,
-  Power2,
-  Linear,
-  Power4,
-  CSSPlugin
-} from 'gsap';
+import { TimelineLite, TweenMax, Power4, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { gravityImagePath } from '../../utils/assetUtils';
@@ -231,11 +224,19 @@ class Gravity extends Component {
                   <div className="col-md-10">
                     <div className="project-image-container">
                       <div className="gravity-text">
-                        <img src={this.GravityText} className="img" />
+                        <img
+                          src={this.GravityText}
+                          className="img"
+                          alt="gravity"
+                        />
                       </div>
 
                       <div className="gravity-bar">
-                        <img src={this.GravityBar} className="img" />
+                        <img
+                          src={this.GravityBar}
+                          className="img"
+                          alt="gravity"
+                        />
                       </div>
                     </div>
                   </div>
@@ -248,7 +249,11 @@ class Gravity extends Component {
                     <div className="row">
                       <div className="col-md-5 col-xs-12">
                         <div className="project-image-container gravity-bar-box">
-                          <img src={this.GravityBarBox} className="img" />
+                          <img
+                            src={this.GravityBarBox}
+                            className="img"
+                            alt="gravity"
+                          />
                         </div>
                       </div>
                       <div className="col-md-2"></div>

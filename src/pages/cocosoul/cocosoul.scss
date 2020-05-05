@@ -111,5 +111,22 @@
 		width: 100%;
 		margin: 0vh 0 15vh;
 	}
+
+	& + .page-footer {
+		#footer-view {
+			.inside-wrapper {
+				.page-footer-wrapper  {
+					.page-footer-content{
+						.title {
+							line-height: 1.37;
+						}
+					}
+				}
+			}
+		} 
+	}
+	
 }
+
+
 

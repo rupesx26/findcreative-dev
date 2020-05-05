@@ -40,7 +40,7 @@ class Policy extends Component {
                     <div className="col-md-10 col-xs-12">
                       <h1>Privacy Policy</h1>
                       <p className="intro">
-                        We, FindCreative, a Limited Liability Partnership
+                        We, FINDCreative, a Limited Liability Partnership
                         incorporated under the Limited Liability Partnership
                         Act, 2008 (hereinafter referred to as "LLP"), having its
                         registered office at _______________________Mumbai,

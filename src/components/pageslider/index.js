@@ -33,33 +33,33 @@ class HrxSlider extends React.Component {
       <Slider {...settings}>
         <div className="slide">
           <div className="slideBg">
-            <img src={this.props.slide1} />
+            <img src={this.props.slide1} alt="slideimg" />
           </div>
         </div>
         <div className="slide slide2">
           <div className="slideBg">
-            <img src={this.props.slide2} />
+            <img src={this.props.slide2} alt="slideimg" />
           </div>
         </div>
         <div className="slide slide3">
           <div className="slideBg">
-            <img src={this.props.slide3} />
+            <img src={this.props.slide3} alt="slideimg" />
           </div>
         </div>
         <div className="slide slide4">
           <div className="slideBg">
-            <img src={this.props.slide4} />
+            <img src={this.props.slide4} alt="slideimg" />
           </div>
         </div>
         <div className="slide slide5">
           <div className="slideBg">
-            <img src={this.props.slide5} />
+            <img src={this.props.slide5} alt="slideimg" />
           </div>
         </div>
 
         <div className="slide slide6">
           <div className="slideBg">
-            <img src={this.props.slide6} />
+            <img src={this.props.slide6} alt="slideimg" />
           </div>
         </div>
       </Slider>

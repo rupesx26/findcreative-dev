@@ -5,14 +5,7 @@ import Head from '../Head';
 import PageAnimWrapper from '../../components/pagetransition';
 import Footer from '../../components/footer';
 import Navigation from '../../components/navigation';
-import {
-  TimelineLite,
-  TweenMax,
-  Power2,
-  Linear,
-  Power4,
-  CSSPlugin
-} from 'gsap';
+import { TimelineLite, TweenMax, Linear, Power4, CSSPlugin } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 import ProjectPageSummary from '../../components/workdetailsanim';
 import { hrxImagePath } from '../../utils/assetUtils';
@@ -135,8 +128,7 @@ class About extends Component {
       .addTo(this.controller);
 
     const outers = document.querySelectorAll('.fold-2-img'),
-      novelSlides = document.querySelectorAll('.masonry-brick--h'),
-      outers2 = document.querySelectorAll('.fold-4-img');
+      novelSlides = document.querySelectorAll('.masonry-brick--h');
     for (let i = 0; i < outers.length; i++) {
       const child = outers[i].childNodes[0].childNodes;
       const fold6Animation = new TimelineLite();
@@ -167,7 +159,7 @@ class About extends Component {
     for (let i = 0; i < novelSlides.length; i++) {
       const child = novelSlides[i].childNodes,
         fold6Animation = new TimelineLite();
-      if (i % 2 == 0) {
+      if (i % 2 === 0) {
         fold6Animation.fromTo(
           child,
           1.5,
@@ -275,7 +267,7 @@ class About extends Component {
                       {/* <img src={HrxBannerTxt}/> */}
                     </div>
                     <div className="char-img">
-                      <img src={this.HrxChar} />
+                      <img src={this.HrxChar} alt="hrx" />
                     </div>
                   </div>
                 </div>
@@ -355,7 +347,11 @@ class About extends Component {
                           ref={el => (this.container = el)}
                         >
                           <div className="col-md-6 col-xs-12 no-gutters">
-                            <img src={this.HrxImgOne} className="img" />
+                            <img
+                              src={this.HrxImgOne}
+                              className="img"
+                              alt="hrx"
+                            />
                           </div>
                         </div>
                         <div
@@ -363,7 +359,11 @@ class About extends Component {
                           ref={el => (this.container = el)}
                         >
                           <div className="col-md-6 col-xs-12 no-gutters">
-                            <img src={this.HrxImgTwo} className="img" />
+                            <img
+                              src={this.HrxImgTwo}
+                              className="img"
+                              alt="hrx"
+                            />
                           </div>
                         </div>
                         <div
@@ -371,7 +371,11 @@ class About extends Component {
                           ref={el => (this.container = el)}
                         >
                           <div className="col-md-6 col-xs-12 no-gutters">
-                            <img src={this.HrxImgThree} className="img" />
+                            <img
+                              src={this.HrxImgThree}
+                              className="img"
+                              alt="hrx"
+                            />
                           </div>
                         </div>
 
@@ -380,7 +384,11 @@ class About extends Component {
                           ref={el => (this.container = el)}
                         >
                           <div className="col-md-6 col-xs-12 no-gutters">
-                            <img src={this.HrxImgFour} className="img" />
+                            <img
+                              src={this.HrxImgFour}
+                              className="img"
+                              alt="hrx"
+                            />
                           </div>
                         </div>
                       </div>

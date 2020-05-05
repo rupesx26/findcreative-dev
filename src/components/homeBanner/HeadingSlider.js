@@ -34,6 +34,14 @@ class HeadingSlider extends Component {
     if (!isMobile) {
       this.bannerAnimationHead();
       this.blobAnimation();
+    } else {
+      const blobMobile = new TimelineLite();
+      blobMobile.to('.banner-blob', 2, {
+        opacity: 1,
+        x: 0,
+        filter: 'blur(0px)',
+        ease: Power0.inOut
+      });
     }
   }
 

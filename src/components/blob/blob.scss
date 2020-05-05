@@ -1,0 +1,108 @@
+@import '../../styles/mixins';
+
+.thin-line-blob-wrapper {
+  position: absolute;
+  width: 50vh;
+}
+.blob-outer {
+    height: 300px;
+    width : 300px;
+    position: absolute;
+    right: 9em;
+    top: 13em;
+    opacity: 0;
+  }
+  .blob-wrapper {
+    height: 100%;
+    width : 100%;
+    text-align: center;
+    position: relative;
+  }
+  
+  .blob-layer-1 {
+    width: calc(100% - 30px);
+    display:inline-block;
+    height: calc(100% - 30px);
+    animation: bloblayer1 30s linear infinite;
+    position: absolute;
+    top: 2em;
+    left: -2em;
+    transform: rotate(45deg);
+  }
+  
+  .blob-layer-2 {
+    width: calc(100% - 100px);
+    display:inline-block;
+    height: calc(100% - 50px);
+    /*background-size:cover;*/
+    animation: bloblayer2 30s linear infinite;
+    position: absolute;
+    top: 4em;
+    right: 7em;
+  }
+  
+  .blob-layer-3 {
+    width: calc(100% - 100px);
+    display: inline-block;
+    height: calc(100% - 100px);
+    background: transparent;
+    border-width: 1px;
+    border-style: solid;
+    opacity: 0.1;
+    animation: bloblayer3 30s linear infinite;
+    position: absolute;
+    top: 5em;
+    left: -2em;
+  
+  }
+
+  .blob {
+    width: calc(100% - 90px);
+    display:inline-block;
+    height: calc(100% - 90px);
+    // background:rgb(48, 195, 229);
+    margin-top: 20%;
+    /*background-size:cover;*/
+    animation: blob 30s linear infinite;
+    position: absolute;
+    top: 0em;
+    left: 0em;
+  }
+
+
+  @keyframes blob{
+    0%,100% { border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;}
+    25% { border-radius: 73% 27% 26% 38% / 73% 36% 64% 27%;}
+    40% { border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%;}
+    50% { border-radius: 28% 72% 44% 56% / 49% 40% 60% 51%;}
+    70% { border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;}
+    85% { border-radius: 73% 27% 26% 38% / 73% 36% 64% 27%;}
+  }
+  
+  @keyframes bloblayer1{
+    0%,100% { border-radius: 73% 27% 26% 38% / 73% 36% 64% 27%}
+    25% { border-radius: 28% 72% 44% 56% / 49% 40% 60% 51%;}
+    40% { border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;}
+    50% { border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%}
+    70% { border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;}
+    85% { border-radius: 73% 27% 26% 38% / 73% 36% 64% 27%;}
+   
+  }
+  
+  @keyframes bloblayer2{
+    0%,100% {border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%;}
+    25% { border-radius: 31% 60% 51% 36% / 40% 40% 60% 51%;}
+    75% { border-radius: 73% 27% 26% 38% / 73% 36% 64% 27%;}
+    50% {  border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;}  
+  }
+  
+  
+  @keyframes bloblayer3{
+    0%,100%  { border-radius: 73% 27% 26% 38% / 73% 36% 64% 27%;}
+    10%{ border-radius: 73% 27% 26% 38% / 73% 36% 64% 27%}
+    20% { border-radius: 28% 72% 44% 56% / 49% 40% 60% 51%;}
+    50% { border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;}
+    35% { border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%}
+    85% { border-radius: 64% 36% 27% 73% / 55% 58% 42% 45%;}
+    
+  }

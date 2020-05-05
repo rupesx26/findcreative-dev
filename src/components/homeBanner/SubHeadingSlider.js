@@ -120,10 +120,10 @@ class SubHeadingSlider extends Component {
   subHeadingDesktop() {
     return (
       <h2>
-        <span className="slideWrap sub-slide-1">We are findcreative Ave.</span>
+        <span className="slideWrap sub-slide-1">We are FINDCreative Ave.</span>
         <span className="slideWrap sub-slide-2">
           <span className="init-text">
-            findcreative Ave <span className="for-last">is a</span>{' '}
+            FINDCreative Ave <span className="for-last">is a</span>{' '}
           </span>
           <span>
             <span className="type type-1">design agency</span>
@@ -139,11 +139,11 @@ class SubHeadingSlider extends Component {
   subHeadingMobile() {
     return (
       <div className="mobile-subhead-wrapper">
-        <h2 className="sub-mob-slide-1 slide-mob">We are findcreative Ave.</h2>
-        {/* <h2 className='sub-mob-slide-2 slide-mob'>findcreative Ave is a design agency</h2>
-        <h2 className='sub-mob-slide-3 slide-mob'>findcreative Ave is a creative agency</h2>
-        <h2 className='sub-mob-slide-4 slide-mob'>findcreative Ave is a digital agency</h2>
-        <h2 className='sub-mob-slide-5 slide-mob'>findcreative Ave loves crazy</h2> */}
+        <h2 className="sub-mob-slide-1 slide-mob">We are FINDCreative Ave.</h2>
+        {/* <h2 className='sub-mob-slide-2 slide-mob'>FINDCreative Ave is a design agency</h2>
+        <h2 className='sub-mob-slide-3 slide-mob'>FINDCreative Ave is a creative agency</h2>
+        <h2 className='sub-mob-slide-4 slide-mob'>FINDCreative Ave is a digital agency</h2>
+        <h2 className='sub-mob-slide-5 slide-mob'>FINDCreative Ave loves crazy</h2> */}
       </div>
     );
   }
