@@ -229,143 +229,143 @@ class HeadingSlider extends Component {
           ease: Expo.easeIn
         },
         '+=1'
-      )
-
-      .fromTo(
-        '.head-slide-6 div',
-        { opacity: 0, y: 50, filter: 'blur(9px)' },
-        {
-          opacity: 1,
-          y: 0,
-          filter: 'blur(0px)',
-          duration: 1.2,
-          stagger: { amount: 0.5 },
-          ease: Expo.easeOut
-        },
-        '+=1.5'
-      )
-      // .fromTo(
-      //   '.head-slide-6 .uniq',
-      //   0.7,
-      //   { scale: 1 },
-      //   { scale: 1.03, ease: Power0.easeInOut },
-      //   '+=1'
-      // )
-      // .to('.head-slide-6 .uniq', 0.7, { scale: 1 }, '+=.2')
-      .to(
-        '.head-slide-6 div',
-        {
-          opacity: 0,
-          y: 50,
-          filter: 'blur(2px)',
-          duration: 1.2,
-          stagger: { amount: 0.25 },
-          ease: Expo.easeIn
-        },
-        '+=1'
-      )
-
-      .fromTo(
-        '.head-slide-7 div',
-        { opacity: 0, y: 50, filter: 'blur(9px)' },
-        {
-          opacity: 1,
-          y: 0,
-          filter: 'blur(0px)',
-          duration: 1.2,
-          stagger: { amount: 0.5 },
-          ease: Expo.easeOut
-        },
-        '+=1.5'
-      )
-      // .fromTo(
-      //   '.head-slide-7 .uniq',
-      //   0.7,
-      //   { scale: 1 },
-      //   { scale: 1.03, ease: Power0.easeInOut },
-      //   '+=1'
-      // )
-      // .to('.head-slide-7 .uniq', 0.7, { scale: 1 }, '+=.2')
-      .to(
-        '.head-slide-7 div',
-        {
-          opacity: 0,
-          y: 50,
-          filter: 'blur(2px)',
-          duration: 1.2,
-          stagger: { amount: 0.25 },
-          ease: Expo.easeIn
-        },
-        '+=1'
-      )
-
-      .fromTo(
-        '.head-slide-8 div',
-        { opacity: 0, y: 50, filter: 'blur(9px)' },
-        {
-          opacity: 1,
-          y: 0,
-          filter: 'blur(0px)',
-          duration: 1.2,
-          stagger: { amount: 0.5 },
-          ease: Expo.easeOut
-        },
-        '+=1.5'
-      )
-      // .fromTo(
-      //   '.head-slide-8 .uniq',
-      //   0.7,
-      //   { scale: 1 },
-      //   { scale: 1.03, ease: Power0.easeInOut },
-      //   '+=1'
-      // )
-      // .to('.head-slide-8 .uniq', 0.7, { scale: 1 }, '+=.2')
-      .to(
-        '.head-slide-8 div',
-        {
-          opacity: 0,
-          y: 50,
-          filter: 'blur(2px)',
-          duration: 1.2,
-          stagger: { amount: 0.25 },
-          ease: Expo.easeIn
-        },
-        '+=1'
-      )
-
-      .fromTo(
-        '.head-slide-9 div',
-        { opacity: 0, y: 50, filter: 'blur(9px)' },
-        {
-          opacity: 1,
-          y: 0,
-          filter: 'blur(0px)',
-          duration: 1.2,
-          stagger: { amount: 0.5 },
-          ease: Expo.easeOut
-        },
-        '+=1.5'
-      )
-      // .fromTo(
-      //   '.head-slide-9 .uniq',
-      //   0.7,
-      //   { scale: 1 },
-      //   { scale: 1.03, ease: Power0.easeInOut },
-      //   '+=1'
-      // )
-      // .to('.head-slide-9 .uniq', 0.7, { scale: 1 }, '+=.2')
-      .to(
-        '.head-slide-9 div',
-        {
-          opacity: 0,
-          y: 50,
-          filter: 'blur(2px)',
-          duration: 1.2,
-          stagger: { amount: 0.25 },
-          ease: Expo.easeIn
-        },
-        '+=1'
       );
+
+    // .fromTo(
+    //   '.head-slide-6 div',
+    //   { opacity: 0, y: 50, filter: 'blur(9px)' },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     filter: 'blur(0px)',
+    //     duration: 1.2,
+    //     stagger: { amount: 0.5 },
+    //     ease: Expo.easeOut
+    //   },
+    //   '+=1.5'
+    // )
+    // .fromTo(
+    //   '.head-slide-6 .uniq',
+    //   0.7,
+    //   { scale: 1 },
+    //   { scale: 1.03, ease: Power0.easeInOut },
+    //   '+=1'
+    // )
+    // .to('.head-slide-6 .uniq', 0.7, { scale: 1 }, '+=.2')
+    // .to(
+    //   '.head-slide-6 div',
+    //   {
+    //     opacity: 0,
+    //     y: 50,
+    //     filter: 'blur(2px)',
+    //     duration: 1.2,
+    //     stagger: { amount: 0.25 },
+    //     ease: Expo.easeIn
+    //   },
+    //   '+=1'
+    // )
+
+    // .fromTo(
+    //   '.head-slide-7 div',
+    //   { opacity: 0, y: 50, filter: 'blur(9px)' },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     filter: 'blur(0px)',
+    //     duration: 1.2,
+    //     stagger: { amount: 0.5 },
+    //     ease: Expo.easeOut
+    //   },
+    //   '+=1.5'
+    // )
+    // .fromTo(
+    //   '.head-slide-7 .uniq',
+    //   0.7,
+    //   { scale: 1 },
+    //   { scale: 1.03, ease: Power0.easeInOut },
+    //   '+=1'
+    // )
+    // .to('.head-slide-7 .uniq', 0.7, { scale: 1 }, '+=.2')
+    // .to(
+    //   '.head-slide-7 div',
+    //   {
+    //     opacity: 0,
+    //     y: 50,
+    //     filter: 'blur(2px)',
+    //     duration: 1.2,
+    //     stagger: { amount: 0.25 },
+    //     ease: Expo.easeIn
+    //   },
+    //   '+=1'
+    // )
+
+    // .fromTo(
+    //   '.head-slide-8 div',
+    //   { opacity: 0, y: 50, filter: 'blur(9px)' },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     filter: 'blur(0px)',
+    //     duration: 1.2,
+    //     stagger: { amount: 0.5 },
+    //     ease: Expo.easeOut
+    //   },
+    //   '+=1.5'
+    // )
+    // .fromTo(
+    //   '.head-slide-8 .uniq',
+    //   0.7,
+    //   { scale: 1 },
+    //   { scale: 1.03, ease: Power0.easeInOut },
+    //   '+=1'
+    // )
+    // .to('.head-slide-8 .uniq', 0.7, { scale: 1 }, '+=.2')
+    // .to(
+    //   '.head-slide-8 div',
+    //   {
+    //     opacity: 0,
+    //     y: 50,
+    //     filter: 'blur(2px)',
+    //     duration: 1.2,
+    //     stagger: { amount: 0.25 },
+    //     ease: Expo.easeIn
+    //   },
+    //   '+=1'
+    // )
+
+    // .fromTo(
+    //   '.head-slide-9 div',
+    //   { opacity: 0, y: 50, filter: 'blur(9px)' },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     filter: 'blur(0px)',
+    //     duration: 1.2,
+    //     stagger: { amount: 0.5 },
+    //     ease: Expo.easeOut
+    //   },
+    //   '+=1.5'
+    // )
+    // .fromTo(
+    //   '.head-slide-9 .uniq',
+    //   0.7,
+    //   { scale: 1 },
+    //   { scale: 1.03, ease: Power0.easeInOut },
+    //   '+=1'
+    // )
+    // .to('.head-slide-9 .uniq', 0.7, { scale: 1 }, '+=.2')
+    // .to(
+    //   '.head-slide-9 div',
+    //   {
+    //     opacity: 0,
+    //     y: 50,
+    //     filter: 'blur(2px)',
+    //     duration: 1.2,
+    //     stagger: { amount: 0.25 },
+    //     ease: Expo.easeIn
+    //   },
+    //   '+=1'
+    // );
 
     tl.add(subtitleTimeline);
 
@@ -411,46 +411,46 @@ class HeadingSlider extends Component {
                 <div>is&nbsp;</div>
                 <br />
                 <div>to&nbsp;</div>
-                <div className="uniq">unite</div>
+                <div>unite</div>
               </div>
               <div className="slide-wrap head-slide-2">
-                <div>now&nbsp;</div>
-                <div>is&nbsp;</div>
-                <div className="uniq">everything</div>
-              </div>
-              <div className="slide-wrap head-slide-3">
                 <div>we&nbsp;</div>
-                <div>make&nbsp;</div>
+                <div>specialise&nbsp;</div>
+                <div>in&nbsp;</div>
                 <div>product&nbsp;</div>
-                <div>and&nbsp;</div> <div>package&nbsp;</div>
-                <div className="uniq">design</div>
-              </div>
-              <div className="slide-wrap head-slide-4">
-                <div>we&nbsp;</div>
-                <div>make&nbsp;</div>
-                <div>branding&nbsp;</div>
-                <div>and&nbsp;</div>
-                <div>digital&nbsp;</div>
-                <div className="uniq">content</div>
-              </div>
-              <div className="slide-wrap head-slide-5">
-                <div className="uniq">audit&nbsp;</div>
-                <div>and&nbsp;</div>
-                <div>research&nbsp;</div>
-                <div>helps&nbsp;</div>
-                <div>us&nbsp;</div>
-                <div>build&nbsp;</div>
-                <div className="uniq">great&nbsp;</div>
+                <div>&&nbsp;</div>
+                <br />
+                <div>packaging&nbsp;</div>
                 <div>design</div>
               </div>
-              <div className="slide-wrap head-slide-6">
-                <div>our&nbsp;</div>
-                <div>strategy&nbsp;</div>
-                <div>is&nbsp;</div>
-                <div>always&nbsp;</div>
-                <div className="uniq">design-led</div> 
+              <div className="slide-wrap head-slide-3">
+                <div>Our&nbsp;</div>
+                <div>approach:&nbsp;</div>
+                <br />
+                <div>
+                  audit &nbsp;<span>></span>&nbsp;
+                </div>
+                <div>
+                  research &nbsp;<span>></span>&nbsp;
+                </div>
+                <div>execute</div>
               </div>
-              <div className="slide-wrap head-slide-7">
+              <div className="slide-wrap head-slide-4">
+                <div>Branding&nbsp;</div>
+                <div>and&nbsp;</div>
+                <div>digital&nbsp;</div>
+                <div>content&nbsp;</div>
+                <div>is&nbsp;</div>
+                <div>our&nbsp;</div>
+                <div>forte&nbsp;</div>
+              </div>
+              <div className="slide-wrap head-slide-5">
+                <div>Now&nbsp;</div>
+                <div>is&nbsp;</div>
+                <div>everthing&nbsp;</div>
+              </div>
+
+              {/* <div className="slide-wrap head-slide-7">
                 <div>our&nbsp;</div>
                 <div>approach&nbsp;</div>
                 <div>is&nbsp;</div>
@@ -458,23 +458,23 @@ class HeadingSlider extends Component {
                 <div>research&nbsp;</div>
                 <div>&amp;&nbsp;</div>
                 <div className="uniq">execute</div>
-              </div>
-              <div className="slide-wrap head-slide-8">
+              </div> */}
+              {/* <div className="slide-wrap head-slide-8">
                 <div>branding&nbsp;</div>
                 <div>is&nbsp;</div>
                 <br />
                 <div>our&nbsp;</div>
                 <div className="uniq">middle&nbsp;</div>
                 <div>name</div>
-              </div>
-              <div className="slide-wrap head-slide-9">
+              </div> */}
+              {/* <div className="slide-wrap head-slide-9">
                 <div>crazy&nbsp;</div>
                 <div>client&nbsp;</div>
                 <div>brings&nbsp;</div>
                 <br />
                 <div className="uniq">crazy&nbsp;</div>
                 <div>ideas.</div>
-              </div>
+              </div> */}
             </h1>
           </div>
         </div>

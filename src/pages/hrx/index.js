@@ -28,7 +28,9 @@ class About extends Component {
 
     this.HrxHeaderBg = hrxImagePath('hrx-banner-bg.jpg');
     this.HrxImgOne = hrxImagePath('hrx-img-1.jpg');
-    this.HrxImgTwo = hrxImagePath('hrx-img-2.jpg');
+    //this.HrxImgTwo = hrxImagePath('hrx-img-2.jpg');
+    this.HrxImgTwo =
+      'https://fcaawsbucket.s3.ap-south-1.amazonaws.com/hrx-img-2.jpg';
     this.HrxImgThree = hrxImagePath('hrx-img-3.jpg');
     this.HrxImgFour = hrxImagePath('hrx-img-4.jpg');
     this.HrxImgFive = hrxImagePath('book-cover.jpg');

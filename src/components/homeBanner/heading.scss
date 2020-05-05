@@ -3,7 +3,7 @@
 
 .head-banner {
     .title {
-        font-size: 6.5vw;
+        font-size: 6em;
         text-align: center;
         color: #000000;
         margin: 0 auto;
@@ -71,9 +71,15 @@
                 text-align: left;
             }
         }
+        &.head-slide-3 {
+            span {
+               font-size: 0.8em;
+            }
+        }
         div {
             display: inline-block; 
             opacity: 0;
+            line-height: 1.10;
             @include respond-until(sm) {
                 opacity: 1;
             }
